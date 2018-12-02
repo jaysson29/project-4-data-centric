@@ -27,25 +27,58 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
                 <textarea name="game_info" id="game_info" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">Task Description</label>
+                <label for="icon_telephone">Game Description</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">assignment</i>
+                <input id="game_img" name="game_img" type="text" class="validate" value="">
+                <label for="icon_prefix">Game Image</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">assignment</i>
+                <input id="game_rating" name="game_rating" type="text" class="validate" value="">
+                <label for="icon_prefix">Game Rating</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">assignment</i>
+                <input id="game_trailer" name="game_trailer" type="text" class="validate" value="">
+                <label for="icon_prefix">Game Trailer</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">assignment</i>
+                <input id="game_developer" name="game_developer" type="text" class="validate" value="">
+                <label for="icon_prefix">Game Developer</label>
+            </div>
+            <div class="input-field col s6">
                 <i class="material-icons prefix">today</i>
-                <input id="game_date" name="game_date" type="text" class="datepicker">
+                <input id="game_date" name="game_date" type="text" class="datepicker" value="">
                 <label for="icon_prefix">Release date</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="switch">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">assignment</i>
+                <input id="game_players" name="game_players" type="number" class="validate" value="">
+                <label for="icon_prefix">Players</label>
+            </div>
+            <div class="col s6 center">
+                <div class="switch">
                 <label>
-                    <input id="recently_added" name ="recently_added" type="checkbox">
-                    <span class="lever"></span>
-                    Recently added
+                    <input id="game_coop" name ="game_coop" type="checkbox">
+                    <span class="lever" ></span>
+                    Game is Co-Op
                     </label>
             </div>
-        </div>
+            </div>
+            <div class="col s6 center">
+                <div class="switch">
+                    <label>
+                        <input id="recently_added" name ="recently_added" type="checkbox">
+                        <span class="lever" ></span>
+                        Recently Added
+                        </label>
+                </div>
+            </div>
         <div class="row">
             <button class="btn waves-effect waves-light right" type="submit" name="action">Add Game
                 <i class="material-icons right">send</i>

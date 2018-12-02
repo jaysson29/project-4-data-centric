@@ -39,19 +39,20 @@ def edit_game(game_id):
 @app.route('/update_game/<game_id>', methods=["POST"])
 def update_game(game_id):
     games = mongo.db.games
-    games.update( {'_id': ObjectId(game_id)}, 
-    {
-        "game_name":  request.form.get['game_name'],
-        "game_info": request.form.get['game_info'],
-        "game_img": request.form.get['game_img'],
-        "game_rating": request.form.get['game_rating'],
-        "game_trailer": request.form.get['game_trailer'],
-        "game_developer": request.form.get['game_developer'],
-        "game_release_date": request.form.get['game_date'],
-        "game_players": request.form.get['game_players'],
-        "game_co_op": request.form.get['game_co-op'],
-        "recently_added": request.form.get['recently_added']
-    })
+    games.update({"_id": ObjectId(game_id)},
+        {
+            "game_platform": request.form['game_platform'],
+            "game_name":  request.form['game_name'],
+            "game_info": request.form['game_info'],
+            "game_img": request.form['game_img'],
+            "game_rating": request.form['game_rating'],
+            "game_trailer": request.form['game_trailer'],
+            "game_developer": request.form['game_developer'],
+            "game_date": request.form['game_date'],
+            "game_players": request.form['game_players'],
+            "game_coop": request.form.get('game_coop'),
+            "recently_added": request.form.get('recently_added')
+        })
     return redirect(url_for('get_games'))
 
 @app.route('/delete_game/<game_id>')

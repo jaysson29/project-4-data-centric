@@ -21,3 +21,10 @@
     margin-top: 20px;
     margin-right:15px;
 }
+.new.badge {
+    margin-top: 7px;
+}
+
+.collapsible-header i {
+    margin-left: -10px;
+}
