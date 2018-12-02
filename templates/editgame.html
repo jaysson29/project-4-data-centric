@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Edit Task</h3>
+<div class="row">
+    <form class="col s12" action="{{ url_for('insert_game') }}" method="POST">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <select id="plaform" name="game_platform">
+                    <option value="" disabled selected>Choose a Platform</option>
+                    {% for plat in platforms %}
+                        {% if plat.game_platform == game.game_platform %}
+                            <option value="{{plat.game_platform}}" selected >{{plat.game_platform}}</option>
+                        {% else %}
+                            <option value="{{plat.game_platform}}">{{plat.game_platform}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <label>Platform</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="game_name" name="game_name" type="text" class="validate" value="{{game.game_name}}">
+                <label for="icon_prefix">Game Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                <textarea name="game_info" id="game_info" class="materialize-textarea">{{game.game_info}}</textarea>
+                <label for="icon_telephone">Game Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">today</i>
+                <input id="game_date" name="game_date" type="text" class="datepicker" value="{{game.game_date}}">
+                <label for="icon_prefix">Release Date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="switch">
+                <label>
+                    {% if game.recently_added %}
+                        <input id="recently_added" name ="recently_added" type="checkbox"checked>
+                    {% else %}
+                        <input id="recently_added" name ="recently_added" type="checkbox">
+                    {% endif %}
+                    <span class="lever" ></span>
+                    Recently Added
+                    </label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light right green" type="submit" name="action">Edit Task
+                <i class="material-icons right">send</i>
+            </button>
+            <a href="{{ url_for('get_games') }}" class="waves-effect waves-light btn red">
+                <i class="material-icons right">cancel</i>Cancel
+            </a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

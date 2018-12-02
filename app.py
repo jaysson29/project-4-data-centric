@@ -5,87 +5,92 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'task_manager'
-app.config["MONGO_URI"] = 'mongodb://root:R00tUser@ds019498.mlab.com:19498/task_manager'
+app.config["MONGO_DBNAME"] = 'my-test-db'
+app.config["MONGO_URI"] = 'mongodb://root:R00tUser@ds061196.mlab.com:61196/my-test-db'
 
 mongo = PyMongo(app)
 
 @app.route('/')
 
-@app.route('/get_tasks')
-def get_tasks():
-    _tasks = mongo.db.tasks.find()
-    task_list = [task for task in _tasks]
-    return render_template('tasks.html', tasks=task_list)
+@app.route('/get_games')
+def get_games():
+    _games = mongo.db.games.find()
+    game_list = [game for game in _games]
+    return render_template('games.html', games=game_list)
 
-@app.route('/add_task')
-def add_task():
-    _categories = mongo.db.catergories.find()
-    catergory_list = [catergory for catergory in _categories]
-    return render_template('addtask.html', catergories=catergory_list)
+@app.route('/add_game')
+def add_game():
+    _platforms = mongo.db.platforms.find()
+    platform_list = [platform for platform in _platforms]
+    return render_template('addgame.html', plaforms=platform_list)
 
-@app.route('/insert_task', methods=['POST'])
-def insert_task():
-    tasks = mongo.db.tasks
-    tasks.insert_one(request.form.to_dict())
-    return redirect(url_for('get_tasks'))
+@app.route('/insert_game', methods=['POST'])
+def insert_game():
+    games = mongo.db.games
+    games.insert_one(request.form.to_dict())
+    return redirect(url_for('get_games'))
     
-@app.route('/edit_task/<task_id>')
-def edit_task(task_id):
-    the_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
-    all_catergories = mongo.db.catergories.find()
-    return render_template("edittask.html", task=the_task, catergories=all_catergories)
+@app.route('/edit_game/<game_id>')
+def edit_game(game_id):
+    the_game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+    all_platforms = mongo.db.platforms.find()
+    return render_template("editgame.html", game=the_game, platforms=all_platforms)
 
-@app.route('/update_task/<task_id>', methods=["POST"])
-def update_task(task_id):
-    tasks = mongo.db.tasks
-    tasks.update( {'_id': ObjectId(task_id)}, 
+@app.route('/update_game/<game_id>', methods=["POST"])
+def update_game(game_id):
+    games = mongo.db.games
+    games.update( {'_id': ObjectId(game_id)}, 
     {
-        'task_name': request.form.get['task_name'],
-        'catergory_name': request.form.get['catergory_name'],
-        'task_description': request.form.get['task_description'],
-        'due_date': request.form.get['due_date'],
-        'is_urgent': request.form.get['is_urgent']
+        "game_name":  request.form.get['game_name'],
+        "game_info": request.form.get['game_info'],
+        "game_img": request.form.get['game_img'],
+        "game_rating": request.form.get['game_rating'],
+        "game_trailer": request.form.get['game_trailer'],
+        "game_developer": request.form.get['game_developer'],
+        "game_release_date": request.form.get['game_date'],
+        "game_players": request.form.get['game_players'],
+        "game_co_op": request.form.get['game_co-op'],
+        "recently_added": request.form.get['recently_added']
     })
-    return redirect(url_for('get_tasks'))
+    return redirect(url_for('get_games'))
 
-@app.route('/delete_task/<task_id>')
-def delete_task(task_id):
-    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
-    return redirect(url_for('get_tasks'))
+@app.route('/delete_game/<game_id>')
+def delete_game(game_id):
+    mongo.db.games.remove({'_id': ObjectId(game_id)})
+    return redirect(url_for('get_games'))
 
-@app.route('/get_catergories')
-def get_catergories():
-    _catergories = mongo.db.catergories.find()
-    catergory_list = [catergory for catergory in _catergories]
-    return render_template('catergories.html', catergories=catergory_list)
+@app.route('/get_platforms')
+def get_platforms():
+    _platforms = mongo.db.platforms.find()
+    platform_list = [platform for platform in _platforms]
+    return render_template('platforms.html', platforms=platform_list)
 
-@app.route('/delete_catergory/<catergory_id>')
-def delete_catergory(catergory_id):
-    mongo.db.catergories.remove({'_id': ObjectId(catergory_id)})
-    return redirect(url_for('get_catergories'))
+@app.route('/delete_platform/<platform_id>')
+def delete_platform(platform_id):
+    mongo.db.platforms.remove({'_id': ObjectId(platform_id)})
+    return redirect(url_for('get_platforms'))
 
-@app.route('/edit_catergory/<catergory_id>')
-def edit_catergory(catergory_id):
-    _catergory = mongo.db.catergories.find_one({'_id': ObjectId(catergory_id)})
-    return render_template('editcatergory.html', catergory= _catergory)
+@app.route('/edit_platform/<platform_id>')
+def edit_platform(platform_id):
+    _platform = mongo.db.platforms.find_one({'_id': ObjectId(platform_id)})
+    return render_template('editplatform.html', platform=_platform)
 
-@app.route('/update_catergory/<catergory_id>', methods=['POST'])
-def update_catergory(catergory_id):
-    _catergories = mongo.db.catergories
-    _catergories.update({"_id": ObjectId(catergory_id)},{"catergory_name": request.form.get("catergory_name")})
-    return redirect(url_for('get_catergories'))
+@app.route('/update_platform/<platform_id>', methods=['POST'])
+def update_platform(platform_id):
+    _platforms = mongo.db.platforms
+    _platforms.update({"_id": ObjectId(platform_id)},{"game_platform": request.form.get("game_platform")})
+    return redirect(url_for('get_platforms'))
     
-@app.route('/insert_catergory', methods=["POST"])
-def insert_catergory():
-    catergories = mongo.db.catergories
-    catergory_doc = {'catergory_name': request.form["catergory_name"]}
-    catergories.insert_one(catergory_doc)
-    return redirect(url_for('get_catergories'))
+@app.route('/insert_platform', methods=["POST"])
+def insert_platform():
+    platforms = mongo.db.platforms
+    platforms_doc = {'game_platform': request.form["game_platform"]}
+    platforms.insert_one(platforms_doc)
+    return redirect(url_for('get_platforms'))
     
-@app.route('/add_catergory')
-def add_catergory():
-    return render_template('addcatergory.html')
+@app.route('/add_platform')
+def add_platform():
+    return render_template('addplatform.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')),debug=True)
