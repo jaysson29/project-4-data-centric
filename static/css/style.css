@@ -11,7 +11,8 @@
 }
 
 .task_header{
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .icon_top{
@@ -23,8 +24,101 @@
 }
 .new.badge {
     margin-top: 7px;
+    background-color: #673ab7 !important;
 }
 
 .collapsible-header i {
-    margin-left: -10px;
+    margin-right: -6px !important;
+    float: right !important;
+}
+
+.left{
+    margin-right: -5px !important;
+}
+.addgame{
+    margin-left: 14% !important;
+}
+.addplat{
+    margin-left: 16% !important;
+}
+.dropdown-content{
+    width: 25% !important;
+    margin-top: 64px;
+}
+
+.dropdown-content li>a{
+    color: black;
+    text-decoration: none;
+}
+.btn-floating:hover {
+    background-color: #ccc !important;
+}
+
+.btn-floating i:hover{
+    color: black;
+}
+
+.nav-wrapper ul li a:hover {
+    background-color: #ccc !important;
+    color: black;
+}
+.gameselect{
+    background-color:#ccc;
+    border-color: black;
+}
+.gameselect:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.platformselect{
+    background-color:#ccc;
+    border-right: hidden;
+    border-left: hidden;
+    border-top: hidden;
+    border-color: black;
+    cursor: default;
+}
+.card .card-image .card-title{
+    color: black;
+}
+
+.card .card-content .card-title{
+    text-align: center;
+}
+
+.card .card-content p{
+    text-align: center;
+}
+
+.image{
+    width:200px;
+    height: 250px;
+}
+
+.card .card-image img{
+    height: 250px;
+}
+
+.card .card-image img:hover{
+    opacity: 0.75;
+}
+
+.card .card-content {
+    height: 130px;
+}
+
+.badge-game{
+    margin-right: 10px;
+    position: absolute;
+    left: calc(115% - 100px);
+    top: 216px;
+}
+
+@media(max-width: 600px)
+{
+    .badge-game{
+        left: calc(108% - 100px);
+    }
 }

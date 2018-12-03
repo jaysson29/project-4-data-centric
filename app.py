@@ -12,6 +12,12 @@ mongo = PyMongo(app)
 
 @app.route('/')
 
+@app.route('/main')
+def main():
+    _games = mongo.db.games.find()
+    game_list = [game for game in _games]
+    return render_template('main.html', games=game_list)
+
 @app.route('/get_games')
 def get_games():
     _games = mongo.db.games.find()

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Games</h3>
+<ul class="collapsible popout" data-collapsible="accordion">
+    <div class="row">
+    {% for game in games %}
+        <div class="col s12 m3">
+          <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{game.game_img}}">
+          {% if game.recently_added == "on" %}
+                <span class="new badge badge-game"></span>
+            {% endif %}
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+          <p>Rating : {{game.game_rating}}</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{game.game_name}}</span>
+        <p>{{game.game_info}}</p>
+        </div>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+</ul>
+    
+{% endblock %}
