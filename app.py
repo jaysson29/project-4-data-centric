@@ -16,19 +16,19 @@ mongo = PyMongo(app)
 def main():
     _games = mongo.db.games.find()
     game_list = [game for game in _games]
-    return render_template('main.html', games=game_list)
+    return render_template('main.html', games=game_list, current="main" , main="#main", gamelink="#games", about="#about", contact="#contact")
 
 @app.route('/get_games')
 def get_games():
     _games = mongo.db.games.find()
     game_list = [game for game in _games]
-    return render_template('games.html', games=game_list)
+    return render_template('games.html', games=game_list, current="game", main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
 
 @app.route('/add_game')
 def add_game():
     _platforms = mongo.db.platforms.find()
     platform_list = [platform for platform in _platforms]
-    return render_template('addgame.html', plaforms=platform_list)
+    return render_template('addgame.html', plaforms=platform_list, current="game",main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
 
 @app.route('/insert_game', methods=['POST'])
 def insert_game():
@@ -40,7 +40,7 @@ def insert_game():
 def edit_game(game_id):
     the_game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
     all_platforms = mongo.db.platforms.find()
-    return render_template("editgame.html", game=the_game, platforms=all_platforms)
+    return render_template("editgame.html", game=the_game, platforms=all_platforms, main="/main", gamelink="/main#games", current="edit", about="/main#about", contact="/main#contact")
 
 @app.route('/update_game/<game_id>', methods=["POST"])
 def update_game(game_id):
@@ -70,8 +70,7 @@ def delete_game(game_id):
 def get_platforms():
     _platforms = mongo.db.platforms.find()
     platform_list = [platform for platform in _platforms]
-    return render_template('platforms.html', platforms=platform_list)
-
+    return render_template('platforms.html', platforms=platform_list, current="plat", main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
 @app.route('/delete_platform/<platform_id>')
 def delete_platform(platform_id):
     mongo.db.platforms.remove({'_id': ObjectId(platform_id)})
@@ -80,7 +79,7 @@ def delete_platform(platform_id):
 @app.route('/edit_platform/<platform_id>')
 def edit_platform(platform_id):
     _platform = mongo.db.platforms.find_one({'_id': ObjectId(platform_id)})
-    return render_template('editplatform.html', platform=_platform)
+    return render_template('editplatform.html', platform=_platform,main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
 
 @app.route('/update_platform/<platform_id>', methods=['POST'])
 def update_platform(platform_id):
@@ -97,7 +96,7 @@ def insert_platform():
     
 @app.route('/add_platform')
 def add_platform():
-    return render_template('addplatform.html')
+    return render_template('addplatform.html',main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')),debug=True)

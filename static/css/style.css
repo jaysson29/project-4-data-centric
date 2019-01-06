@@ -1,3 +1,8 @@
+body{
+    background: black ;
+    font-family: "Courier New", Courier, monospace;
+}
+
 .btn_small{
     height:24px;
     width:100px;
@@ -62,6 +67,17 @@
     background-color: #ccc !important;
     color: black;
 }
+nav .nav-wrapper{
+    border-bottom: 2px red solid;
+}
+.overflow-head{
+    overflow-x: scroll;
+}
+.overflow-games{
+    height: 480px;
+    width: 3000px;
+}
+
 .gameselect{
     background-color:#ccc;
     border-color: black;
@@ -92,6 +108,11 @@
     text-align: center;
 }
 
+.card .card-content .card-title {
+    text-align: center;
+    margin-top: -25px;
+}
+
 .image{
     width:200px;
     height: 250px;
@@ -107,13 +128,511 @@
 
 .card .card-content {
     height: 130px;
+    background-color: #cccccc;
+    border-radius: 0 0 10px 2px;
 }
 
 .badge-game{
     margin-right: 10px;
     position: absolute;
-    left: calc(115% - 100px);
+    left: calc(115% - 85px);
     top: 216px;
+}
+
+.game-case {
+    border: 10px #9e9e9e solid;
+    border-radius: 12px;
+    border-left: 0px;
+    padding-bottom: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 431px;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px rgba(0, 100, 255, 0.25);
+}
+
+.playstation-4-case {
+    border: 10px #0064ff solid;
+    border-radius: 12px;
+    border-left: 0px;
+    padding-bottom: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 431px;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px rgba(0, 100, 255, 0.25);
+}
+
+.xbox-one-case {
+    border: 10px #4caf50 solid;
+    border-radius: 12px;
+    border-left: 0px;
+    padding-bottom: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 431px;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px rgba(76, 175, 80, 0.25);
+}
+
+.pc-case {
+    border: 10px black solid;
+    border-radius: 12px;
+    border-left: 0px;
+    padding-bottom: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 431px;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px rgba(00, 00, 00, 0.25);
+}
+
+.nintendo-switch-case {
+    border: 10px rgb(96, 125, 139) solid;
+    border-radius: 12px;
+    border-left: 0px;
+    padding-bottom: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 431px;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px rgba(96, 125, 139, 0.25);
+}
+
+.card {
+    background-repeat: no-repeat;
+    background-position-y: -370px;
+    background-image: #9e9e9e;
+    background-image: -webkit-linear-gradient(to right, #9e9e9e 0%,#9e9e9e 28%,#9e9e9e 28%,#9e9e9e 43%,#9e9e9e 43%,#9e9e9e 100%);
+    background-image: linear-gradient(to right, #9e9e9e 0%,#9e9e9e 28%,#9e9e9e 28%,#9e9e9e 43%,#9e9e9e 43%,#9e9e9e 100%);
+    padding-top: 30px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: #0064ff;
+    margin-top: 0px;
+    width: 101%;
+}
+
+.playstation-4-card {
+    background-repeat: no-repeat;
+    background-position-y: -370px;
+    background-image: #1e5799;
+    background-image: -webkit-linear-gradient(left, #1e5799 0%,#207cca 28%,#207cca 28%,#2989d8 43%,#2989d8 43%,#00ffef 100%);
+    background-image: linear-gradient(to right, #1e5799 0%,#207cca 28%,#207cca 28%,#2989d8 43%,#2989d8 43%,#00ffef 100%) !important;
+    padding-top: 30px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: #0064ff;
+    margin-top: 0px;
+    width: 101%;
+}
+
+.xbox-one-card {
+    background-repeat: no-repeat;
+    background-position-y: -370px;
+    background-image: -webkit-linear-gradient(to right, rgb(76, 175, 80) 0%, rgb(76, 175, 80) 28%, rgb(76, 175, 80) 28%, rgb(76, 175, 80) 43%, rgb(76, 175, 80) 43%, rgb(76, 175, 80) 100%);
+    background-image: linear-gradient(to right, rgb(76, 175, 80) 0%, rgb(76, 175, 80) 28%, rgb(76, 175, 80) 28%, rgb(76, 175, 80) 43%, rgb(76, 175, 80) 43%, rgb(76, 175, 80) 100%);
+    padding-top: 30px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: #0064ff;
+    margin-top: 0px;
+    width: 101%;
+}
+
+.pc-card {
+    background-repeat: no-repeat;
+    background-position-y: -370px;
+    background-image: -webkit-linear-gradient(to right, black 0%, black 28%, black 28%, black 43%, black 43%, black 100%);
+    background-image: linear-gradient(to right, black 0%, black 28%, black 28%, black 43%, black 43%, black 100%);
+    padding-top: 30px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: #0064ff;
+    margin-top: 0px;
+    width: 101%;
+}
+
+.nintendo-switch-card {
+    background-repeat: no-repeat;
+    background-position-y: -370px;
+    background-image: -webkit-linear-gradient(to right, rgb(96, 125, 139) 0%, rgb(96, 125, 139) 28%, rgb(96, 125, 139) 28%, rgb(96, 125, 139) 43%, rgb(96, 125, 139) 43%, rgb(96, 125, 139) 100%);
+    background-image: linear-gradient(to right, rgb(96, 125, 139) 0%, rgb(96, 125, 139) 28%, rgb(96, 125, 139) 28%, rgb(96, 125, 139) 43%, rgb(96, 125, 139) 43%, rgb(96, 125, 139) 100%);
+    padding-top: 30px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: #0064ff;
+    margin-top: 0px;
+    width: 101%;
+}
+
+.card .card-image img:hover {
+    filter: invert(1) brightness(50%) saturate(5) contrast(2);
+    opacity: 1;
+}
+
+.rating {
+    margin-top: -13%;
+    margin-left: 32.5%;
+    padding-bottom: 15px !important;
+    position: absolute;
+}
+
+.main-con{
+    margin-left: 0;
+    width: 100%;
+    max-width: fit-content;
+    left: 0;
+}
+.games{
+    padding: 1% 20% 1% 20%;
+}
+
+.plats {
+    width: 60%;
+    margin-left: 20%;
+    padding-top: 75px;
+}
+
+.plat-con{
+    background-color: white;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0px;
+    max-width: none;
+}
+
+.game-con{
+    background-color: white;
+    width: 100%;
+    max-width: none;
+    padding-top: 110px;
+}
+
+.edit-con{
+    background-color: white;
+    width: 100%;
+    max-width: none;
+}
+
+.edit-game{
+    padding: 1% 20% 1% 20%;
+}
+
+.ParallaxVideo{ 
+    height: 300px;
+    padding-bottom: 50px;
+    padding-top: 50px; 
+}
+.ParallaxVideo video{ 
+   min-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -999;
+    width: 100%;
+}
+
+.ParallaxVideo2{ 
+    height: 300px;
+    padding-bottom: 50px;
+    padding-top: 50px; 
+}
+.ParallaxVideo2 video{ 
+   min-width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: -998;
+    width: 100%;
+}
+
+.pararow{
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+}
+
+.page-footer .footer-copyright{
+    background-color: #cccccc26;
+}
+
+.pagination li.active a {
+    color: #fff;
+}
+
+.pagination li.active {
+    background-color: #000000;
+}
+
+.footer{
+    margin-left: 0;
+    width: 100%;
+    max-width: none;
+    left: auto;
+}
+
+.parallax-container {
+    height: 928px;
+}
+
+.downbutton {
+    margin-top: 820px;
+    margin-left: 47%;
+    background: #333333a1;
+    color: white;
+    height: 80px;
+    position: absolute;
+    width: 80px;
+    z-index: 999;
+    cursor: default;
+    border-radius: 30px;
+    box-shadow: 2px 8px 6px hsla(0, 0%, 35%, 0.41);
+}
+
+.downbutton:hover {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.downbutton i {
+    font-size: 80px;
+}
+
+.game-header h1{
+        color: white;
+    margin-top: -64px;
+    margin-bottom: 35px;
+    background: #333333;
+    width: 110px;
+    border-radius: 10px;
+    border: 2px red solid;
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.game-box{
+    padding-top: 25px;
+    background-color: #333 !important;
+    margin-bottom: 0;
+    border-top: 2px red solid !important;
+    border-bottom: 2px red solid !important;
+    height: 875px;
+}
+
+.about-box{
+    padding-top: 25px;
+    background-color: #333 !important;
+    margin-bottom: 0;
+    border-top: 2px red solid !important;
+    border-bottom: 2px red solid !important;
+    height: 875px;
+}
+
+.contact-box{
+    padding-top: 25px;
+    background-color: #333 !important;
+    margin-bottom: 0;
+    border-top: 2px red solid !important;
+    border-bottom: 2px red solid !important;
+    height: 875px;
+}
+
+.line {
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 175px;
+}
+/*-----About Section------*/
+.aboutSection {
+    height: 98%;
+}
+
+.picture {
+    height: 250px;
+    background-image: url(/static/img/me.jpg);
+    background-size: 123%;
+    background-repeat: no-repeat;
+    border: 12.5px black solid;
+    border-radius: 120px 20px 120px 35px;
+    position: relative;
+    z-index: 2;
+}
+
+.name {
+    background: #00000070;
+    height: 150px;
+    color: white;
+    text-align: right;
+    margin-top: -100px;
+    position: relative;
+    z-index: 1 !important;
+    padding-top: 96px !important;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 0px 0px 5px 15px;
+    border: 7px white solid;
+    border-right: 0;
+    border-top: 0;
+}
+
+.info {
+    background: #9e9e9e1c;
+    color: white;
+    height: 530px;
+    text-align: left;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+    border: 10px black solid;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0px 0px 15px 20px;
+    margin-top: -10px;
+}
+
+.aboutDiv{
+    background: rgba(0, 0, 0, 0.87);
+    height: 785px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.aboutRow{
+    margin-top: 20px;
+}
+
+.aboutHeader{
+    height: 100px;
+    background: white;
+    border-radius: 10px 10px 15px 15px;
+}
+
+.aboutHeader-icon{
+    font-size: 50px !important;
+    color: #e67e22;
+    margin-top: 22px;
+}
+
+.aboutHeader h3 {
+    text-transform: uppercase;
+    margin-top: 3%;
+    margin-left: -150px;
+    font-size: -webkit-xxx-large;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.aboutInfo{
+    height: 400px;
+}
+
+.progress{
+    position: relative;
+    height: 25px;
+    border-radius: 5px;
+    background-color: rgba(40, 40, 40, 1) !important;
+}
+.progress-type{
+    position: absolute;
+    left: 0px;
+    font-weight: 400;
+    padding: 3px 30px 2px 10px;
+    color: #fafafa;
+    background-color: rgba(25,25,25,0.2);
+}
+.progress-type2{
+    position: absolute;
+    left: 94.5%;
+    font-weight: 400;
+    padding: 3px 30px 2px 10px;
+    color: #fafafa;
+    background-color: rgba(25,25,25,0.2);
+}
+
+.progress-section{
+    margin: 40px 20px;
+    margin-left: 100px !important;
+    margin-right: 100px !important;
+}
+
+/*----------Three Reasons----------*/
+
+.three-reasons-icon{
+    font-size: 26px;
+    color: #e67e22;
+    margin-top: 13px;
+    padding-left: 15px;
+    text-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.three-reasons-heading{
+    margin-bottom: 15px;
+    padding-left: 15px;
+    text-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.section-heading{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+    text-align: center;
+}
+
+.mySkills{
+    font-size: 18px;
+    text-align: center;
+    margin-left: -50px;
+    margin-right: -23px;
+    height: 30px;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.f12{
+    font-size: 12px;
+}
+
+/*----contact----*/
+.contact-icons {
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #9e9e9e;
+}
+
+.contact-box .input-field .prefix ~ input,.contact-box  .input-field .prefix ~ textarea,.contact-box  .input-field .prefix ~ .validate ~ label{
+    border-radius: 15px;
+    padding-left: 21px;
+    border: 1px white solid;
+    background-color: black;
+    color: white;
+}
+
+.contact-box textarea.materialize-textarea{
+    height: 100px;
+}
+
+.validate:focus{
+    border: 2px rgb(38, 166, 154) solid !important;
+}
+
+.valid {
+    border: 2px rgb(76, 175, 80) solid !important;
+}
+
+.invalid {
+    border: 2px rgb(244, 67, 54) solid !important;
+}
+
+span.helper-text {
+    margin-left: 65px;
+    position: absolute;
+    margin-top: -20px;
+    opacity: 0.65;
+    text-decoration: underline;
+    text-transform: capitalize;
+    color: #9e9e9e;
 }
 
 @media(max-width: 600px)

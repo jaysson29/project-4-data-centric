@@ -1,30 +1,239 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h3>Games</h3>
-<ul class="collapsible popout" data-collapsible="accordion">
-    <div class="row">
-    {% for game in games %}
-        <div class="col s12 m3">
-          <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="{{game.game_img}}">
-          {% if game.recently_added == "on" %}
-                <span class="new badge badge-game"></span>
-            {% endif %}
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-          <p>Rating : {{game.game_rating}}</p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{game.game_name}}</span>
-        <p>{{game.game_info}}</p>
-        </div>
-        </div>
-        </div>
-    {% endfor %}
+<div class="downbutton"><i class="Large material-icons">keyboard_arrow_down</i></div>
+<div class="top" id="main">
+  <div class="parallax-container">
+    <div class="parallax">
+      <div class="ParallaxVideo">
+        <video autoplay preload="auto" muted loop id="video-1">
+          <source src="/static/vid/spider-man.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
-</ul>
+  </div>
+
+  <ul class="collapsible popout white game-box" data-collapsible="accordion" id="games">
+      <div class="row pararow">
+        <div class="game-header">
+          <h1>Games</h1>
+          <div class="line"></div>
+        </div>
+        <div class="overflow-head">
+          <div class="overflow-games">
+          {% for game in games %}
+              <div class="col" style="width: 285px;">
+                <div class="{{game.game_platform|lower}}-case">
+                  <div class="card {{game.game_platform|lower}}-card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="{{game.game_img}}">
+                      {% if game.recently_added == "on" %}
+                        <span class="new badge badge-game"></span>
+                      {% endif %}
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    </div>
+                    <p class="rating">Rating : {{game.game_rating}}</p>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{game.game_name}}</span>
+                      <p>{{game.game_info}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          {% endfor %}
+          </div>
+        </div>
+  </ul>
+  
+    <div class="parallax-container">
+      <div class="parallax">
+        <div class="ParallaxVideo2">
+          <video autoplay preload="auto" muted loop id="video-2">
+            <source src="/static/vid/elite-danagerous.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
     
+    <ul class="collapsible popout white about-box" data-collapsible="accordion" id="about">
+      <div class="row pararow aboutSection">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="col s2">
+              <div class="row" style="margin-bottom: 0;">
+                <div class="col s12 picture"></div>
+              </div>
+              <div class="row" style="margin-bottom: 0;">
+                <div class="col s12 name uppercase">jason bishop</div>
+              </div>
+              <div class="row" style="margin-bottom: 0;">
+                <div class="col s12 info">
+                  <div class="col s12 " style="padding-top: 10px;">
+                    <h3 class="section-heading uppercase">about me</h3>
+                    <div class="line" style="margin-top: -9px; margin-left: -10px; margin-right: -30px;"></div>
+                    
+                    <div class="row" style="margin-bottom:0px;margin-top: -10px; height: 150px !important;">
+                        <div class="col s2">
+                            <i class="three-reasons-icon fa fa-tv" aria-hidden="true"></i>
+                        </div>
+                        <div class="col s10">
+                            <h4 class="three-reasons-heading uppercase">Front End</h4>
+                            <li class="mySkills" style="background: grey; border-radius: 15px 0px 0px 0px;"> HTML</li>
+                            <li class="mySkills" style="background: white; color: black;"> CSS</li>
+                            <li class="mySkills" style="background: #4caf50; border-radius: 0px 0px 0px 15px; box-shadow: 10px 10px rgba(0, 0, 0, 0.35)"> JS</li>
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="margin-bottom:0px; margin-top: -10px;">
+                        <div class="col s2">
+                            <i class="three-reasons-icon fa fa-gears" aria-hidden="true"></i>
+                        </div>
+                        <div class="col s10">
+                            <h4 class="three-reasons-heading uppercase">Back End</h4>
+                            <li class="mySkills" style="background: black; border-radius: 15px 0px 0px 0px;"> Python</li>
+                            <li class="mySkills" style="background: blue;"> DJango</li>
+                            <li class="mySkills" style="background: brown; border-radius: 0px 0px 0px 15px; box-shadow: 10px 10px rgba(0, 0, 0, 0.35)"> MongoDB</li>
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="margin-bottom:0px; margin-top: 5px;">
+                        <div class="col s2">
+                            <i class="three-reasons-icon fa fa-gamepad" aria-hidden="true"></i>
+                        </div>
+                        <div class="col s10">
+                            <h4 class="three-reasons-heading uppercase">Games I Enjoy</h4>
+                            <li class="mySkills" style="background: slategrey; color: cornsilk; border-radius: 15px 0px 0px 0px;"> Destiny 2</li>
+                            <li class="mySkills" style="background: tomato; height: 100%;"> Middle Earth: Shadow of war</li>
+                            <li class="mySkills" style="background: purple; border-radius: 0px 0px 0px 15px; box-shadow: 10px 10px rgba(0, 0, 0, 0.35)"> Elite Dangerous</li>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col s10 aboutDiv">
+              <div class="row aboutRow">
+                <div class="col s1"></div>
+                <div class="col s10 aboutHeader">
+                  <div class="col s3">
+                    <i class="aboutHeader-icon fa fa-info-circle" aria-hidden="true"></i>
+                  </div>
+                  <div class="col s9">
+                    <h3 class="">about site</h3>
+                  </div>
+                </div>
+                <div class="col s1"></div>
+              </div>
+              <div class="row aboutInfo">
+                
+              </div>
+              <div class="row progress-section">
+                <div class="progress">
+                    <div class="determinate green" style="width:80%"></div>
+                    <span class="progress-type">HTML / HTML5</span>
+                    <span class="progress-type2">80% </span>
+                </div>
+                <div class="progress">
+                    <div class="determinate purple" style="width:90%"></div>
+                    <span class="progress-type">CSS / CSS3</span>
+                    <span class="progress-type2">90% </span>
+                </div>
+                <div class="progress">
+                    <div class="determinate orange" style="width:20%"></div>
+                    <span class="progress-type">JavaScript / jQuery</span>
+                    <span class="progress-type2">20% </span>
+                </div>
+                <div class="progress">
+                    <div class="determinate red" style="width:50%"></div>
+                    <span class="progress-type">Python / Django</span>
+                    <span class="progress-type2">50% </span>
+                </div>
+                <div class="progress">
+                    <div class="determinate" style="width:50%"></div>
+                    <span class="progress-type">SQL / NoSQL</span>
+                    <span class="progress-type2">50%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </ul>
+    
+    <div class="parallax-container">
+      <div class="parallax">
+        <div class="ParallaxVideo2">
+          <video autoplay preload="auto" muted loop id="video-3">
+            <source src="/static/vid/RDR2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    
+    <ul class="collapsible popout white contact-box" data-collapsible="accordion" id="contact">
+      <div class="row pararow">
+        <form class="col s10 offset-s1">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix contact-icons">person</i>
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name" style="border: 0;background: 0;">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix contact-icons">person_outline</i>
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name" style="border: 0;background: 0;">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix contact-icons">email</i>
+              <input id="email" type="email" class="validate">
+              <label for="email" style="border: 0;background: 0;">Email</label>
+              <span class="helper-text" data-error="wrong" data-success="right">I need your email so i can reply to you queiry.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix contact-icons" style="padding-top: 50px;">mode_edit</i>
+              <textarea id="textarea1" class="materialize-textarea validate"></textarea>
+              <label for="textarea1" style="border: 0;background: 0;">Textarea</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s5 offset-s5">
+              <button class="btn waves-effect waves-light green" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </ul>
+    
+    <script>
+    window.onscroll = function() {myFunction()};
+    
+    function myFunction() {
+        if(document.body.scrollTop > 2800 || document.documentElement.scrollTop > 2800){
+          document.getElementById("video-1").setAttribute("style", "position: absolute;");
+            document.getElementById("video-2").setAttribute("style", "position: absolute;");
+            document.getElementById("video-3").setAttribute("style", "position: fixed;");
+        }
+        else if (document.body.scrollTop > 880 || document.documentElement.scrollTop > 880) {
+            document.getElementById("video-1").setAttribute("style", "position: absolute;");
+            document.getElementById("video-2").setAttribute("style", "position: fixed;");
+            document.getElementById("video-3").setAttribute("style", "position: absolute;");
+        }
+        else{
+          document.getElementById("video-2").setAttribute("style", "position: absolute;");
+          document.getElementById("video-1").setAttribute("style", "position: fixed;");
+        }
+    }
+</script>  
+  
+</div>
 {% endblock %}
