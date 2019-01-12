@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="downbutton"><i class="Large material-icons">keyboard_arrow_down</i></div>
+<div class="searchButton" id="search">
+  <form>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="Large material-icons">search</i>
+        <input id="Search" type="text" class="validateSearch" placeholder="Search" autocomplete="off">
+      </div>
+    </div>
+  </form>
+</div>
 <div class="top" id="main">
   <div class="parallax-container">
     <div class="parallax">
@@ -17,9 +26,52 @@
       <div class="row pararow">
         <div class="game-header">
           <h1>Games</h1>
-          <div class="line"></div>
         </div>
-        <div class="overflow-head">
+        <div class="col s2">
+          <ul class="collection with-header">
+            <li class="collection-header"><h4>Games</h4></li>
+            <a href="#!" class="collection-item">ALL</a>
+            <a href="#!" class="collection-item">NEW</a>
+            <a href="#!" class="collection-item">RATINGS</a>
+            <a href="#!" class="collection-item">PLATFORMS</a>
+            <a href="#!" class="collection-item">GENRE</a>
+            <a href="#!" class="collection-item">PLAYERS</a>
+            <a href="#!" class="collection-item">CO-OP</a>
+          </ul>
+        </div>
+        <div class="col s10" style="margin-left: -22px !important;">
+          <div class="col s12 createAd">
+            <div class="row">
+              <div class="col s12">
+                <h3 class="adHeader">Join Us</h3>
+              </div>
+              <div class="col s12">
+                <div class="p1">
+                  <p>Want to add your favourite games?</p>
+                </div>
+                <div class="p2">
+                  <p>Create an Account or login if you are already register with us!</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s3" style="margin-left: 32.5%;">
+                <button class="btn waves-effect waves-light blue" type="submit" name="action">Create
+                  <i class="material-icons right">person_add</i>
+                </button>
+              </div>
+              <div class="col s3">
+                <button class="btn waves-effect waves-light green" type="submit" name="action">Log in
+                  <i class="material-icons right">person</i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 mainDiv">
+            
+          </div>
+        </div>
+        <!--<div class="overflow-head">
           <div class="overflow-games">
           {% for game in games %}
               <div class="col" style="width: 285px;">
@@ -44,7 +96,8 @@
               </div>
           {% endfor %}
           </div>
-        </div>
+        </div>-->
+      </div>
   </ul>
   
     <div class="parallax-container">
@@ -174,7 +227,10 @@
     </div>
     
     <ul class="collapsible popout white contact-box" data-collapsible="accordion" id="contact">
-      <div class="row pararow">
+      <div class="row pararow contactForm">
+        <div class="col s5 offset-s5 contactHeader">
+          <i class="material-icons prefix contact-icons">contact_mail</i><h3>Contact Us</h3>
+        </div>
         <form class="col s10 offset-s1">
           <div class="row">
             <div class="input-field col s6">
@@ -200,7 +256,7 @@
             <div class="input-field col s12">
               <i class="material-icons prefix contact-icons" style="padding-top: 50px;">mode_edit</i>
               <textarea id="textarea1" class="materialize-textarea validate"></textarea>
-              <label for="textarea1" style="border: 0;background: 0;">Textarea</label>
+              <label for="textarea1" style="border: 0;background: 0;">Wright your message here...</label>
             </div>
           </div>
           <div class="row">
@@ -211,6 +267,18 @@
             </div>
           </div>
         </form>
+        <div class="col s12">
+          <div class="row">
+            <div class="col s4 socials">
+              <a href="#" class="fab fa-facebook"></a>
+              <a href="#" class="fab fa-twitter"></a>
+              <a href="#" class="fab fa-google"></a>
+              <a href="#" class="fab fa-instagram"></a>
+              <a href="#" class="fab fa-linkedin"></a>
+              <a href="#" class="fab fa-github"></a>
+            </div>
+          </div>
+        </div>
       </div>
     </ul>
     
@@ -218,6 +286,12 @@
     window.onscroll = function() {myFunction()};
     
     function myFunction() {
+        if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+          document.getElementById("search").setAttribute("style", "visibility: hidden; display: none;");
+        }
+        else{
+          document.getElementById("search").setAttribute("style", "visibility: visible;");
+        }
         if(document.body.scrollTop > 2800 || document.documentElement.scrollTop > 2800){
           document.getElementById("video-1").setAttribute("style", "position: absolute;");
             document.getElementById("video-2").setAttribute("style", "position: absolute;");

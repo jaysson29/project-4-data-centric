@@ -3,6 +3,42 @@ body{
     font-family: "Courier New", Courier, monospace;
 }
 
+.searchButton {
+    margin-top: 420px;
+    margin-left: 40%;
+    background: #333333a1;
+    color: white;
+    height: 80px;
+    position: absolute;
+    width: 400px;
+    z-index: 999;
+    cursor: default;
+    border-radius: 30px;
+    box-shadow: 2px 8px 6px hsla(0, 0%, 35%, 0.41);
+}
+
+.searchButton:hover {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.validateSearch{
+    float: left;
+    width: 70% !important;
+    margin-left: 25px !important;
+    height: 80px !important;
+    margin-top: -15px !important;
+    font-size: 35px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.searchButton i {
+    font-size: 80px;
+    margin-top: -15px;
+}
+
+
 .btn_small{
     height:24px;
     width:100px;
@@ -278,12 +314,13 @@ nav .nav-wrapper{
     position: absolute;
 }
 
-.main-con{
+.main-con {
     margin-left: 0;
     width: 100%;
-    max-width: fit-content;
+    max-width: -webkit-fill-available;
     left: 0;
 }
+
 .games{
     padding: 1% 20% 1% 20%;
 }
@@ -373,29 +410,6 @@ nav .nav-wrapper{
 
 .parallax-container {
     height: 928px;
-}
-
-.downbutton {
-    margin-top: 820px;
-    margin-left: 47%;
-    background: #333333a1;
-    color: white;
-    height: 80px;
-    position: absolute;
-    width: 80px;
-    z-index: 999;
-    cursor: default;
-    border-radius: 30px;
-    box-shadow: 2px 8px 6px hsla(0, 0%, 35%, 0.41);
-}
-
-.downbutton:hover {
-    background-color: #f5f5f5;
-    color: black;
-}
-
-.downbutton i {
-    font-size: 80px;
 }
 
 .game-header h1{
@@ -613,6 +627,10 @@ nav .nav-wrapper{
     height: 100px;
 }
 
+textarea.materialize-textarea.validate+label:not(.label-icon).active {
+    color: #26a69a;
+}
+
 .validate:focus{
     border: 2px rgb(38, 166, 154) solid !important;
 }
@@ -625,6 +643,25 @@ nav .nav-wrapper{
     border: 2px rgb(244, 67, 54) solid !important;
 }
 
+.contactForm {
+    border-radius: 15px;
+    border: 3px solid;
+    box-shadow: 30px 30px 15px #00000085;
+    height: 780px;
+}
+
+.contactHeader i {
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    margin-left: -70px;
+    font-size: 60px;
+}
+
+.contactHeader h3{
+    font-size: 60px;
+}
+
 span.helper-text {
     margin-left: 65px;
     position: absolute;
@@ -634,6 +671,160 @@ span.helper-text {
     text-transform: capitalize;
     color: #9e9e9e;
 }
+
+/* Style all font awesome icons */
+.socials{
+    margin-left: 37.5% !important;
+    margin-top: 80px;
+}
+
+.fab {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 45%;
+}
+
+.fab:hover {
+  background-color: #26a69a;
+}
+
+/* Set a specific color for each brand */
+
+.fa-facebook {
+  background: black;
+  color: white;
+  padding-left: 12px;
+  padding-top: 10px;
+}
+
+.fa-twitter {
+  background: white;
+  color: black;
+  padding-left: 12px;
+  padding-top: 10px;
+}
+
+.fa-google {
+  background: black;
+  color: white;
+  padding-left: 12px;
+  padding-top: 10px;
+}
+
+.fa-instagram {
+  background: white;
+  color: black;
+  padding-left: 12px;
+  padding-top: 10px;
+}
+
+.fa-linkedin {
+  background: black;
+  color: white;
+  padding-left: 12px;
+  padding-top: 10px;
+}
+
+.fa-github {
+  background: white;
+  color: black;
+  padding-left: 11px;
+  padding-top: 10px;
+}
+
+.collection-item{
+    color: black !important;
+}
+
+.mainDiv{
+    height: 640px;
+    background-color: white;
+    margin-left: -22px;
+    border: 1px black solid;
+    width: 103% !important;
+}
+/*--------------Join Section------------*/
+
+.createAd {
+    height: 150px;
+    background-image: url(/static/img/test.jpg);
+    width: 100% !important;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    background-size: cover;
+    background-position-y: -40px;
+    margin-left: 20px !important;
+}
+
+.p1{
+    width: 700px;
+    background-color: rgba(0, 0, 0, 0.4);;
+    border-radius: 15px;
+    margin-left: 27%;
+}
+
+.p1 p{
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    font-size: 35px;
+}
+
+.p2{
+    width: 590px;
+    background-color: rgba(0, 0, 0, 0.4);;
+    border-radius: 5px;
+    margin-left: 31%;
+}
+
+.p2 p{
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 1px black;
+}
+
+/*-------------------------------------*/
+
+/*--------------Game Options------------*/
+
+ul.collection.with-header {
+    padding-top: 130px;
+    color: white !important;
+}
+
+.collection-header{
+    background-color: #000 !important;
+}
+
+.collection.with-header i.material-icons {
+    float: right;
+}
+
+.collection.with-header .collection-item {
+    padding-left: 30px;
+    height: 85px;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+.collection-header h4 {
+    font-size: 32px;
+}
+
+.collection a.collection-item:not(.active):hover {
+    background-color: #000;
+    color: white !important;
+}
+
+/*-------------------------------------*/
+
 
 @media(max-width: 600px)
 {
