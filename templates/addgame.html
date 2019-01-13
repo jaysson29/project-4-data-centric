@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div class="gameAddPage">
 <h3>Add Game</h3>
 <div class="row">
     <form class="col s12" action="{{ url_for('insert_game') }}" method="POST">
@@ -88,6 +88,8 @@
             </a>
         </div>
     </form>
+</div>
+
 </div>
 
 {% endblock %}
