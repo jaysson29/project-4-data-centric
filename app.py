@@ -79,7 +79,7 @@ def delete_platform(platform_id):
 @app.route('/edit_platform/<platform_id>')
 def edit_platform(platform_id):
     _platform = mongo.db.platforms.find_one({'_id': ObjectId(platform_id)})
-    return render_template('editplatform.html', platform=_platform,main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
+    return render_template('editplatform.html', current="plat-edit", platform=_platform,main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
 
 @app.route('/update_platform/<platform_id>', methods=['POST'])
 def update_platform(platform_id):
