@@ -275,6 +275,32 @@
       </div>
     </ul>
     
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    function myFunction() {
+        if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300){
+          document.getElementById("search").setAttribute("style", "visibility: hidden; display: none;");
+        }
+        else{
+          document.getElementById("search").setAttribute("style", "visibility: visible;");
+        }
+        if(document.body.scrollTop > 2800 || document.documentElement.scrollTop > 2800){
+          document.getElementById("video-1").setAttribute("style", "position: absolute;");
+          document.getElementById("video-2").setAttribute("style", "position: absolute;");
+          document.getElementById("video-3").setAttribute("style", "position: fixed;");
+        }
+        else if (document.body.scrollTop > 880 || document.documentElement.scrollTop > 880) {
+          document.getElementById("video-1").setAttribute("style", "position: absolute;");
+          document.getElementById("video-2").setAttribute("style", "position: fixed;");
+          document.getElementById("video-3").setAttribute("style", "position: absolute;");
+        }
+        else{
+          document.getElementById("video-2").setAttribute("style", "position: absolute;");
+          document.getElementById("video-1").setAttribute("style", "position: fixed;");
+        }
+    }
+</script> 
     
 {% for game in games %}
   <div id="{{game._id}}" class="modal modal-fixed-footer">
@@ -310,29 +336,3 @@
 </div>
 {% endblock %}
 
-<script>
-    window.onscroll = function() {myFunction()};
-    
-    function myFunction() {
-        if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300){
-          document.getElementById("search").setAttribute("style", "visibility: hidden; display: none;");
-        }
-        else{
-          document.getElementById("search").setAttribute("style", "visibility: visible;");
-        }
-        if(document.body.scrollTop > 2800 || document.documentElement.scrollTop > 2800){
-          document.getElementById("video-1").setAttribute("style", "position: absolute;");
-          document.getElementById("video-2").setAttribute("style", "position: absolute;");
-          document.getElementById("video-3").setAttribute("style", "position: fixed;");
-        }
-        else if (document.body.scrollTop > 880 || document.documentElement.scrollTop > 880) {
-          document.getElementById("video-1").setAttribute("style", "position: absolute;");
-          document.getElementById("video-2").setAttribute("style", "position: fixed;");
-          document.getElementById("video-3").setAttribute("style", "position: absolute;");
-        }
-        else{
-          document.getElementById("video-2").setAttribute("style", "position: absolute;");
-          document.getElementById("video-1").setAttribute("style", "position: fixed;");
-        }
-    }
-</script> 
