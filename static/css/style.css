@@ -122,6 +122,8 @@ nav .nav-wrapper{
     margin-top: 15px;
 }
 
+
+/*----------------Modal--For--Game--------------*/
 .modal{
     width:95% !important;
     max-height: none;
@@ -137,24 +139,39 @@ nav .nav-wrapper{
     color: white;
 }
 
+.modal-header{
+    margin: -25px !important;
+    height: 430px;
+    overflow: hidden;
+}
 
 .popup-img {
-    width: 108%;
-    height: 401px;
-    margin-left: -25px;
-    margin-top: -24px;
+    width: 100%;
+    height: 405px;
 }
 
 .trailer-sec{
-    height: 401px;
-    margin-top: -24px;
-    margin-right: 0px;
+    width: 720px !important;
+    margin-left: 12px !important;
+    height: 405px !important;
     background-color: black;
-    color: white;
+}
+
+.trailer-sec iframe{
+    height: 405px;
+    width: 720px;
+    margin-left: -12px !important;
+}
+
+.extra-sec{
+    background-color: black;
+    height: 405px !important;
+    width: 35.65% !important;
+    margin-right: 0px;
 }
 
 .fa-times:before {
-    margin-left: 80px;
+    margin-left: 240px;
     margin-top: 3px;
     position: absolute;
 }
