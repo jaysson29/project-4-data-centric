@@ -17,6 +17,14 @@ def main():
     _games = mongo.db.games.find()
     game_list = [game for game in _games]
     return render_template('main.html', games=game_list, current="main" , main="#main", gamelink="#games", about="#about", contact="#contact")
+    
+@app.route('/create')
+def create():
+    return render_template('create.html', current="create", main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
+    
+@app.route('/login')
+def login():
+    return render_template('login.html', current="login", main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
 
 @app.route('/get_games')
 def get_games():

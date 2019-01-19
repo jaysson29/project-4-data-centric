@@ -10,7 +10,7 @@ body{
 .searchButton {
     margin-top: 420px;
     margin-left: 40%;
-    background: #333333a1;
+    background-color: rgba(51, 51, 51, 0.631372549);
     color: white;
     height: 80px;
     position: absolute;
@@ -86,15 +86,26 @@ body{
 .addplat{
     margin-left: 16% !important;
 }
+/*-------------Nav------------*/
 .dropdown-content{
     width: 25% !important;
     margin-top: 64px;
 }
 
-.dropdown-content li>a{
-    color: black;
-    text-decoration: none;
+.dropdown-content li{
+  border-left: 1px red solid;
+    border-bottom: 1px red solid;
 }
+
+.dropdown-content li>a{
+    color: white;
+    text-decoration: none;
+    background-color: black;
+}
+.dropdown-content li.divider {
+    background-color: red;
+}
+
 .btn-floating:hover {
     background-color: #ccc !important;
 }
@@ -104,12 +115,19 @@ body{
 }
 
 .nav-wrapper ul li a:hover {
-    background-color: #ccc !important;
+    background-color: red !important;
     color: black;
 }
 nav .nav-wrapper{
     border-bottom: 2px red solid;
 }
+.dropdown-content li.divider {
+    min-height: 0;
+    height: 1px;
+    background-color: red;
+}
+
+/*-----------------------------*/
 .overflow-head{
     overflow-y: scroll;
     height: 100%;
@@ -384,21 +402,48 @@ nav .nav-wrapper{
     position: absolute;
 }
 
-.main-con {
-    margin-left: 0;
-    width: 100%;
-    max-width: -webkit-fill-available;
-    left: 0;
-}
-
 .games{
     padding: 1% 20% 1% 20%;
+}
+
+.edit-game{
+    padding: 1% 20% 1% 20%;
+    padding-top: 80px;
 }
 
 .plats {
     width: 60%;
     margin-left: 20%;
     padding-top: 75px;
+}
+
+.main-con {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+}
+
+.create-con {
+    height: 700px;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: -15px;
+    background-color: white;
+}
+
+.login-con {
+    height: 700px;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: -15px;
+    background-color: white;
 }
 
 .plat-con{
@@ -432,11 +477,6 @@ nav .nav-wrapper{
     background-color: white;
     width: 100%;
     max-width: none;
-}
-
-.edit-game{
-    padding: 1% 20% 1% 20%;
-    padding-top: 80px;
 }
 
 .ParallaxVideo{ 
@@ -852,6 +892,12 @@ span.helper-text {
     margin-left: 20px !important;
 }
 
+#adButton:hover{
+    background-color: blue !important;
+    color: black;
+    box-shadow: 5px 5px black;
+}
+
 .p1{
     width: 700px;
     background-color: rgba(0, 0, 0, 0.5);;
@@ -863,7 +909,7 @@ span.helper-text {
     color: white;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 5px;
+    margin-left: 5%;
     font-size: 35px;
 }
 
