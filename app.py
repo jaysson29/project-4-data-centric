@@ -15,8 +15,21 @@ mongo = PyMongo(app)
 @app.route('/main')
 def main():
     _games = mongo.db.games.find()
+    _new =  mongo.db.games.find({"recently_added": "on"})
+    _rating = mongo.db.games.find()
+    _players = mongo.db.games.find()
+    _coop = mongo.db.games.find({"game_coop": "on"})
+    
+    _console = mongo.db.games.find({"game_platform": "PC" })
+    
     game_list = [game for game in _games]
-    return render_template('main.html', games=game_list, current="main" , main="#main", gamelink="#games", about="#about", contact="#contact")
+    new_list = [game for game in _new]
+    rating_list = [game for game in _rating]
+    console_list = [game for game in _console]
+    player_list = [game for game in _players]
+    coop_list = [game for game in _coop]
+    
+    return render_template('main.html', games=game_list , new=new_list , rating=rating_list, console=console_list, players=player_list, coop=coop_list , current="main" , main="#main", gamelink="#games", about="#about", contact="#contact")
     
 @app.route('/get_games')
 def get_games():
@@ -71,6 +84,7 @@ def get_platforms():
     _platforms = mongo.db.platforms.find()
     platform_list = [platform for platform in _platforms]
     return render_template('platforms.html', platforms=platform_list, current="plat", main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
+    
 @app.route('/delete_platform/<platform_id>')
 def delete_platform(platform_id):
     mongo.db.platforms.remove({'_id': ObjectId(platform_id)})

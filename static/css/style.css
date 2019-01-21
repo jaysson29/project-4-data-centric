@@ -72,6 +72,10 @@ body{
     background-color: #673ab7 !important;
 }
 
+.badge-game{
+    margin-top: -87px !important;
+}
+
 .collapsible-header i {
     margin-right: -6px !important;
     float: right !important;
@@ -872,6 +876,10 @@ span.helper-text {
     color: black !important;
 }
 
+.collection .collection-item.active {
+    background-color: Red;
+}
+
 .mainDiv{
     height: 640px;
     background-color: white;
@@ -963,6 +971,9 @@ ul.collection.with-header {
 
 /*-------------------------------------*/
 
+.page-footer {
+    padding-top: 0px !important;
+}
 
 @media(max-width: 600px)
 {

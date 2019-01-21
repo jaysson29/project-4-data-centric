@@ -30,13 +30,13 @@
       <div class="col s2">
         <ul class="collection with-header">
           <li class="collection-header"><h4>Games</h4></li>
-          <a href="#!" class="collection-item">ALL</a>
-          <a href="#!" class="collection-item">NEW</a>
-          <a href="#!" class="collection-item">RATINGS</a>
-          <a href="#!" class="collection-item">PLATFORMS</a>
-          <a href="#!" class="collection-item">GENRE</a>
-          <a href="#!" class="collection-item">PLAYERS</a>
-          <a href="#!" class="collection-item">CO-OP</a>
+          <a href="#!" class="collection-item active" onclick="myCollection(this.id)" id="all">ALL</a>
+          <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="new">NEW</a>
+          <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="rating">RATINGS</a>
+          <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="platform">PLATFORMS</a>
+          <a href="#!" class="collection-item" onclick="myCollection(this.id)">GENRE</a>
+          <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="players">PLAYERS</a>
+          <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="coop">CO-OP</a>
         </ul>
       </div>
       <div class="col s10" style="margin-left: -22px !important;">
@@ -64,7 +64,8 @@
             </div>
           </div>
         </div>
-      <div class="col s12 mainDiv">
+      <!-- All Games -->
+      <div class="col s12 mainDiv" id="allGames" style="visibility: visible; display: block;">
         <div class="overflow-head">
           <div class="overflow-games">
             {% for game in games %}
@@ -88,6 +89,132 @@
           </div>
         </div>
       </div>
+      <!--   Find New Games -->
+      <div class="col s12 mainDiv" id="newGames" style="visibility: hidden; display: none;">
+        <div class="overflow-head">
+          <div class="overflow-games">
+            {% for game in new %}
+            <div class="col" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+      <!--   Find ratings-->
+      <div class="col s12 mainDiv" id="ratingGames" style="visibility: hidden; display: none;">
+        <div class="overflow-head">
+          <div class="overflow-games">
+            {% for game in rating %}
+            <div class="col" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+      <!--   Find platforms -->
+      <div class="col s12 mainDiv" id="platformGames" style="visibility: hidden; display: none;">
+        <div class="overflow-head">
+          <div class="overflow-games">
+            {% for game in console %}
+            <div class="col" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+      <!--   Find Players -->
+      <div class="col s12 mainDiv" id="playersGames" style="visibility: hidden; display: none;">
+        <div class="overflow-head">
+          <div class="overflow-games">
+            {% for game in players %}
+            <div class="col" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+      <!--   Find Coop Games -->
+      <div class="col s12 mainDiv" id="coopGames" style="visibility: hidden; display: none;">
+        <div class="overflow-head">
+          <div class="overflow-games">
+            {% for game in coop %}
+            <div class="col" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+      
     </div>
     </div>
   </ul>
@@ -298,6 +425,105 @@
         document.getElementById("video-2").setAttribute("style", "position: absolute;");
         document.getElementById("video-1").setAttribute("style", "position: fixed;");
       }
+  }
+  
+  function myCollection(Menuid){
+    if(Menuid == "all"){
+      document.getElementById("all").classList.add("active");
+      document.getElementById("new").classList.remove("active");
+      document.getElementById("rating").classList.remove("active");
+      document.getElementById("platform").classList.remove("active");
+      document.getElementById("players").classList.remove("active");
+      document.getElementById("coop").classList.remove("active");
+      
+      
+      document.getElementById("allGames").setAttribute("style", "visibility: visible; display: block;");
+      document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
+    }
+    else if (Menuid == "new"){
+      document.getElementById("all").classList.remove("active");
+      document.getElementById("new").classList.add("active");
+      document.getElementById("rating").classList.remove("active");
+      document.getElementById("platform").classList.remove("active");
+      document.getElementById("players").classList.remove("active");
+      document.getElementById("coop").classList.remove("active");
+      
+      
+      document.getElementById("allGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("newGames").setAttribute("style", "visibility: visible; display: block;");
+      document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
+    }
+    else if (Menuid == "rating"){
+      document.getElementById("all").classList.remove("active");
+      document.getElementById("new").classList.remove("active");
+      document.getElementById("rating").classList.add("active");
+      document.getElementById("platform").classList.remove("active");
+      document.getElementById("players").classList.remove("active");
+      document.getElementById("coop").classList.remove("active");
+      
+      
+      document.getElementById("allGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("ratingGames").setAttribute("style", "visibility: visible; display: block;");
+      document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
+    }
+    else if (Menuid == "platform"){
+      document.getElementById("all").classList.remove("active");
+      document.getElementById("new").classList.remove("active");
+      document.getElementById("rating").classList.remove("active");
+      document.getElementById("platform").classList.add("active");
+      document.getElementById("players").classList.remove("active");
+      document.getElementById("coop").classList.remove("active");
+      
+      
+      document.getElementById("allGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("platformGames").setAttribute("style", "visibility: visible; display: block;");
+      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
+    }
+    else if (Menuid == "players"){
+      document.getElementById("all").classList.remove("active");
+      document.getElementById("new").classList.remove("active");
+      document.getElementById("rating").classList.remove("active");
+      document.getElementById("platform").classList.remove("active");
+      document.getElementById("players").classList.add("active");
+      document.getElementById("coop").classList.remove("active");
+      
+      
+      document.getElementById("allGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("playersGames").setAttribute("style", "visibility: visible; display: block;");
+      document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
+    }
+    else if (Menuid == "coop"){
+      document.getElementById("all").classList.remove("active");
+      document.getElementById("new").classList.remove("active");
+      document.getElementById("rating").classList.remove("active");
+      document.getElementById("platform").classList.remove("active");
+      document.getElementById("players").classList.remove("active");
+      document.getElementById("coop").classList.add("active");
+      
+      
+      document.getElementById("allGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("coopGames").setAttribute("style", "visibility: visible; display: block;");
+    }
   }
 </script> 
     
