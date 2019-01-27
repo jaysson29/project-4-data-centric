@@ -28,6 +28,9 @@
         <h1>Games</h1>
       </div>
       <div class="col s2">
+        <div class="games-logo">
+          <i class="game-logo-icon fa fa-gamepad" aria-hidden="true"></i>
+        </div>
         <ul class="collection with-header">
           <li class="collection-header"><h4>Games</h4></li>
           <a href="#!" class="collection-item active" onclick="myCollection(this.id)" id="all">ALL</a>
@@ -529,6 +532,12 @@
     
 {% for game in games %}
   <div id="{{game._id}}" class="modal modal-fixed-footer" onkeypress="videoStop">
+    <div class="col s12" style="margin-top: -70px;">
+      <div class="{{game.game_platform}}-modal-name">
+        <h4 class="modal-game-name">{{game.game_name}}</h4>
+      </div>
+    </div>
+    
     <div class="modal-content">
       <div class="col s12 modal-header" style="margin: -25px !important;">
         <div class="row">
@@ -539,18 +548,102 @@
             <iframe id="{{game._id}}trailer-video" src="{{game.game_trailer}}?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation"></iframe>
           </div>
           <div class="col s3 extra-sec">
-            
+            <div class="row">
+              <div class="col s12 {{game.game_platform}}-buy">
+                <h3 style="font-size: 45px; text-align: center; margin-top: 10px;">Where To Buy</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 store" style="margin-top: 0px !important;">
+                <div class="col s1 store-logo">
+                  
+                </div>
+                <div class="col s8">
+                  
+                </div>
+                <div class="col s3 store-price">
+                    <p class="store-price">£36.98</p>
+                    <a href="#" class="store-link">By Google</a>
+                </div>
+              </div>
+              <div class="col s12 store">
+                <div class="col s1 store-logo">
+                  
+                </div>
+                <div class="col s8">
+                  
+                </div>
+                <div class="col s3 store-price">
+                    <p class="store-price">£36.98</p>
+                    <a href="#" class="store-link">By Google</a>
+                </div>
+              </div>
+              <div class="col s12 store">
+                <div class="col s1 store-logo">
+                  
+                </div>
+                <div class="col s8">
+                  
+                </div>
+                <div class="col s3 store-price">
+                    <p class="store-price">£36.98</p>
+                    <a href="#" class="store-link">By Google</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <h4 style="text-align: center;">{{game.game_name}}</h4>
-      <p>Game Platform: {{game.game_platform}}</p>
-      <p>Developer:{{game.game_developer}}</p>
-      <p>Release Dare: {{game.game_date}}</p>
-      <p>Players: {{game.game_players}}</p>
-      <p>CO-OP : {{game.game_coop}}</p>
-      <p>{{game.game_info}}</p>
+      
+      <div class="col s12" style="margin-right: -13px;">
+        <div class="row">
+          <div class="col s7 modal-game-info">
+            <div class="row">
+              <div class="col s6" style="border: 1px solid black; border-left: 0px">
+                <h2 class="center">Game Platform</h2>
+                <h3 class="center">{{game.game_platform}}</h3>
+              </div>
+              <div class="col s6" style="border: 1px solid black; border-right: 0px">
+                <h2 class="center">Release Date</h2>
+                <h3 class="center">{{game.game_date}}</h3>
+              </div>
+              <div class="col s4" style="border: 1px solid black; border-left: 0px">
+                <h2 class="center">Developer</h2>
+                <h3 class="center">{{game.game_developer}}</h3>
+              </div>
+              <div class="col s4" style="border: 1px solid black;">
+                <h2 class="center">Players</h2>
+                <h3 class="center">{{game.game_players}}</h3>
+              </div>
+              <div class="col s4" style="border: 1px solid black; border-right: 0px">
+                <h2 class="center">CO-OP</h2> 
+                <h3 class="center">{{game.game_coop}}</h3>
+              </div>
+              <div class="col s12 game-info-sec">
+                <p style="font-size: 18px;">{{game.game_info}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s5 modal-game-reviews">
+            <div class="row" style="height: 278px; margin-bottom: 0; overflow-y: scroll;">
+              <div class="col s10 offset-s1 game-review">
+                
+              </div>
+            </div>
+            <div class="col s12 review-input">
+              <form class="">
+                <div class="input-field col s11 review-input-box">
+                  <i class="material-icons prefix" style="font-size: 3rem;margin-top: 5px;">rate_review</i>
+                  <input id="" type="text" class="validate">
+                </div>
+                <a class="btn-floating btn-large waves-effect waves-light black"><i class="material-icons">send</i></a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    
     <div class="modal-footer">
       <div class="col s12" style="margin: 0;margin-left: -7px; margin-right: -7px;">
         <i id="{{game._id}}closeButton" class="fas fa-times modal-action modal-close waves-effect">Press Esc or Close</i>

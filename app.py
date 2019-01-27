@@ -29,7 +29,20 @@ def main():
     player_list = [game for game in _players]
     coop_list = [game for game in _coop]
     
-    return render_template('main.html', games=game_list , new=new_list , rating=rating_list, console=console_list, players=player_list, coop=coop_list , current="main" , main="#main", gamelink="#games", about="#about", contact="#contact")
+    return render_template(
+        'main.html', 
+        games=game_list, 
+        new=new_list, 
+        rating=rating_list, 
+        console=console_list, 
+        players=player_list, 
+        coop=coop_list, 
+        current="main", 
+        main="#main", 
+        gamelink="#games", 
+        about="#about", 
+        contact="#contact"
+    )
     
 @app.route('/get_games')
 def get_games():
