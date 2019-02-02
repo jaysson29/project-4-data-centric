@@ -19,6 +19,9 @@ def main():
     _rating = mongo.db.games.find()
     _players = mongo.db.games.find()
     _coop = mongo.db.games.find({"game_coop": "on"})
+    _genres = mongo.db.genres.find()
+    _reviews = mongo.db.reviews.find()
+    _ads = mongo.db.ads.find()
     
     _console = mongo.db.games.find({"game_platform": "PC" })
     
@@ -28,6 +31,9 @@ def main():
     console_list = [game for game in _console]
     player_list = [game for game in _players]
     coop_list = [game for game in _coop]
+    genre_list = [genre for genre in _genres]
+    reviews_list = [review for review in _reviews]
+    ads_list = [ad for ad in _ads]
     
     return render_template(
         'main.html', 
@@ -36,7 +42,9 @@ def main():
         rating=rating_list, 
         console=console_list, 
         players=player_list, 
-        coop=coop_list, 
+        coop=coop_list,
+        ads=ads_list,
+        reviews=reviews_list,
         current="main", 
         main="#main", 
         gamelink="#games", 
@@ -86,6 +94,14 @@ def update_game(game_id):
             "recently_added": request.form.get('recently_added')
         })
     return redirect(url_for('get_games'))
+    
+@app.route('/get_reviews/<game_id>')
+def get_reviews(game_id):
+    _reviews = mongo.db.reviews.find()
+    the_game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+    reviews = _reviews
+    
+    return render_template("reviews.html", game=the_game, reviews=reviews, main="/main", gamelink="/main#games", current="edit", about="/main#about", contact="/main#contact")
 
 @app.route('/delete_game/<game_id>')
 def delete_game(game_id):

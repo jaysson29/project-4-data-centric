@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="reviews">
+    <h3>Reviews for {{game.game_name}}</h3>
+     <ul class="collapsible platformselect" data-collapsible="accordion">
+    {% for review in reviews %}
+    {% if review.review_game == game.game_name %}
+    <li>
+    <div class="collapsible-header platformselect">
+        <div class="row" style="width: 100%;margin-bottom: 0px !important;">
+            <div class="col s12">
+                <div class="col s3">
+                    <i class="material-icons prefix" style="margin-top: 20px;float: left !important;">person</i>
+                    <strong style="margin-left: 30px;margin-top: -15px;float: left;">Users Name</strong>
+                    <p style="float: left;margin-left: 50px;margin-top: 15px; margin-bottom:0px;">{{review.review_name}}</p>
+                </div>
+                <div class="col s5">
+                    <strong style="float: left;margin-top: -15px;margin-left: 90px;">Message</strong>
+                    <p style="margin-top: 20px; margin-bottom:0px;">{{review.review_message}}</p>
+                </div>
+                <div class="col s1">
+                    <strong style="float: left;margin-top: -15px;margin-left: -20px;">Rating</strong>
+                    <p style="margin-top: 20px; margin-bottom:0px;">{{review.review_rating}}</p>
+                </div>
+                <div class="col s3" style="margin-left: 720px;float: none; width: 30%;">
+                    <a href="#" class="waves-effect waves-light btn-large btn_small blue" style="margin-top: 10px;"><i class="material-icons left btn_small_icon">edit</i>Edit</a>
+                    <a href="#"class="waves-effect waves-light btn-large btn_small red" style="margin-top: 10px;"><i class="material-icons left btn_small_icon">delete</i>Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    </li>
+    </ul>
+</div>
+{% endblock %}
