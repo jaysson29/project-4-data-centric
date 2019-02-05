@@ -28,7 +28,7 @@
       <div class="game-header">
         <h1>Games</h1>
       </div>
-      <div class="col s2">
+      <div class="col s2 menu-mobile">
         <div class="games-logo">
           <i class="game-logo-icon fa fa-gamepad" aria-hidden="true"></i>
         </div>
@@ -73,7 +73,7 @@
         <div class="overflow-head">
           <div class="overflow-games">
             {% for game in games %}
-            <div class="col" style="width: 215px;">
+            <div class="col game-case-size" style="width: 215px;">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
                   <div class="card-image waves-effect waves-block waves-light">
@@ -354,7 +354,7 @@
       <div class="col s5 offset-s5 contactHeader">
         <i class="material-icons prefix contact-icons">contact_mail</i><h3>Contact Us</h3>
       </div>
-      <form class="col s10 offset-s1">
+      <form class="col s10 offset-s1 mobile-form">
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix contact-icons">person</i>
@@ -383,7 +383,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col s5 offset-s5">
+          <div class="col s5 offset-s5 m-f-b">
             <button class="btn waves-effect waves-light green" type="submit" name="action">Submit
               <i class="material-icons right">send</i>
             </button>

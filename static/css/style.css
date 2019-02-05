@@ -1158,9 +1158,241 @@ ul.collection.with-header {
     padding-top: 0px !important;
 }
 
-@media(max-width: 600px)
+@media(max-width: 768px)
 {
     .badge-game{
-        left: calc(108% - 100px);
+        left: calc(108% - 60px);
+        top: 156px;
     }
+    .main-con {
+        width: 100%;
+        max-width: none;
+    }
+    .ParallaxVideo video{
+        width: 385%;
+        left: -145%;
+        height: 100%;
+    }
+    
+    .ParallaxVideo2 video{
+        width: 385%;
+        left: -145%;
+        height: 100%;
+    }
+    
+    .parallax-container {
+        height: 755px;
+    }
+    
+    .searchButton{
+        margin-top: 610px;
+        margin-left: 20%;
+        height: 40px;
+        width: 250px;
+    }
+    
+    .searchButton i {
+        font-size: 40px;
+        margin-top: -15px;
+    }
+    
+    .validateSearch {
+        width: 70% !important;
+        margin-top: -35px !important;
+        font-size: 25px !important;
+    }
+    nav .brand-logo {
+        left: 35% !important;
+        position: inherit;
+    }
+    
+    nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+        font-size: 50px !important;
+    }
+    
+    .p1 {
+        width: 170px;
+    }
+    
+    .p2 {
+        width: 170px;
+    }
+    
+    .games {
+        padding: 1% 5% 1% 5%;
+    }
+    
+    .task_header{
+        margin-left: 0 !important;
+    }
+    
+    .collapsible-header i {
+        margin-right: 3px !important;
+    }
+    a.waves-effect.waves-light.btn-large.btn_small{
+        width: 50px !important;
+    }
+    
+    .collapsible-header.platformselect .task_header.col.s3 {
+        width: 50%;
+    }
+
+    .plats {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    .game-logo-icon {
+        font-size: 65px !important;
+        margin-top: -40px;
+        color: red;
+        margin-bottom: -205px;
+        padding-left: 130px;
+    }
+    
+    .createAd {
+        visibility: collapse;
+        height: 0;
+    }
+    
+    .collection.with-header .collection-item {
+        height: 120px;
+        padding-top: 50px;
+        width: 50% !important;
+        float: left !important;
+        padding-left: 2%;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        border: 1px solid #e0e0e0;
+    }
+    
+    ul.collection.with-header {
+        padding-top: 50px;
+    }
+    
+    .menu-mobile{
+        width: 100% !important;
+    }
+    
+    .mainDiv{
+        width: 136% !important;
+        margin-left: 0px !important;
+        height: 810px !important;
+    }
+    
+    .overflow-head{
+        margin-left: -2% !important;
+    }
+    
+    .overflow-games{
+        margin-top: 5px;
+    }
+    
+    .card .card-image img{
+        height: 100px;
+    }
+    
+    .game-case{
+        height: 240px;
+    }
+    
+    .game-case-size{
+        width: 33% !important;
+    }
+    
+    .playstation-4-case{
+        height: 240px;
+    }
+    
+    .playstation-4-card{
+        background-position-y: -190px;
+        border-top-right-radius: 5px !important;
+    }
+    
+    .xbox-one-case{
+        height: 240px;
+    }
+    
+    .xbox-one-card{
+        background-position-y: -190px;
+        border-top-right-radius: 5px !important;
+    }
+    
+    .pc-case{
+        height: 240px;
+    }
+    
+    .pc-card{
+        background-position-y: -190px;
+        border-top-right-radius: 5px !important;
+    }
+    
+    .nintendo-switch-case{
+        height: 240px;
+    }
+    
+    .nintendo-switch-card {
+        background-position-y: -190px;
+        border-top-right-radius: 5px !important;
+    }
+    
+    .socials {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .contactHeader{
+        margin-left: 55% !important;
+    }
+    
+    .contactHeader h3{
+        width: 240%;
+        float: left;
+        margin-left: -170px;
+    }
+    
+    .mobile-form{
+        width: 90% !important;
+        margin-left: 0 !important;
+    }
+    
+    .m-f-b{
+        margin-left: 35% !important;
+    }
+    
+    .socials{
+        width: 100% !important;
+        margin-left: 5% !important;
+    }
+    
+    .input-field.col.s6 {
+        width: 100%;
+    }
+    
+    .game-box{
+        height: 1495px;
+    }
+    .rating{
+        margin-top: 7%;
+        margin-left: 3.5%;
+        width: 160%;
+        font-size: 14px;
+    }
+    
+    .card .card-content {
+        padding-top: 24px;
+        margin-bottom: -30px;
+    }
+    
+    .card .card-title {
+        font-size: 18px;
+        font-size: 14px;
+    }
+    
+    .card .card-content {
+        padding: 0 !important;
+        margin-top: 24px !important;
+    }
+    
 }
