@@ -390,6 +390,36 @@ nav .nav-wrapper{
     border-color: black;
     cursor: default;
 }
+
+.platform-menu{
+    margin-top: 10%;
+    width: 90% !important;
+}
+
+.platform-menu-item{
+    width: 25% !important;
+}
+
+.platform-menu-item a{
+    font-size: 20px;
+    height: 100px;
+    width: 100% !important;
+    background-color: red;
+    text-align: center;
+    margin: 30px;
+    border: 5px black solid;
+    border-radius: 10px;
+    padding-top: 7.5% !important;
+    color: black;
+}
+
+.platform-menu-item a:hover {
+    background-color: black !important;
+    color: white;
+    box-shadow: 10px 10px black;
+    border: 5px white solid;
+}
+
 .card .card-image .card-title{
     color: black;
 }
@@ -638,6 +668,21 @@ nav .nav-wrapper{
     padding-right: 20%;
     padding-left: 20%;
     padding-bottom: 9.5%;
+}
+
+.plat-add-con{
+    background-color: white;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0px;
+}
+
+.add-plat{
+    width: 60% !important;
+    margin-left: 20%;
 }
 
 .game-con{
@@ -897,6 +942,15 @@ nav .nav-wrapper{
     margin-right: -23px;
     height: 30px;
 }
+
+.skill1{
+    border-radius: 15px 0px 0px 0px;
+}
+
+.skill3{
+    border-radius: 0px 0px 0px 15px; 
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.35);
+}
 .uppercase{
     text-transform: uppercase;
 }
@@ -1152,6 +1206,15 @@ ul.collection.with-header {
     color: white !important;
 }
 
+.btn-back{
+    width: 75%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    margin-top: 7%;
+    margin-left: -3.5%;
+}
+
 /*-------------------------------------*/
 
 .page-footer {
@@ -1167,6 +1230,10 @@ ul.collection.with-header {
     .main-con {
         width: 100%;
         max-width: none;
+    }
+    
+    .plat-con{
+        height: 100%;
     }
     .ParallaxVideo video{
         width: 385%;
@@ -1222,6 +1289,36 @@ ul.collection.with-header {
         padding: 1% 5% 1% 5%;
     }
     
+    .PlayStation-4-modal-name{
+        height: 50px;
+        margin-top: 20px;
+    }
+    
+    .Xbox-One-modal-name{
+        height: 50px;
+        margin-top: 20px;
+    }
+    
+    .PC-modal-name{
+        height: 50px;
+        margin-top: 20px;
+    }
+    
+    .Nintendo-Switch-modal-name{
+        height: 50px;
+        margin-top: 20px;
+    }
+    
+    .modal-game-name {
+        font-size: 30px !important;
+    }
+    
+    .game-header h1 {
+        font-size: 34px !important;
+        text-align: center;
+        width: 130px;
+    }
+    
     .task_header{
         margin-left: 0 !important;
     }
@@ -1229,8 +1326,27 @@ ul.collection.with-header {
     .collapsible-header i {
         margin-right: 3px !important;
     }
-    a.waves-effect.waves-light.btn-large.btn_small{
-        width: 50px !important;
+    .mobile-button-game {
+        width: 20% !important;
+    }
+    
+    .mobile-button-plat{
+        width: 20% !important;
+    }
+    
+    .mobile-button-game i {
+        padding-left: 12px !important;
+    }
+    
+    
+    .mobile-button-plat i {
+        margin-left: 20%;
+        float: left !important;
+    }
+    
+    a.waves-effect.waves-light.btn-large.btn_small.purple i{
+        margin-left: 0 !important;
+        font-size: 24px !important;
     }
     
     .collapsible-header.platformselect .task_header.col.s3 {
@@ -1243,11 +1359,11 @@ ul.collection.with-header {
     }
     
     .game-logo-icon {
-        font-size: 65px !important;
-        margin-top: -40px;
+        font-size: 125px !important;
+        margin-top: -55px;
         color: red;
         margin-bottom: -205px;
-        padding-left: 130px;
+        padding-left: 120px;
     }
     
     .createAd {
@@ -1272,7 +1388,8 @@ ul.collection.with-header {
     }
     
     .menu-mobile{
-        width: 100% !important;
+        width: 110% !important;
+        margin-left: -20px !important;
     }
     
     .mainDiv{
@@ -1373,11 +1490,11 @@ ul.collection.with-header {
     .game-box{
         height: 1495px;
     }
-    .rating{
+    .rating {
         margin-top: 7%;
-        margin-left: 3.5%;
+        margin-left: 8%;
         width: 160%;
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .card .card-content {
@@ -1393,6 +1510,126 @@ ul.collection.with-header {
     .card .card-content {
         padding: 0 !important;
         margin-top: 24px !important;
+    }
+    
+    .contactForm {
+        box-shadow: 10px 10px 5px #00000085;
+    }
+    
+    .plat-add-con{
+        padding-top: 30%;
+        padding-bottom: 30%;
+    }
+    
+    .mobile-button {
+        float: left !important;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .footer-copyright{
+        margin-left: -25% !important;
+    }
+    
+    .dropdown-content {
+        width: 100% !important;
+    }
+    
+    .col.s6.center {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    
+    .input-mobile {
+        margin-left: -35px !important;
+        width: 120% !important;
+    }
+    
+    .about-box{
+        height: 1670px !important;
+    }
+    
+    .mobile-about-info{
+        width: 100% !important;
+    }
+    
+    .skill1{
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .skill3{
+        border-radius: 0px 0px 15px 15px; 
+        box-shadow: 0px 10px rgba(0, 0, 0, 0.35);
+    }
+    
+    .mySkills {
+        margin-left: -60px;
+        margin-right: 0px;
+    }
+    
+    .info{
+        border-right: 10px black solid !important; 
+    }
+    
+    .name{
+        border-right: 7px white solid !important;
+        text-align: center;
+        border-radius: 0px 0px 15px 15px;
+    }
+    
+    .line{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .aboutDiv {
+        width: 100% !important;
+        border-radius: 15px 15px 15px 15px;
+    }
+    
+    .aboutHeader h3 {
+        font-size: 50px;
+        margin-top: -2%;
+        margin-left: 0;
+    }
+    
+    .progress-section {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+    
+    .progress-type2{
+        font-size: 12px;
+        left: 88.5%;
+    }
+    
+    .popup-img {
+        height: 170px;
+    }
+    
+    .trailer-sec iframe {
+        height: 220px !important;
+        width: 100% !important;
+    }
+    
+    .trailer-sec{
+        height: 220px !important;
+        width: 100% !important;
+    }
+    
+    .platform-menu-item {
+        width: 100% !important;
+        margin-top: -30px !important;
+    }
+    
+    
+    .btn-back{
+            width: 95%;
+        background-color: black;
+        color: white;
+        position: inherit;
+        margin-top: 0;
+        margin-left: 2.5%;
     }
     
 }

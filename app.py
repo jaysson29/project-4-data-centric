@@ -22,13 +22,31 @@ def main():
     _genres = mongo.db.genres.find()
     _reviews = mongo.db.reviews.find()
     _ads = mongo.db.ads.find()
+    _platforms = mongo.db.platforms.find()
     
-    _console = mongo.db.games.find({"game_platform": "PC" })
+    _ps4 = mongo.db.games.find({"game_platform": "PlayStation-4"})
+    _linux = mongo.db.games.find({"game_platform": "Linux"})
+    _mac = mongo.db.games.find({"game_platform": "Mac"})
+    _xbone = mongo.db.games.find({"game_platform": "Xbox-One"})
+    _x360 = mongo.db.games.find({"game_platform": "Xbox-360"})
+    _ps3 = mongo.db.games.find({"game_platform": "Playstation-3"})
+    _pc = mongo.db.games.find({"game_platform": "PC"})
+    _ninswitch = mongo.db.games.find({"game_platform": "Nintendo-Switch"})
     
     game_list = [game for game in _games]
+    platform_list = [platform for platform in _platforms]
+    
+    ps4_list = [game for game in _ps4]
+    linux_list = [game for game in _linux]
+    mac_list = [game for game in _mac]
+    xbone_list = [game for game in _xbone]
+    x360_list = [game for game in _x360]
+    ps3_list = [game for game in _ps3]
+    pc_list = [game for game in _pc]
+    ninswitch_list = [game for game in _ninswitch]
+    
     new_list = [game for game in _new]
     rating_list = [game for game in _rating]
-    console_list = [game for game in _console]
     player_list = [game for game in _players]
     coop_list = [game for game in _coop]
     genre_list = [genre for genre in _genres]
@@ -37,14 +55,24 @@ def main():
     
     return render_template(
         'main.html', 
-        games=game_list, 
+        games=game_list,
+        platforms=platform_list,
         new=new_list, 
         rating=rating_list, 
-        console=console_list, 
         players=player_list, 
         coop=coop_list,
         ads=ads_list,
         reviews=reviews_list,
+        
+        ps4=ps4_list,
+        linux=linux_list,
+        mac=mac_list,
+        xbone=xbone_list,
+        x360=x360_list,
+        ps3=ps3_list,
+        pc=pc_list,
+        ninswitch=ninswitch_list,
+         
         current="main", 
         main="#main", 
         gamelink="#games", 
@@ -139,7 +167,7 @@ def insert_platform():
     
 @app.route('/add_platform')
 def add_platform():
-    return render_template('addplatform.html',main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
+    return render_template('addplatform.html',current="plat-add", main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')),debug=True)

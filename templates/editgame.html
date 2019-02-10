@@ -5,7 +5,7 @@
 <div class="row">
     <form class="col s12" action="{{ url_for('update_game', game_id=game._id) }}" method="POST">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">poll</i>
                 <select id="plaform" name="game_platform">
                     <option value="" disabled selected>Choose a Platform</option>
@@ -19,46 +19,46 @@
                 </select>
                 <label>Platform</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">assignment</i>
                 <input id="game_name" name="game_name" type="text" class="validate" value="{{game.game_name}}">
                 <label for="icon_prefix">Game Name</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 input-mobile">
                 <i class="material-icons prefix">subject</i>
                 <textarea name="game_info" id="game_info" class="materialize-textarea">{{game.game_info}}</textarea>
                 <label for="icon_telephone">Game Description</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">assignment</i>
                 <input id="game_img" name="game_img" type="text" class="validate" value="{{game.game_img}}">
                 <label for="icon_prefix">Game Image</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">assignment</i>
                 <input id="game_rating" name="game_rating" type="text" class="validate" value="{{game.game_rating}}">
                 <label for="icon_prefix">Game Rating</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">assignment</i>
                 <input id="game_trailer" name="game_trailer" type="text" class="validate" value="{{game.game_trailer}}">
                 <label for="icon_prefix">Game Trailer</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">assignment</i>
                 <input id="game_developer" name="game_developer" type="text" class="validate" value="{{game.game_developer}}">
                 <label for="icon_prefix">Game Developer</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">today</i>
                 <input id="game_date" name="game_date" type="text" class="datepicker" value="{{game.game_date}}">
                 <label for="icon_prefix">Release date</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">assignment</i>
                 <input id="game_players" name="game_players" type="number" class="validate" value="{{game.game_players}}">
                 <label for="icon_prefix">Players</label>
@@ -91,10 +91,10 @@
             </div>
         </div>
         <div class="row">
-            <button class="btn waves-effect waves-light right green" type="submit" name="action">Edit Game
+            <button class="btn waves-effect waves-light right green mobile-button" type="submit" name="action">Edit Game
                 <i class="material-icons right">send</i>
             </button>
-            <a href="{{ url_for('get_games') }}" class="waves-effect waves-light btn red">
+            <a href="{{ url_for('get_games') }}" class="waves-effect waves-light btn red mobile-button">
                 <i class="material-icons right">cancel</i>Cancel
             </a>
         </div>

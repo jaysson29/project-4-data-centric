@@ -44,7 +44,7 @@
         </ul>
       </div>
       <div class="col s10" style="margin-left: -22px !important;">
-        <div class="col s12 createAd">
+      <div class="col s12 createAd">
           <div class="row">
             <div class="col s12">
               <div class="p1">
@@ -98,7 +98,7 @@
         <div class="overflow-head">
           <div class="overflow-games">
             {% for game in new %}
-            <div class="col" style="width: 215px;">
+            <div class="col game-case-size" style="width: 215px;">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
                   <div class="card-image waves-effect waves-block waves-light">
@@ -123,7 +123,7 @@
         <div class="overflow-head">
           <div class="overflow-games">
             {% for game in rating %}
-            <div class="col" style="width: 215px;">
+            <div class="col game-case-size" style="width: 215px;">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
                   <div class="card-image waves-effect waves-block waves-light">
@@ -146,9 +146,156 @@
       <!--   Find platforms -->
       <div class="col s12 mainDiv" id="platformGames" style="visibility: hidden; display: none;">
         <div class="overflow-head">
-          <div class="overflow-games">
-            {% for game in console %}
-            <div class="col" style="width: 215px;">
+          <div class="row platform-menu" id="platform-Menu">
+            {% for platform in platforms %}
+            <div class="platform-menu-item col s2">
+              <a class="waves-effect waves-light btn" onclick="platformSelect(this.id)" id="{{platform.game_platform}}">{{platform.game_platform}}</a>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="overflow-games" id="ps4-list" style="visibility: hidden; display: none;">
+            {% for game in ps4 %}
+              <div class="col game-case-size" style="width: 215px;">
+                <div class="{{game.game_platform|lower}}-case">
+                  <div class="card {{game.game_platform|lower}}-card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                    <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                    {% if game.recently_added == "on" %}
+                      <span class="new badge badge-game"></span>
+                    {% endif %}
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    </div>
+                    <p class="rating">Rating : {{game.game_rating}}</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+          <div class="overflow-games" id="linux-list" style="visibility: hidden; display: none;">
+          {% for game in linux %}
+            <div class="col game-case-size" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div> 
+          <div class="overflow-games" id="mac-list" style="visibility: hidden; display: none;">
+          {% for game in mac %}
+            <div class="col game-case-size" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div> 
+          <div class="overflow-games" id="xbone-list" style="visibility: hidden; display: none;">
+          {% for game in xbone %}
+            <div class="col game-case-size" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div> 
+          <div class="overflow-games" id="x360-list" style="visibility: hidden; display: none;">
+          {% for game in x360 %}
+            <div class="col game-case-size" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div> 
+          <div class="overflow-games" id="ps3-list" style="visibility: hidden; display: none;">
+          {% for game in ps3 %}
+            <div class="col game-case-size" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div> 
+          <div class="overflow-games" id="pc-list" style="visibility: hidden; display: none;">
+          {% for game in pc %}
+            <div class="col game-case-size" style="width: 215px;">
+              <div class="{{game.game_platform|lower}}-case">
+                <div class="card {{game.game_platform|lower}}-card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  {% if game.recently_added == "on" %}
+                    <span class="new badge badge-game"></span>
+                  {% endif %}
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                  </div>
+                  <p class="rating">Rating : {{game.game_rating}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div> 
+          <div class="overflow-games" id="ninswitch-list" style="visibility: hidden; display: none;">
+          {% for game in ninswitch %}
+            <div class="col game-case-size" style="width: 215px;">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
                   <div class="card-image waves-effect waves-block waves-light">
@@ -166,6 +313,9 @@
             </div>
           {% endfor %}
           </div>
+          <div class="platform-back" id="platform-back">
+            <a class="waves-effect waves-light btn btn-back" onclick="myCollection('platform')">Go Back</a>
+          </div>
         </div>
       </div>
       <!--   Find Players -->
@@ -173,7 +323,7 @@
         <div class="overflow-head">
           <div class="overflow-games">
             {% for game in players %}
-            <div class="col" style="width: 215px;">
+            <div class="col game-case-size" style="width: 215px;">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
                   <div class="card-image waves-effect waves-block waves-light">
@@ -198,7 +348,7 @@
         <div class="overflow-head">
           <div class="overflow-games">
             {% for game in coop %}
-            <div class="col" style="width: 215px;">
+            <div class="col game-case-size" style="width: 215px;">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
                   <div class="card-image waves-effect waves-block waves-light">
@@ -218,8 +368,7 @@
           </div>
         </div>
       </div>
-      
-    </div>
+      </div>
     </div>
   </ul>
   
@@ -236,8 +385,11 @@
     
   <ul class="collapsible popout white about-box" data-collapsible="accordion" id="about">
     <div class="row pararow aboutSection">
+      <div class="game-header">
+        <h1>About</h1>
+      </div>
         <div class="row" style="margin-bottom: 0;">
-          <div class="col s2">
+          <div class="col s2 mobile-about-info">
             <div class="row" style="margin-bottom: 0;">
               <div class="col s12 picture"></div>
             </div>
@@ -256,9 +408,9 @@
                       </div>
                       <div class="col s10">
                           <h4 class="three-reasons-heading uppercase">Front End</h4>
-                          <li class="mySkills" style="background: grey; border-radius: 15px 0px 0px 0px;"> HTML</li>
+                          <li class="mySkills skill1" style="background: grey;"> HTML</li>
                           <li class="mySkills" style="background: white; color: black;"> CSS</li>
-                          <li class="mySkills" style="background: #4caf50; border-radius: 0px 0px 0px 15px; box-shadow: 10px 10px rgba(0, 0, 0, 0.35)"> JS</li>
+                          <li class="mySkills skill3" style="background: #4caf50;"> JS</li>
                       </div>
                   </div>
                   
@@ -268,9 +420,9 @@
                       </div>
                       <div class="col s10">
                           <h4 class="three-reasons-heading uppercase">Back End</h4>
-                          <li class="mySkills" style="background: black; border-radius: 15px 0px 0px 0px;"> Python</li>
+                          <li class="mySkills skill1" style="background: black;"> Python</li>
                           <li class="mySkills" style="background: blue;"> DJango</li>
-                          <li class="mySkills" style="background: brown; border-radius: 0px 0px 0px 15px; box-shadow: 10px 10px rgba(0, 0, 0, 0.35)"> MongoDB</li>
+                          <li class="mySkills skill3" style="background: brown;"> MongoDB</li>
                       </div>
                   </div>
                   
@@ -280,9 +432,9 @@
                       </div>
                       <div class="col s10">
                           <h4 class="three-reasons-heading uppercase">Games I Enjoy</h4>
-                          <li class="mySkills" style="background: slategrey; color: cornsilk; border-radius: 15px 0px 0px 0px;"> Destiny 2</li>
+                          <li class="mySkills skill1" style="background: slategrey; color: cornsilk;"> Destiny 2</li>
                           <li class="mySkills" style="background: tomato; height: 100%;"> Middle Earth: Shadow of war</li>
-                          <li class="mySkills" style="background: purple; border-radius: 0px 0px 0px 15px; box-shadow: 10px 10px rgba(0, 0, 0, 0.35)"> Elite Dangerous</li>
+                          <li class="mySkills skill3" style="background: purple;"> Elite Dangerous</li>
                       </div>
                   </div>
                 </div>
@@ -351,6 +503,9 @@
     
   <ul class="collapsible popout white contact-box" data-collapsible="accordion" id="contact">
     <div class="row pararow contactForm">
+      <div class="game-header">
+        <h1>Contact</h1>
+      </div>
       <div class="col s5 offset-s5 contactHeader">
         <i class="material-icons prefix contact-icons">contact_mail</i><h3>Contact Us</h3>
       </div>
@@ -372,14 +527,14 @@
             <i class="material-icons prefix contact-icons">email</i>
             <input id="email" type="email" class="validate">
             <label for="email" style="border: 0;background: 0;">Email</label>
-            <span class="helper-text" data-error="wrong" data-success="right">I need your email so i can reply to you queiry.</span>
+            <span class="helper-text" data-error="wrong" data-success="right">I need your email so i can reply to your inquiry.</span>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <i class="material-icons prefix contact-icons" style="padding-top: 50px;">mode_edit</i>
             <textarea id="textarea1" class="materialize-textarea validate"></textarea>
-            <label for="textarea1" style="border: 0;background: 0;">Wright your message here...</label>
+            <label for="textarea1" style="border: 0;background: 0;">Write Your Message Here...</label>
           </div>
         </div>
         <div class="row">
@@ -393,12 +548,12 @@
       <div class="col s12">
         <div class="row">
           <div class="col s4 socials">
-            <a href="#" class="fab fa-facebook"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-google"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-github"></a>
+            <a href="https://www.facebook.com/" class="fab fa-facebook"></a>
+            <a href="https://twitter.com/" class="fab fa-twitter"></a>
+            <a href="https://www.google.com/" class="fab fa-google"></a>
+            <a href="https://www.instagram.com/?hl=en" class="fab fa-instagram"></a>
+            <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
+            <a href="https://github.com/" class="fab fa-github"></a>
           </div>
         </div>
       </div>

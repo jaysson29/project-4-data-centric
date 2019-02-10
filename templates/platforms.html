@@ -7,8 +7,8 @@
         {% for platform in platforms %}
         <li>
             <div class="collapsible-header platformselect">
-                <a href="{{url_for('delete_platform', platform_id=platform._id)}}"class="waves-effect waves-light btn-large btn_small red"><i class="material-icons left btn_small_icon">delete</i>Delete</a>
-                <a href="{{url_for('edit_platform', platform_id=platform._id)}}" class="waves-effect waves-light btn-large btn_small blue" ><i class="material-icons left btn_small_icon">edit</i>Edit</a>
+                <a href="{{url_for('delete_platform', platform_id=platform._id)}}"class="waves-effect waves-light btn-large btn_small red mobile-button-plat"><i class="material-icons left btn_small_icon">delete</i>Delete</a>
+                <a href="{{url_for('edit_platform', platform_id=platform._id)}}" class="waves-effect waves-light btn-large btn_small blue mobile-button-plat" ><i class="material-icons left btn_small_icon">edit</i>Edit</a>
                 <div class="task_header col s3">
                     <strong>{{platform.game_platform}}</strong>
                 </div>

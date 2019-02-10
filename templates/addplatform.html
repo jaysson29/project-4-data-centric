@@ -1,25 +1,25 @@
 {% extends 'base.html'%} {% block content %}
-
+<div class="add-plat">
 <h3>Add Catergory</h3>
 <div class="row">
     <form action="{{ url_for('insert_platform') }}" method="POST" class="col s12">
         <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 input-mobile">
                 <i class="material-icons prefix">poll</i>
                 <input id="game_platform" name="game_platform" type="text" class="validate" value="">
                 <label for="icon_prefix">Platform</label>
             </div>
         </div>
         <div class="row">
-            <button class="btn waves-effect waves-light right green" type="submit" name="action">Add plaform
+            <button class="btn waves-effect waves-light right green mobile-button" type="submit" name="action">Add plaform
                 <i class="material-icons right">playlist_add</i>
              </button>
-            <a href="{{ url_for('get_platforms') }}" class="waves-effect waves-light btn red">
+            <a href="{{ url_for('get_platforms') }}" class="waves-effect waves-light btn red mobile-button">
                 <i class="material-icons right">cancel</i>Cancel
             </a>
             </button>
         </div>
     </form>
 </div>
-
+</div>
 {% endblock %}
