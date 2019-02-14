@@ -458,7 +458,24 @@
               <div class="col s1"></div>
             </div>
             <div class="row aboutInfo">
-              
+              <h1>I used the following guidelines when developing this project:</h1>
+              <ul class="aboutInfoText">
+                <li>Logic must be written in Python. HTML, CSS, and JavaScript can be used to enhance the look and feel of the cookbook.</li>
+                <li>Whenever possible, strive to use semantic HTML5 elements to structure your HTML code better.</li>
+                <li>The website must be data-driven and can rely on structured data, unstructured data or a mix of structured and unstructured data. </li>
+                <li>CRUD operations can be carried out using either SQL (e.g. MySQL/SQLite/Postgres) or NoSQL (e.g. MongoDB).</li>
+                <li>Use Flask, a micro-framework, to run your application. Provide instructions on how to run your project locally in your README.</li>
+                <li>Make sure your site is as responsive as possible. You can test this by checking the site on different screen sizes and browsers.</li>
+                <li>Share details of how you created your database schema in your README.</li>
+                <li>Consider sharing working drafts or finalised versions of your database schema in a 'Database Schema' folder in your repo. Provide a link to this folder in your README.</li>
+                <li>We advise that you write down user stories and create wireframes/mockups before embarking on full-blown development.</li>
+                <li>The site can also make use of CSS frameworks such as Bootstrap, just make sure you maintain a clear separation between the library code and your code.</li>
+                <li>Write a README.md file for your project that explains what the project does and the need that it fulfills. It should also describe the functionality of the project, as well as the technologies used. If some of the work was based on other code, explain what was kept and how it was changed to fit your need. A project submitted without a README.md file will FAIL.</li>
+                <li>Use Git & GitHub for version control. Each new piece of functionality should be in a separate commit.</li>
+                <li>Deploy the final version of your code to a hosting platform such as Heroku.</li>
+              <h2>Non-requirements for this project:</h2>
+                <li>Secure user authentication (e.g. via passwords) is not required for this particular project. Having each user just choose a username is sufficient. Secure authentication will be introduced in the Django module.</li>
+              </ul>
             </div>
             <div class="row progress-section">
               <div class="progress">
@@ -472,9 +489,9 @@
                   <span class="progress-type2">90% </span>
               </div>
               <div class="progress">
-                  <div class="determinate orange" style="width:20%"></div>
+                  <div class="determinate orange" style="width:40%"></div>
                   <span class="progress-type">JavaScript / jQuery</span>
-                  <span class="progress-type2">20% </span>
+                  <span class="progress-type2">40% </span>
               </div>
               <div class="progress">
                   <div class="determinate red" style="width:50%"></div>
@@ -482,9 +499,9 @@
                   <span class="progress-type2">50% </span>
               </div>
               <div class="progress">
-                  <div class="determinate" style="width:50%"></div>
+                  <div class="determinate" style="width:80%"></div>
                   <span class="progress-type">SQL / NoSQL</span>
-                  <span class="progress-type2">50%</span>
+                  <span class="progress-type2">80%</span>
               </div>
             </div>
           </div>
@@ -632,23 +649,23 @@
         <div class="row">
           <div class="col s7 modal-game-info">
             <div class="row">
-              <div class="col s6" style="border: 1px solid black; border-left: 0px">
+              <div class="col s6 modal-game-platform" style="border: 1px solid black; border-left: 0px">
                 <h2 class="center">Game Platform</h2>
                 <h3 class="center">{{game.game_platform}}</h3>
               </div>
-              <div class="col s6" style="border: 1px solid black; border-right: 0px">
+              <div class="col s6 modal-game-release" style="border: 1px solid black; border-right: 0px">
                 <h2 class="center">Release Date</h2>
                 <h3 class="center">{{game.game_date}}</h3>
               </div>
-              <div class="col s4" style="border: 1px solid black; border-left: 0px">
+              <div class="col s4 modal-game-developer" style="border: 1px solid black; border-left: 0px">
                 <h2 class="center">Developer</h2>
                 <h3 class="center">{{game.game_developer}}</h3>
               </div>
-              <div class="col s4" style="border: 1px solid black;">
+              <div class="col s4 modal-game-players" style="border: 1px solid black;">
                 <h2 class="center">Players</h2>
                 <h3 class="center">{{game.game_players}}</h3>
               </div>
-              <div class="col s4" style="border: 1px solid black; border-right: 0px">
+              <div class="col s4 modal-game-coop" style="border: 1px solid black; border-right: 0px">
                 <h2 class="center">CO-OP</h2> 
                 <h3 class="center">{{game.game_coop}}</h3>
               </div>
@@ -663,14 +680,14 @@
                 {% if review.review_game == game.game_name %}
                 <div class="col s10 offset-s1 game-review">
                   <div class="col s3">
-                    <i class="material-icons prefix" style="margin-top:15px;float: left;">person</i>
-                    <p style="float: left;margin-left: 10px;">{{review.review_name}}</p>
+                    <i class="material-icons prefix game-review-icon">person</i>
+                    <p class="game-review-name">{{review.review_name}}</p>
                   </div>
                   <div class="col s6">
-                    <p>{{review.review_message}}</p>
+                    <p class="game-review-messsage">{{review.review_message}}</p>
                   </div>
                   <div class="col s3">
-                    <p>{{review.review_rating}}</p>
+                    <p class="game-review-rating">{{review.review_rating}}</p>
                   </div>
                 </div>
                 {% endif %}
@@ -685,7 +702,7 @@
                 <div class="input-field col s5 review-input-box">
                   <input id="" placeholder="Review" type="text" class="validate">
                 </div>
-                 <div class="input-field col s3 review-input-box">
+                 <div class="input-field col s3 review-input-box rating-input">
                   <input id="" placeholder="0/10 Rating" type="number" name="rating" min="1" max="10" class="validate">
                 </div>
                

@@ -782,7 +782,7 @@ nav .nav-wrapper{
     margin-bottom: 0;
     border-top: 2px red solid !important;
     border-bottom: 2px red solid !important;
-    height: 875px;
+    height: 985px;
 }
 
 .contact-box{
@@ -851,10 +851,14 @@ nav .nav-wrapper{
 
 .aboutDiv{
     background: rgba(0, 0, 0, 0.87);
-    height: 785px;
+    height: 906px;
     margin-top: 20px;
     text-align: center;
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.mobile-about-info{
+    margin-top: 70px !important;
 }
 
 .aboutRow{
@@ -882,7 +886,30 @@ nav .nav-wrapper{
 }
 
 .aboutInfo{
-    height: 400px;
+    height: 530px;
+}
+
+.aboutInfoText{
+    color: white;
+    text-align: left;
+    margin-left: 10%;
+}
+
+.aboutInfoText li{
+    list-style-type: disc !important;
+    color: white;
+}
+
+.aboutInfo h1{
+    color: white;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.aboutInfoText h2 {
+    color: white;
+    text-align: left;
+    margin-left: -6%;
 }
 
 .progress{
@@ -1217,6 +1244,18 @@ ul.collection.with-header {
 
 /*-------------------------------------*/
 
+
+.game-review-icon{
+    margin-top:15px;
+    float: left;
+}
+
+.game-review-name{
+    float: left;
+    margin-left: 10px;
+}
+
+
 .page-footer {
     padding-top: 0px !important;
 }
@@ -1289,24 +1328,41 @@ ul.collection.with-header {
         padding: 1% 5% 1% 5%;
     }
     
+    .modal.modal-fixed-footer {
+        height: 93% !important;
+        top: 7% !important;
+    }
+    
+    .modal {
+        width: 100% !important;
+    }
+    
     .PlayStation-4-modal-name{
         height: 50px;
         margin-top: 20px;
+        width: 100%;
+        margin-left: 0%;
     }
     
     .Xbox-One-modal-name{
         height: 50px;
         margin-top: 20px;
+        width: 100%;
+        margin-left: 0%;
     }
     
     .PC-modal-name{
         height: 50px;
         margin-top: 20px;
+        width: 100%;
+        margin-left: 0%;
     }
     
     .Nintendo-Switch-modal-name{
         height: 50px;
         margin-top: 20px;
+        width: 100%;
+        margin-left: 0%;
     }
     
     .modal-game-name {
@@ -1545,8 +1601,8 @@ ul.collection.with-header {
         width: 120% !important;
     }
     
-    .about-box{
-        height: 1670px !important;
+    .about-box {
+        height: 2690px !important;
     }
     
     .mobile-about-info{
@@ -1585,6 +1641,11 @@ ul.collection.with-header {
     .aboutDiv {
         width: 100% !important;
         border-radius: 15px 15px 15px 15px;
+        height: 1730px;
+    }
+    
+    .aboutInfo {
+        height: 1370px;
     }
     
     .aboutHeader h3 {
@@ -1596,6 +1657,7 @@ ul.collection.with-header {
     .progress-section {
         margin-left: 10px !important;
         margin-right: 10px !important;
+        margin-top: 0 !important;
     }
     
     .progress-type2{
@@ -1603,18 +1665,27 @@ ul.collection.with-header {
         left: 88.5%;
     }
     
+    .modal.modal-fixed-footer .modal-content {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: calc(100% - 47px) !important;
+    }
+    
     .popup-img {
-        height: 170px;
+        height: 200px;
+        width: 222% !important;
     }
     
     .trailer-sec iframe {
-        height: 220px !important;
-        width: 100% !important;
+        height: 240px !important;
+        width: 106% !important;
     }
     
-    .trailer-sec{
+    .trailer-sec {
         height: 220px !important;
         width: 100% !important;
+        margin-top: 429px;
+        position: absolute;
     }
     
     .platform-menu-item {
@@ -1624,12 +1695,257 @@ ul.collection.with-header {
     
     
     .btn-back{
-            width: 95%;
+        width: 95%;
         background-color: black;
         color: white;
         position: inherit;
         margin-top: 0;
         margin-left: 2.5%;
+    }
+    
+    .aboutInfoText li {
+        width: 95%;
+    }
+    
+    .aboutInfo h1 {
+        text-align: left;
+        margin-left: 5%;
+        width: 90%;
+    }
+    
+    .aboutInfoText h2 {
+        text-align: left;
+        width: 90%;
+    }
+    
+    .extra-sec{
+        width: 45% !important;
+        margin-left: -80px !important;
+        margin-top: 200px !important;
+    }
+    
+    .PlayStation-4-buy{
+        height: 40px !important;
+    }
+    
+    .PlayStation-4-buy h3 {
+        font-size: 25px !important;
+        text-align: center !important;
+        margin-top: 0px !important;
+    }
+    
+    .Xbox-One-buy{
+        height: 40px !important;
+    }
+    
+    .Xbox-One-buy h3 {
+        font-size: 25px !important;
+        text-align: center !important;
+        margin-top: 0px !important;
+    }
+    
+    .PC-buy {
+        height: 40px !important;
+    }
+    
+    .PC-buy h3 {
+        font-size: 25px !important;
+        text-align: center !important;
+        margin-top: 0px !important;
+    }
+    
+    .Nintendo-Switch-buy {
+        height: 40px !important;
+    }
+    
+    .Nintendo-Switch-buy h3 {
+        font-size: 25px !important;
+        text-align: center !important;
+        margin-top: 0px !important;
+    }
+    
+    .store-logo {
+        height: 20px !important;
+        width: 20px !important;
+        margin-top: 6px !important;
+        margin-left: 5px !important;
+    }
+    
+    .store {
+        height: 35px !important;
+        margin-left: 25px !important;
+        width: 155px !important;
+        border-radius: 15px !important;
+        margin-top: 20px !important;
+        box-shadow: 5px 5px black;
+    }
+    
+    .store-price {
+        text-align: center;
+        margin-top: 2px !important;
+        font-weight: 500;
+        font-size: 10px !important;
+        margin-bottom: 0px !important;
+        margin-left: 35px !important;
+        position: absolute !important;
+    }
+    
+    p.store-price {
+    margin-left: 41px !important;
+    }
+    
+    .store-link {
+        font-size: 10px !important;
+        margin-top: 12px !important;
+        margin-left: 32px !important;
+    }
+    
+    .modal-game-info{
+        float: initial;
+        margin-top: -400px !important;
+        margin-left: 189px !important;
+    }
+    
+    .modal-game-info h2{
+        font-size: 15px !important;
+    }
+    
+    .modal-game-info h3{
+        font-size: 15px !important;
+    }
+    
+    .modal-game-platform {
+        border: none !important;
+        border-left: 0px !important;
+        margin-left: 0px !important;
+        margin-right: -5px !important;
+    }
+
+    .modal-game-release{
+        border:none !important;
+        border-left: 0px !important;
+        margin-left: -5px !important;
+        margin-right: -10px !important;
+    }
+    
+    .modal-game-developer{
+        border:none !important;
+        border-left: 0px !important;
+        width: 50% !important;
+        margin-left: 0px !important;
+    }
+    
+    .modal-game-players{
+        margin-left: 0px !important;
+        border:none !important;
+    }
+    
+    .modal-game-coop{
+        border-right: 0px !important;
+        margin-left: 80px !important;
+        border:none !important;
+    }
+    
+    .game-info-sec{
+        margin-left: 10px !important;
+        width: 90% !important;
+        margin-top: 10px !important;
+        border:none !important;
+    }
+    
+    .game-info-sec p {
+        font-size: 11px !important;
+    }
+    
+    .modal-game-reviews {
+        background-color: #ddd;
+        height: 210px !important;
+        margin-left: -20px !important;
+        margin-top: 265px !important;
+        width: 110% !important;
+    }
+    
+    .modal-game-reviews-row{
+        height: 278px !important;
+        margin-bottom: 0 !important;
+        overflow-y: scroll !important;
+    }
+    
+    .game-review {
+        height: 30px !important;
+        margin-top: 15px !important;
+        border-radius: 10px !important;
+        box-shadow: 0px 10px 10px grey;
+    }
+    
+    .game-review-icon {
+        margin-top: 5px !important;
+        float: left;
+    }
+    
+    .game-review-name {
+        float: left !important;
+        margin-left: 30px !important;
+        margin-top: -25px !important;
+    }
+    
+    .game-review-messsage {
+        margin-top: 5px !important;
+    }
+    
+    .game-review-rating{
+        margin-top: 5px !important;
+    }
+    
+    .input-field.col.s3.review-input-box {
+        width: 30%;
+        margin-right: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    
+    .input-field.col.s3.review-input-box input{
+        font-size: 10px;
+    }
+    
+    .input-field.col.s5.review-input-box {
+        margin-right: -20px;
+        padding-left: 0;
+    }
+    
+    .input-field.col.s5.review-input-box input {
+        font-size: 10px
+    }
+    
+    .modal-game-reviews .row {
+        height: 208px !important;
+    }
+    
+    .rating-input {
+        width: 23% !important;
+        margin-right: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    
+    .rating-input input{
+        font-size: 10px;
+    }
+    
+    .btn-floating.btn-large {
+        width: 40px;
+        height: 40px;
+        margin-left: -10px;
+        margin-top: 10px;
+    }
+    
+    .btn-floating.btn-large i {
+        font-size: 1.6rem;
+        margin-top: -10px !important;
+    }
+    
+    .fa-times:before {
+        margin-left: 300px !important;
     }
     
 }
