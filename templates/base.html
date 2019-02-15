@@ -66,6 +66,7 @@
             $(".dropdown-button").dropdown();
             $('.parallax').parallax();
             $('.modal').modal();
+            $('video').on('ended', function () { this.load(); this.play();  });
         });
     
         $('.datepicker').pickadate({
