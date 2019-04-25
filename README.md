@@ -5,6 +5,8 @@
 ### Preview
 
 **Live Preview** : [Here](https://project-4-data-centric-jason.herokuapp.com/)
+
+![Full Width Pics Preview](https://github.com/jaysson29/project-4-data-centric/blob/master/snapshot.jpg?raw=true)
 ### What is this website for?
  
 This is a website for my full stack web development course as a project, this project is based on only three languages HTML, CSS AND JavaScript 
