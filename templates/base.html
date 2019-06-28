@@ -15,9 +15,6 @@
     <title>PROJECT 4</title>
 </head>
 <body>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    
     <header>
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="{{url_for('get_games')}}">Manage Games</a></li>
@@ -58,6 +55,9 @@
       </div>
     </footer>
     
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    
     <script type="text/javascript">
         $(document).ready(function(){
             $('.collapsible').collapsible();
@@ -73,6 +73,9 @@
             this.play();  
         });
     
+        $('.datepicker').on('mousedown',function(event){
+            event.preventDefault();
+        })
         $('.datepicker').pickadate({
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 15, // Creates a dropdown of 15 years to control year,

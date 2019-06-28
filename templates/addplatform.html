@@ -2,7 +2,7 @@
 <div class="add-plat">
 <h3>Add Catergory</h3>
 <div class="row">
-    <form action="{{ url_for('insert_platform') }}" method="POST" class="col s12">
+    <form name="platForm" action="{{ url_for('insert_platform') }}" onsubmit="return validateForm()" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12 input-mobile">
                 <i class="material-icons prefix">poll</i>
@@ -19,6 +19,16 @@
             </a>
             </button>
         </div>
+        <script type="text/javascript">
+            function validateForm() {
+              var a = document.forms["platForm"]["game_platform"].value;
+              
+              if (a == "") {
+                alert("Please Enter Platform Name ! ");
+                return false;
+              }
+            }
+        </script>
     </form>
 </div>
 </div>

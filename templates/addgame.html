@@ -3,7 +3,7 @@
 <div class="gameAddPage">
 <h3>Add Game</h3>
 <div class="row">
-    <form class="col s12" action="{{ url_for('insert_game') }}" method="POST">
+    <form name="gameForm" class="col s12" action="{{ url_for('insert_game') }}" onsubmit="return validateForm()" method="POST">
         <div class="row">
             <div class="input-field col s12 input-mobile">
                 <i class="material-icons prefix">poll</i>
@@ -76,7 +76,7 @@
                         <input id="recently_added" name ="recently_added" type="checkbox">
                         <span class="lever" ></span>
                         Recently Added
-                        </label>
+                    </label>
                 </div>
             </div>
         <div class="row">
@@ -87,6 +87,51 @@
                 <i class="material-icons right">cancel</i>Cancel
             </a>
         </div>
+        <script type="text/javascript">
+            function validateForm() {
+              var a = document.forms["gameForm"]["game_platform"].value;
+              var b = document.forms["gameForm"]["game_name"].value;
+              var c = document.forms["gameForm"]["game_info"].value;
+              var d = document.forms["gameForm"]["game_img"].value;
+              var e = document.forms["gameForm"]["game_rating"].value;
+              var f = document.forms["gameForm"]["game_trailer"].value;
+              var g = document.forms["gameForm"]["game_developer"].value;
+              var h = document.forms["gameForm"]["game_players"].value;
+              
+              if (a == "") {
+                alert("Please Select Platform");
+                return false;
+              }
+              if (b == "") {
+                alert("Please Enter Game Name");
+                return false;
+              }
+              if (c == "") {
+                alert("Please Enter Game Info");
+                return false;
+              }
+              if (d == "") {
+                alert("Please Enter Game Image Url");
+                return false;
+              }
+              if (e == "") {
+                alert("Please Enter Game Rating");
+                return false;
+              }
+              if (f == "") {
+                alert("Please Enter Game Trailer");
+                return false;
+              }
+              if (g == "") {
+                alert("Please Enter Game Developer");
+                return false;
+              }
+              if (h == "") {
+                alert("Please Enter Game Players Value");
+                return false;
+              }
+            }
+        </script>
     </form>
 </div>
 
