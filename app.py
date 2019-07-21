@@ -10,13 +10,15 @@ app.config["MONGO_URI"] = 'mongodb://root:R00tUser@ds061196.mlab.com:61196/my-te
 
 mongo = PyMongo(app)
 
+os.environ["PASSWORD"] = "Jayssonmaster29"
+
 @app.route('/')
 
 @app.route('/main')
 def main():
     _games = mongo.db.games.find()
     _new =  mongo.db.games.find({"recently_added": "on"})
-    _rating = mongo.db.games.find()
+    _rating = mongo.db.games.find({"game_rating": 1}).sort("game_rating", -1)
     _players = mongo.db.games.find()
     _coop = mongo.db.games.find({"game_coop": "on"})
     _genres = mongo.db.genres.find()
@@ -85,6 +87,14 @@ def get_games():
     _games = mongo.db.games.find()
     game_list = [game for game in _games]
     return render_template('games.html', games=game_list, current="game", main="/main", gamelink="/main#games", about="/main#about", contact="/main#contact")
+    
+@app.route('/get_game/<game_id>')
+def get_game(game_id):
+    _game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+    _reviews = mongo.db.reviews.find()
+    
+    return render_template("game.html", game=_game, reviews=_reviews , main="/main", gamelink="/main#games", current="game", about="/main#about", contact="/main#contact")
+
 
 @app.route('/add_game')
 def add_game():

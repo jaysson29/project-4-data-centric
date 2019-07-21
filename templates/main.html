@@ -40,7 +40,6 @@
           <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="new">NEW</a>
           <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="rating">RATINGS</a>
           <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="platform">PLATFORMS</a>
-          <a href="#!" class="collection-item" onclick="myCollection(this.id)">GENRE</a>
           <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="players">PLAYERS</a>
           <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="coop">CO-OP</a>
         </ul>
@@ -55,10 +54,11 @@
           <div class="overflow-games">
             {% for game in games %}
             <div class="col game-case-size" style="width: 215px;">
+              <a href="{{url_for('get_game', game_id=game._id)}}">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  <div class="card-image">
+                  <img src="{{game.game_img}}">
                   {% if game.recently_added == "on" %}
                     <span class="new badge badge-game"></span>
                   {% endif %}
@@ -69,8 +69,9 @@
                   <p class="rating">Rating : {{game.game_rating}}</p>
                 </div>
               </div>
+              </a>
             </div>
-          {% endfor %}
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -80,10 +81,11 @@
           <div class="overflow-games">
             {% for game in new %}
             <div class="col game-case-size" style="width: 215px;">
+              <a href="{{url_for('get_game', game_id=game._id)}}">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  <div class="card-image">
+                  <img src="{{game.game_img}}">
                   {% if game.recently_added == "on" %}
                     <span class="new badge badge-game"></span>
                   {% endif %}
@@ -94,6 +96,7 @@
                   <p class="rating">Rating : {{game.game_rating}}</p>
                 </div>
               </div>
+              </a>
             </div>
           {% endfor %}
           </div>
@@ -103,24 +106,151 @@
       <div class="col s12 mainDiv" id="ratingGames" style="visibility: hidden; display: none;">
         <div class="overflow-head">
           <div class="overflow-games">
-            {% for game in rating %}
-            <div class="col game-case-size" style="width: 215px;">
-              <div class="{{game.game_platform|lower}}-case">
-                <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
-                  {% if game.recently_added == "on" %}
-                    <span class="new badge badge-game"></span>
-                  {% endif %}
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                  </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
-                </div>
+            <div class="row rating-menu" id="rating-Menu">
+              <div class="rating-menu-item col s4">
+                <a class="waves-effect waves-light btn" onclick="ratingselect(this.id)" id="rating-5"><i class="fas fa-star"></i> 5</a>
+              </div>
+              <div class="rating-menu-item col s4">
+                <a class="waves-effect waves-light btn" onclick="ratingselect(this.id)" id="rating-4"><i class="fas fa-star"></i> 4</a>
+              </div>
+              <div class="rating-menu-item col s4">
+                <a class="waves-effect waves-light btn" onclick="ratingselect(this.id)" id="rating-3"><i class="fas fa-star"></i> 3</a>
+              </div>
+              <div class="rating-menu-item col s4 offset-s2">
+                <a class="waves-effect waves-light btn" onclick="ratingselect(this.id)" id="rating-2"><i class="fas fa-star"></i> 2</a>
+              </div>
+              <div class="rating-menu-item col s4">
+                <a class="waves-effect waves-light btn" onclick="ratingselect(this.id)" id="rating-1"><i class="fas fa-star"></i> 1</a>
               </div>
             </div>
-          {% endfor %}
+            
+            <div class="overflow-games" id="rating-5-list" style="visibility: hidden; display: none;">
+              {% for game in games %}
+                {% if game.game_rating == "5" %}
+                <div class="col game-case-size" style="width: 215px;">
+                  <a href="{{url_for('get_game', game_id=game._id)}}">
+                  <div class="{{game.game_platform|lower}}-case">
+                    <div class="card {{game.game_platform|lower}}-card">
+                      <div class="card-image">
+                      <img src="{{game.game_img}}">
+                      {% if game.recently_added == "on" %}
+                        <span class="new badge badge-game"></span>
+                      {% endif %}
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                      </div>
+                      <p class="rating">Rating : {{game.game_rating}}</p>
+                    </div>
+                  </div>
+                  </a>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            
+            <div class="overflow-games" id="rating-4-list" style="visibility: hidden; display: none;">
+              {% for game in games %}
+                {% if game.game_rating <= "4.9" and game.game_rating >= "4" %}
+                <div class="col game-case-size" style="width: 215px;">
+                <a href="{{url_for('get_game', game_id=game._id)}}">
+                <div class="{{game.game_platform|lower}}-case">
+                  <div class="card {{game.game_platform|lower}}-card">
+                    <div class="card-image">
+                    <img src="{{game.game_img}}">
+                    {% if game.recently_added == "on" %}
+                      <span class="new badge badge-game"></span>
+                    {% endif %}
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    </div>
+                    <p class="rating">Rating : {{game.game_rating}}</p>
+                  </div>
+                </div>
+                </a>
+              </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            
+            <div class="overflow-games" id="rating-3-list" style="visibility: hidden; display: none;">
+              {% for game in games %}
+                {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                <div class="col game-case-size" style="width: 215px;">
+                  <a href="{{url_for('get_game', game_id=game._id)}}">
+                  <div class="{{game.game_platform|lower}}-case">
+                    <div class="card {{game.game_platform|lower}}-card">
+                      <div class="card-image">
+                      <img src="{{game.game_img}}">
+                      {% if game.recently_added == "on" %}
+                        <span class="new badge badge-game"></span>
+                      {% endif %}
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                      </div>
+                      <p class="rating">Rating : {{game.game_rating}}</p>
+                    </div>
+                  </div>
+                  </a>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            
+            <div class="overflow-games" id="rating-2-list" style="visibility: hidden; display: none;">
+              {% for game in games %}
+                {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                <div class="col game-case-size" style="width: 215px;">
+                  <a href="{{url_for('get_game', game_id=game._id)}}">
+                  <div class="{{game.game_platform|lower}}-case">
+                    <div class="card {{game.game_platform|lower}}-card">
+                      <div class="card-image">
+                      <img src="{{game.game_img}}">
+                      {% if game.recently_added == "on" %}
+                        <span class="new badge badge-game"></span>
+                      {% endif %}
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                      </div>
+                      <p class="rating">Rating : {{game.game_rating}}</p>
+                    </div>
+                  </div>
+                  </a>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            
+            <div class="overflow-games" id="rating-1-list" style="visibility: hidden; display: none;">
+              {% for game in games %}
+                {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                <div class="col game-case-size" style="width: 215px;">
+                  <a href="{{url_for('get_game', game_id=game._id)}}">
+                  <div class="{{game.game_platform|lower}}-case">
+                    <div class="card {{game.game_platform|lower}}-card">
+                      <div class="card-image">
+                      <img src="{{game.game_img}}">
+                      {% if game.recently_added == "on" %}
+                        <span class="new badge badge-game"></span>
+                      {% endif %}
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                      </div>
+                      <p class="rating">Rating : {{game.game_rating}}</p>
+                    </div>
+                  </div>
+                  </a>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="rating-back" id="rating-back">
+              <a class="waves-effect waves-light btn btn-back" onclick="myCollection('rating')">Go Back</a>
+            </div>
           </div>
         </div>
       </div>
@@ -136,31 +266,12 @@
           </div>
           <div class="overflow-games" id="ps4-list" style="visibility: hidden; display: none;">
             {% for game in ps4 %}
-              <div class="col game-case-size" style="width: 215px;">
-                <div class="{{game.game_platform|lower}}-case">
-                  <div class="card {{game.game_platform|lower}}-card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                    <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
-                    {% if game.recently_added == "on" %}
-                      <span class="new badge badge-game"></span>
-                    {% endif %}
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                    </div>
-                    <p class="rating">Rating : {{game.game_rating}}</p>
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
-            </div>
-          <div class="overflow-games" id="linux-list" style="visibility: hidden; display: none;">
-          {% for game in linux %}
             <div class="col game-case-size" style="width: 215px;">
+              <a href="{{url_for('get_game', game_id=game._id)}}">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  <div class="card-image">
+                  <img src="{{game.game_img}}">
                   {% if game.recently_added == "on" %}
                     <span class="new badge badge-game"></span>
                   {% endif %}
@@ -171,127 +282,162 @@
                   <p class="rating">Rating : {{game.game_rating}}</p>
                 </div>
               </div>
+              </a>
             </div>
+            {% endfor %}
+          </div>
+          <div class="overflow-games" id="linux-list" style="visibility: hidden; display: none;">
+          {% for game in linux %}
+          <div class="col game-case-size" style="width: 215px;">
+            <a href="{{url_for('get_game', game_id=game._id)}}">
+            <div class="{{game.game_platform|lower}}-case">
+              <div class="card {{game.game_platform|lower}}-card">
+                <div class="card-image">
+                <img src="{{game.game_img}}">
+                {% if game.recently_added == "on" %}
+                  <span class="new badge badge-game"></span>
+                {% endif %}
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                </div>
+                <p class="rating">Rating : {{game.game_rating}}</p>
+              </div>
+            </div>
+            </a>
+          </div>
           {% endfor %}
           </div> 
           <div class="overflow-games" id="mac-list" style="visibility: hidden; display: none;">
           {% for game in mac %}
-            <div class="col game-case-size" style="width: 215px;">
-              <div class="{{game.game_platform|lower}}-case">
-                <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
-                  {% if game.recently_added == "on" %}
-                    <span class="new badge badge-game"></span>
-                  {% endif %}
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                  </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
+          <div class="col game-case-size" style="width: 215px;">
+            <a href="{{url_for('get_game', game_id=game._id)}}">
+            <div class="{{game.game_platform|lower}}-case">
+              <div class="card {{game.game_platform|lower}}-card">
+                <div class="card-image">
+                <img src="{{game.game_img}}">
+                {% if game.recently_added == "on" %}
+                  <span class="new badge badge-game"></span>
+                {% endif %}
                 </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                </div>
+                <p class="rating">Rating : {{game.game_rating}}</p>
               </div>
             </div>
+            </a>
+          </div>
           {% endfor %}
           </div> 
           <div class="overflow-games" id="xbone-list" style="visibility: hidden; display: none;">
           {% for game in xbone %}
-            <div class="col game-case-size" style="width: 215px;">
-              <div class="{{game.game_platform|lower}}-case">
-                <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
-                  {% if game.recently_added == "on" %}
-                    <span class="new badge badge-game"></span>
-                  {% endif %}
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                  </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
+          <div class="col game-case-size" style="width: 215px;">
+            <a href="{{url_for('get_game', game_id=game._id)}}">
+            <div class="{{game.game_platform|lower}}-case">
+              <div class="card {{game.game_platform|lower}}-card">
+                <div class="card-image">
+                <img src="{{game.game_img}}">
+                {% if game.recently_added == "on" %}
+                  <span class="new badge badge-game"></span>
+                {% endif %}
                 </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                </div>
+                <p class="rating">Rating : {{game.game_rating}}</p>
               </div>
             </div>
+            </a>
+          </div>
           {% endfor %}
           </div> 
           <div class="overflow-games" id="x360-list" style="visibility: hidden; display: none;">
           {% for game in x360 %}
-            <div class="col game-case-size" style="width: 215px;">
-              <div class="{{game.game_platform|lower}}-case">
-                <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
-                  {% if game.recently_added == "on" %}
-                    <span class="new badge badge-game"></span>
-                  {% endif %}
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                  </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
+          <div class="col game-case-size" style="width: 215px;">
+            <a href="{{url_for('get_game', game_id=game._id)}}">
+            <div class="{{game.game_platform|lower}}-case">
+              <div class="card {{game.game_platform|lower}}-card">
+                <div class="card-image">
+                <img src="{{game.game_img}}">
+                {% if game.recently_added == "on" %}
+                  <span class="new badge badge-game"></span>
+                {% endif %}
                 </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                </div>
+                <p class="rating">Rating : {{game.game_rating}}</p>
               </div>
             </div>
+            </a>
+          </div>
           {% endfor %}
           </div> 
           <div class="overflow-games" id="ps3-list" style="visibility: hidden; display: none;">
           {% for game in ps3 %}
-            <div class="col game-case-size" style="width: 215px;">
-              <div class="{{game.game_platform|lower}}-case">
-                <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
-                  {% if game.recently_added == "on" %}
-                    <span class="new badge badge-game"></span>
-                  {% endif %}
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                  </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
+          <div class="col game-case-size" style="width: 215px;">
+            <a href="{{url_for('get_game', game_id=game._id)}}">
+            <div class="{{game.game_platform|lower}}-case">
+              <div class="card {{game.game_platform|lower}}-card">
+                <div class="card-image">
+                <img src="{{game.game_img}}">
+                {% if game.recently_added == "on" %}
+                  <span class="new badge badge-game"></span>
+                {% endif %}
                 </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                </div>
+                <p class="rating">Rating : {{game.game_rating}}</p>
               </div>
             </div>
+            </a>
+          </div>
           {% endfor %}
           </div> 
           <div class="overflow-games" id="pc-list" style="visibility: hidden; display: none;">
           {% for game in pc %}
-            <div class="col game-case-size" style="width: 215px;">
-              <div class="{{game.game_platform|lower}}-case">
-                <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
-                  {% if game.recently_added == "on" %}
-                    <span class="new badge badge-game"></span>
-                  {% endif %}
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                  </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
+          <div class="col game-case-size" style="width: 215px;">
+            <a href="{{url_for('get_game', game_id=game._id)}}">
+            <div class="{{game.game_platform|lower}}-case">
+              <div class="card {{game.game_platform|lower}}-card">
+                <div class="card-image">
+                <img src="{{game.game_img}}">
+                {% if game.recently_added == "on" %}
+                  <span class="new badge badge-game"></span>
+                {% endif %}
                 </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                </div>
+                <p class="rating">Rating : {{game.game_rating}}</p>
               </div>
             </div>
+            </a>
+          </div>
           {% endfor %}
           </div> 
           <div class="overflow-games" id="ninswitch-list" style="visibility: hidden; display: none;">
           {% for game in ninswitch %}
-            <div class="col game-case-size" style="width: 215px;">
-              <div class="{{game.game_platform|lower}}-case">
-                <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
-                  {% if game.recently_added == "on" %}
-                    <span class="new badge badge-game"></span>
-                  {% endif %}
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                  </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
+          <div class="col game-case-size" style="width: 215px;">
+            <a href="{{url_for('get_game', game_id=game._id)}}">
+            <div class="{{game.game_platform|lower}}-case">
+              <div class="card {{game.game_platform|lower}}-card">
+                <div class="card-image">
+                <img src="{{game.game_img}}">
+                {% if game.recently_added == "on" %}
+                  <span class="new badge badge-game"></span>
+                {% endif %}
                 </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                </div>
+                <p class="rating">Rating : {{game.game_rating}}</p>
               </div>
             </div>
+            </a>
+          </div>
           {% endfor %}
           </div>
           <div class="platform-back" id="platform-back">
@@ -305,10 +451,11 @@
           <div class="overflow-games">
             {% for game in players %}
             <div class="col game-case-size" style="width: 215px;">
+              <a href="{{url_for('get_game', game_id=game._id)}}">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  <div class="card-image">
+                  <img src="{{game.game_img}}">
                   {% if game.recently_added == "on" %}
                     <span class="new badge badge-game"></span>
                   {% endif %}
@@ -319,8 +466,9 @@
                   <p class="rating">Rating : {{game.game_rating}}</p>
                 </div>
               </div>
+              </a>
             </div>
-          {% endfor %}
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -330,10 +478,11 @@
           <div class="overflow-games">
             {% for game in coop %}
             <div class="col game-case-size" style="width: 215px;">
+              <a href="{{url_for('get_game', game_id=game._id)}}">
               <div class="{{game.game_platform|lower}}-case">
                 <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                  <img class="modal-trigger" data-target="{{game._id}}" src="{{game.game_img}}">
+                  <div class="card-image">
+                  <img src="{{game.game_img}}">
                   {% if game.recently_added == "on" %}
                     <span class="new badge badge-game"></span>
                   {% endif %}
@@ -344,8 +493,9 @@
                   <p class="rating">Rating : {{game.game_rating}}</p>
                 </div>
               </div>
+              </a>
             </div>
-          {% endfor %}
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -439,24 +589,18 @@
               <div class="col s1"></div>
             </div>
             <div class="row aboutInfo">
-              <h1>I used the following guidelines when developing this project:</h1>
-              <ul class="aboutInfoText">
-                <li>Logic must be written in Python. HTML, CSS, and JavaScript can be used to enhance the look and feel of the cookbook.</li>
-                <li>Whenever possible, strive to use semantic HTML5 elements to structure your HTML code better.</li>
-                <li>The website must be data-driven and can rely on structured data, unstructured data or a mix of structured and unstructured data. </li>
-                <li>CRUD operations can be carried out using either SQL (e.g. MySQL/SQLite/Postgres) or NoSQL (e.g. MongoDB).</li>
-                <li>Use Flask, a micro-framework, to run your application. Provide instructions on how to run your project locally in your README.</li>
-                <li>Make sure your site is as responsive as possible. You can test this by checking the site on different screen sizes and browsers.</li>
-                <li>Share details of how you created your database schema in your README.</li>
-                <li>Consider sharing working drafts or finalised versions of your database schema in a 'Database Schema' folder in your repo. Provide a link to this folder in your README.</li>
-                <li>We advise that you write down user stories and create wireframes/mockups before embarking on full-blown development.</li>
-                <li>The site can also make use of CSS frameworks such as Bootstrap, just make sure you maintain a clear separation between the library code and your code.</li>
-                <li>Write a README.md file for your project that explains what the project does and the need that it fulfills. It should also describe the functionality of the project, as well as the technologies used. If some of the work was based on other code, explain what was kept and how it was changed to fit your need. A project submitted without a README.md file will FAIL.</li>
-                <li>Use Git & GitHub for version control. Each new piece of functionality should be in a separate commit.</li>
-                <li>Deploy the final version of your code to a hosting platform such as Heroku.</li>
-              <h2>Non-requirements for this project:</h2>
-                <li>Secure user authentication (e.g. via passwords) is not required for this particular project. Having each user just choose a username is sufficient. Secure authentication will be introduced in the Django module.</li>
-              </ul>
+              <div class="col s12 m12 l4">
+                <h3>Why I Created This Website ? </h3>
+                <p>Why I Created This Website ? </p>
+              </div>
+              <div class="col s12 m12 l4">
+                <h3>How I Created This Website ? </h3>
+                <p>How I Created This Website ? </p>
+              </div>
+              <div class="col s12 m12 l4">
+                <h3>Who Does This Website Target ? </h3>
+                <p>Who Does This Website Target ? </p>
+              </div>
             </div>
             <div class="row progress-section">
               <div class="progress">
@@ -475,16 +619,96 @@
                   <span class="progress-type2">40% </span>
               </div>
               <div class="progress">
-                  <div class="determinate red" style="width:50%"></div>
-                  <span class="progress-type">Python / Django</span>
-                  <span class="progress-type2">50% </span>
+                  <div class="determinate red" style="width:80%"></div>
+                  <span class="progress-type">Python / MongoDB</span>
+                  <span class="progress-type2">80% </span>
               </div>
               <div class="progress">
-                  <div class="determinate" style="width:80%"></div>
+                  <div class="determinate" style="width:10%"></div>
                   <span class="progress-type">SQL / NoSQL</span>
-                  <span class="progress-type2">80%</span>
+                  <span class="progress-type2">10%</span>
               </div>
             </div>
+            <ul class="collapsible popout" data-collapsible="accordion">
+              <li>
+                  <div class="collapsible-header aboutSelect">
+                      <div class="col s1 about-chevron">
+                          <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="about_header col s3">
+                          <strong>How To Add A Game ?</strong>
+                      </div>
+                       <div class="col s1 about-chevron">
+                          <i class="fas fa-chevron-down"></i>
+                      </div>
+                  </div>
+                  <div class="collapsible-body">
+                      <h1 class="aboutInfoText">Step By Step Guide : </h1>
+                      <ul class="aboutInfoText">
+                        <li>1. Firstly Select The Manage Games Option From The Admin Drop Down Menu On The Navigation Bar.</li>
+                        <li><img src="/static/img/about/select_admin.jpg" class="w100"></img></li>
+                        <li>2. Secondly Click The New Game Button at the bottom of the page.</li>
+                        <li><img src="/static/img/about/select_add.jpg"  class="w50"></img></li>
+                        <li>3. This Will Take You To A Form, Which Will Allow You To Enter Details About A Game You Want To Add.</li>
+                        <li><img src="/static/img/about/select_add_game.jpg" class="w100"></img></li>
+                        <li>4. When Selecting The Platform It Will Have A Drop Down Menu With Multiple Platforms, Select Your Desired Platform.</li>
+                        <li><img src="/static/img/about/select_plat.jpg" class="w100"></img></li>
+                        <li>5. When Providing The Link To The Trailer You Will Have To Do The Following:</li>
+                        <li><img src="/static/img/about/select_add_trailer.jpg"  class="w50"></img></li>
+                        <li>6. Go To Youtube And Find A Trailer For The Game You Want Then Refer To The URL / Website Address.</li>
+                        <li><img src="/static/img/about/select_one.jpg" class="w50"></img></li>
+                        <li>7. Copy The Code From The Url After the = Character And Paste It In The Game Trailer Box</li>
+                        <li><img src="/static/img/about/select_two.jpg" class="w50"></img></li>
+                        <li>8. Finally Once All Information Has Been Correclty Entered Press "Add Game" Which Will Add It To The DataBase And Will Be Avaible On The Games Section For Every One To See.</li>
+                        <li>For Example: </li>
+                        <li><img src="/static/img/about/select_example.jpg"></img></li>
+                      </ul>
+                  </div>
+              </li>
+              <li>
+                <div class="collapsible-header aboutSelect">
+                    <div class="col s1 about-chevron">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="about_header col s3">
+                        <strong>How To Edit A Game ?</strong>
+                    </div>
+                     <div class="col s1 about-chevron">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="collapsible-body">
+                  <h1 class="aboutInfoText">Step By Step Guide : </h1>
+                  <ul class="aboutInfoText">
+                    <li>1. Select The Manage Games Option From The Admin Drop Down Menu On The Navigation Bar.</li>
+                    <li><img src="/static/img/about/select_admin.jpg" class="w100"></img></li>
+                    <li>2. Click The Game You Want To Edit.</li>
+                    <li><img src="/static/img/about/select_edit.jpg" class="w50"></img></li>
+                    <li>3. Press The "Edit" Buttom To Edit Game </li>
+                    <li><img src="/static/img/about/select_edit_edit.jpg" class="w50"></img></li>
+                    <li>4.This Will Bring Up A Form, Which Will Allow You To Edit The Details About A Game You Want To Edit</li>
+                    <li><img src="/static/img/about/select_edit_game.jpg" class="w100"></img></li>
+                    <li>5. Once All Information Has Been Correclty Entered Press "Edit Game" Which Will Edit The Information On The DataBase.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header aboutSelect">
+                    <div class="col s1 about-chevron">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="about_header col s3">
+                        <strong>More !</strong>
+                    </div>
+                     <div class="col s1 about-chevron">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="collapsible-body">
+                  <h1 class="aboutInfoText" style="text-align: center !important;">Coming Soon !</h1>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
     </div>
@@ -549,7 +773,7 @@
       </form>
       <div class="col s12">
         <div class="row">
-          <div class="col s4 socials">
+          <div class="col m4 offset-m4 socials">
             <a href="https://www.facebook.com/" class="fab fa-facebook"></a>
             <a href="https://twitter.com/" class="fab fa-twitter"></a>
             <a href="https://www.google.com/" class="fab fa-google"></a>
@@ -561,174 +785,6 @@
       </div>
     </div>
   </ul>
-    
-{% for game in games %}
-  <div id="{{game._id}}" class="modal modal-fixed-footer" onkeypress="videoStop">
-    <div class="col s12" style="margin-top: -70px;">
-      <div class="{{game.game_platform}}-modal-name">
-        <h4 class="modal-game-name">{{game.game_name}}</h4>
-      </div>
-    </div>
-    
-    <div class="modal-content">
-      <div class="col s12 modal-header" style="margin: -25px !important;">
-        <div class="row">
-          <div class="col s3" style="margin-right: -23px;">
-            <img class="popup-img" src="{{game.game_img}}">
-          </div>
-          <div class="col s4 trailer-sec">
-            <iframe id="{{game._id}}trailer-video" src="{{game.game_trailer}}?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation"></iframe>
-          </div>
-          <div class="col s3 extra-sec">
-            <div class="row">
-              <div class="col s12 {{game.game_platform}}-buy">
-                <h3 style="font-size: 45px; text-align: center; margin-top: 10px;">Where To Buy</h3>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col s12 store" style="margin-top: 0px !important;">
-                <div class="col s1 store-logo">
-                  
-                </div>
-                <div class="col s8">
-                  
-                </div>
-                <div class="col s3 store-price">
-                    <p class="store-price">£36.98</p>
-                    <a href="#" class="store-link">By Google</a>
-                </div>
-              </div>
-              <div class="col s12 store">
-                <div class="col s1 store-logo">
-                  
-                </div>
-                <div class="col s8">
-                  
-                </div>
-                <div class="col s3 store-price">
-                    <p class="store-price">£36.98</p>
-                    <a href="#" class="store-link">By Google</a>
-                </div>
-              </div>
-              <div class="col s12 store">
-                <div class="col s1 store-logo">
-                  
-                </div>
-                <div class="col s8">
-                  
-                </div>
-                <div class="col s3 store-price">
-                    <p class="store-price">£36.98</p>
-                    <a href="#" class="store-link">By Google</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col s12" style="margin-right: -13px;">
-        <div class="row">
-          <div class="col s7 modal-game-info">
-            <div class="row">
-              <div class="col s6 modal-game-platform" style="border: 1px solid black; border-left: 0px">
-                <h2 class="center">Game Platform</h2>
-                <h3 class="center">{{game.game_platform}}</h3>
-              </div>
-              <div class="col s6 modal-game-release" style="border: 1px solid black; border-right: 0px">
-                <h2 class="center">Release Date</h2>
-                <h3 class="center">{{game.game_date}}</h3>
-              </div>
-              <div class="col s4 modal-game-developer" style="border: 1px solid black; border-left: 0px">
-                <h2 class="center">Developer</h2>
-                <h3 class="center">{{game.game_developer}}</h3>
-              </div>
-              <div class="col s4 modal-game-players" style="border: 1px solid black;">
-                <h2 class="center">Players</h2>
-                <h3 class="center">{{game.game_players}}</h3>
-              </div>
-              <div class="col s4 modal-game-coop" style="border: 1px solid black; border-right: 0px">
-                <h2 class="center">CO-OP</h2> 
-                <h3 class="center">{{game.game_coop}}</h3>
-              </div>
-              <div class="col s12 game-info-sec">
-                <p style="font-size: 18px;">{{game.game_info}}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col s5 modal-game-reviews">
-            <div class="row" style="height: 278px; margin-bottom: 0; overflow-y: scroll;">
-              {% for review in reviews %}
-                {% if review.review_game == game.game_name %}
-                <div class="col s10 offset-s1 game-review">
-                  <div class="col s3">
-                    <i class="material-icons prefix game-review-icon">person</i>
-                    <p class="game-review-name">{{review.review_name}}</p>
-                  </div>
-                  <div class="col s6">
-                    <p class="game-review-messsage">{{review.review_message}}</p>
-                  </div>
-                  <div class="col s3">
-                    <p class="game-review-rating">{{review.review_rating}}</p>
-                  </div>
-                </div>
-                {% endif %}
-              {% endfor %}
-            </div>
-            <div class="col s12 review-input">
-              <form class="">
-                <div class="input-field col s3 review-input-box">
-                  <i class="material-icons prefix" style="font-size: 40px;margin-top: 10px;">rate_review</i>
-                  <input id="" placeholder="Name" type="text" class="validate">
-                </div>
-                <div class="input-field col s5 review-input-box">
-                  <input id="" placeholder="Review" type="text" class="validate">
-                </div>
-                 <div class="input-field col s3 review-input-box rating-input">
-                  <input id="" placeholder="0/10 Rating" type="number" name="rating" min="1" max="10" class="validate">
-                </div>
-               
-                <div class="input-field col s1 review-input-box">
-                  <a class="btn-floating btn-large waves-effect waves-light black" style="margin-left: -10px;"><i class="material-icons">send</i></a>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="modal-footer">
-      <div class="col s12" style="margin: 0;margin-left: -7px; margin-right: -7px;">
-        <i id="{{game._id}}closeButton" class="fas fa-times modal-action modal-close waves-effect">Press Esc or Close</i>
-      </div>
-    </div>
-  </div>
-  <script>
-    document.getElementById("{{game._id}}closeButton").onclick = function() {videoStop()};
-
-    document.onkeydown = function(evt) {
-      evt = evt || window.event;
-      var isEscape = false;
-      if ("key" in evt) {
-          isEscape = (evt.key == "Escape" || evt.key == "Esc");
-      } else {
-          isEscape = (evt.keyCode == 27);
-      }
-      if (isEscape) {
-          videoStop()
-      }
-    };
-
-    function videoStop() {
-      var frames = document.getElementsByTagName('iframe').length;
-			for (var i = 0; i < frames; i++) {
-				var iframe = document.getElementsByTagName('iframe')[i].contentWindow;
-        iframe.postMessage('{"event":"command","func":"stopVideo","args":""}','*');
-			}
-    }
-  </script>
-{% endfor %}
-
+  
 </div>
 {% endblock %}

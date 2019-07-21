@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+    
+    <div class="{{game.game_platform}}-modal-name">
+      <h1 class="game-name">{{game.game_name}}</h1>
+    </div>
+    
+    <div class="row {{game.game_platform}}-row">
+      <div class="col s6">
+        <img src="{{game.game_img}}" class="game-image {{game.game_platform}}-image">
+      </div>
+      <div class="col s6">
+        <div>
+          <div class="row">
+            <div class="col s6">
+              <h3>Game System:</h3>
+            </div>
+            <div class="col s6">
+              <h3 class="right">{{game.game_platform}}</h3>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col s6">
+              <h3>Release Date:</h3>
+            </div>
+            <div class="col s6">
+              <h3 class="right">{{game.game_date}}</h3>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col s6">
+              <h3>Game Developer:</h3>
+            </div>
+            <div class="col s6">
+              <h3 class="right">{{game.game_developer}}</h3>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col s6">
+              <h3>Name Of Players:</h3>
+            </div>
+            <div class="col s6">
+              <h3 class="right">{{game.game_players}}</h3>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col s6">
+              <h3>CO-OP :</h3>
+            </div>
+            <div class="col s6">
+              {% if game.game_coop == "on"%}
+              <h3 class="right">Yes</h3>
+              {% else %}
+              <h3 class="right">No</h3>
+              {% endif %}
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col s6">
+              <h3>Rating :</h3>
+            </div>
+            <div class="col s6">
+              <h3 class="right">{{game.game_rating}} / 5</h3>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col s12">
+              <h3 class="center">Game Description</h3>
+            </div>
+            <div class="col s12">
+              <p style="font-size: 18px; text-align: center;">{{game.game_info}}</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="row {{game.game_platform}}-row">
+      <div class="col s12">
+        <iframe class="game-trailer" id="{{game._id}}trailer-video" src="https://www.youtube.com/embed/{{game.game_trailer}}?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation"></iframe>
+      </div>
+    </div>
+    
+    <div class="row {{game.game_platform}}-row">
+      <div class="col s12">
+        
+        <div class="game-reviews">
+        {% for review in reviews %}
+          {% if review.review_game == game.game_name %}
+          <div class="col s10 offset-s1 game-review">
+            <div class="col s3">
+              <i class="material-icons prefix game-review-icon">person</i>
+              <p class="game-review-name">{{review.review_name}}</p>
+            </div>
+            <div class="col s6">
+              <p class="game-review-messsage">{{review.review_message}}</p>
+            </div>
+            <div class="col s3">
+              <p class="game-review-rating">Rated ( {{review.review_rating}} / 5 )</p>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+        
+        <div class="col s12 review-input">
+          <form class="">
+            <div class="input-field col s3 review-input-box">
+              <i class="material-icons prefix" style="font-size: 40px;margin-top: 10px;">rate_review</i>
+              <input id="" placeholder="Name" type="text" class="validate">
+            </div>
+            <div class="input-field col s5 review-input-box">
+              <input id="" placeholder="Review" type="text" class="validate">
+            </div>
+             <div class="input-field col s3 review-input-box rating-input">
+              <input id="" placeholder="0/5 Rating" type="number" name="rating" min="1" max="5" class="validate" step="0.1">
+            </div>
+           
+            <div class="input-field col s1 review-input-box">
+              <a class="btn-floating btn-large waves-effect waves-light black"><i class="material-icons">send</i></a>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="row extra-row">
+      <div class="col s12">
+        <div class="extra-sec">
+          <div class="row">
+            <div class="col s12 {{game.game_platform}}-buy">
+              <h3 style="font-size: 45px; text-align: center; margin-top: 10px;">Where To Buy</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 store" style="margin-top: 0px !important;">
+              <div class="col s1 store-logo">
+                
+              </div>
+              <div class="col s8">
+                <h1 class="center">Amazon</h1>
+              </div>
+              <div class="col s3 store-price">
+                  <p class="store-price">£36.98</p>
+                  <p class="store-link">By Google</p>
+              </div>
+            </div>
+            <div class="col s12 store">
+              <div class="col s1 store-logo">
+                
+              </div>
+              <div class="col s8">
+                <h1 class="center">Ebay</h1>
+              </div>
+              <div class="col s3 store-price">
+                  <p class="store-price">£36.98</p>
+                  <p class="store-link">By Google</p>
+              </div>
+            </div>
+            <div class="col s12 store">
+              <div class="col s1 store-logo">
+                
+              </div>
+              <div class="col s8">
+                <h1 class="center">G2A</h1>
+              </div>
+              <div class="col s3 store-price">
+                  <p class="store-price">£36.98</p>
+                  <p class="store-link">By Google</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+{% endblock %}

@@ -63,6 +63,12 @@ function myCollection(Menuid){
       document.getElementById("players").classList.remove("active");
       document.getElementById("coop").classList.remove("active");
       
+      document.getElementById("rating-Menu").setAttribute("style", "visibility: visible; display: block;");
+      document.getElementById("rating-5-list").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("rating-4-list").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("rating-3-list").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("rating-2-list").setAttribute("style", "visibility: hidden; display: none;");
+      document.getElementById("rating-1-list").setAttribute("style", "visibility: hidden; display: none;");
       
       document.getElementById("allGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
@@ -70,6 +76,8 @@ function myCollection(Menuid){
       document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
+      
+      document.getElementById("rating-back").setAttribute("style", "visibility: hidden; display: none;");
     }
     else if (Menuid == "platform"){
       document.getElementById("platform-Menu").setAttribute("style", "visibility: visible; display: block;");
@@ -164,5 +172,51 @@ function platformSelect(platformid){
   else if(platformid == "Nintendo-Switch"){
     document.getElementById("ninswitch-list").setAttribute("style", "visibility: visible; display: block;");
     document.getElementById("platform-back").setAttribute("style", "visibility: visible; display: block;");
+  }
+}
+
+function ratingselect(ratingid){
+  document.getElementById("rating-Menu").setAttribute("style", "visibility: hidden; display: none;");
+  if(ratingid == "rating-5"){
+    document.getElementById("rating-5-list").setAttribute("style", "visibility: visible; display: block;");
+    document.getElementById("rating-back").setAttribute("style", "visibility: visible; display: block;");
+  }
+  else if(ratingid == "rating-4"){
+    document.getElementById("rating-4-list").setAttribute("style", "visibility: visible; display: block;");
+    document.getElementById("rating-back").setAttribute("style", "visibility: visible; display: block;");
+  }
+  else if(ratingid == "rating-3"){
+    document.getElementById("rating-3-list").setAttribute("style", "visibility: visible; display: block;");
+    document.getElementById("rating-back").setAttribute("style", "visibility: visible; display: block;");
+  }
+  else if(ratingid == "rating-2"){
+    document.getElementById("rating-2-list").setAttribute("style", "visibility: visible; display: block;");
+    document.getElementById("rating-back").setAttribute("style", "visibility: visible; display: block;");
+  }
+  else if(ratingid == "rating-1"){
+    document.getElementById("rating-1-list").setAttribute("style", "visibility: visible; display: block;");
+    document.getElementById("rating-back").setAttribute("style", "visibility: visible; display: block;");
+  }
+}
+
+function checkpassword(gameid){
+  var password = "Jayssonmaster29";
+  var pass_id = gameid + "-password_input";
+  var modal_footer_id = gameid + "-modal-footer";
+  var modal_content_id = gameid + "-modal-content";
+  
+  var input_password = document.getElementById(pass_id).value;
+  var footer = document.getElementById(modal_footer_id);
+  var modal_content = document.getElementById(modal_content_id);
+  
+  if(input_password != password){
+    Materialize.toast('Incorrect Password', 4000)
+    return false;
+  }
+  else{
+    Materialize.toast('Correct Password', 4000)
+    footer.setAttribute("style", "visibility: visible; display: block;");
+    modal_content.setAttribute("style", "visibility: hidden; display: none;")
+    return true;
   }
 }

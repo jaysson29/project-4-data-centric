@@ -5,7 +5,7 @@
 <div class="row">
     <form name="gameForm" class="col s12" action="{{ url_for('insert_game') }}" onsubmit="return validateForm()" method="POST">
         <div class="row">
-            <div class="input-field col s12 input-mobile">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">poll</i>
                 <select id="plaform" name="game_platform">
                     <option value="" disabled selected>Choose a Platform</option>
@@ -15,9 +15,7 @@
                 </select>
                 <label>Platform</label>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12 input-mobile">
+            <div class="input-field col s6 input-mobile">
                 <i class="material-icons prefix">assignment</i>
                 <input id="game_name" name="game_name" type="text" class="validate">
                 <label for="icon_prefix">Game Name</label>
