@@ -10,6 +10,25 @@ body{
     width: 50% !important;
 }
 
+.side-nav {
+    width: 100% !important;
+}
+
+.side-nav li>a {
+    font-size: 35px !important;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.fa-times-circle {
+    color: black !important;
+    font-size: 60px !important;
+    margin-bottom: 70px;
+    text-align: right;
+    width: 100%;
+}
+
 .gameAddPage{
     width:70%;
     margin-left: 15%;
@@ -555,7 +574,7 @@ nav .nav-wrapper{
 
 .card .card-content .card-title {
     text-align: center;
-    margin-top: -25px;
+    margin-top: 155px;
 }
 
 .card .card-title {
@@ -598,6 +617,23 @@ nav .nav-wrapper{
     height: 300px;
     margin-bottom: 25px;
     box-shadow: 5px 5px rgba(0, 100, 255, 0.25);
+}
+
+.game-case-title{
+    text-align: left !important;
+    margin-top: -215px !important;
+    margin-left: -15px !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.game-case-dev {
+    font-size: 12px !important;
+    margin-top: -10px !important;
+    margin-bottom: -5px !important;
+    line-height: 13px !important;
+    width: 130%;
+    margin-left: -20px;
+    text-align: center !important;
 }
 
 .playstation-4-case {
@@ -725,6 +761,11 @@ nav .nav-wrapper{
     margin-left: 22.5%;
     padding-bottom: 15px !important;
     position: absolute;
+}
+
+
+.star-checked{
+    color: orange !important;
 }
 
 .games{
@@ -1063,15 +1104,22 @@ nav .nav-wrapper{
 }
 
 .aboutInfo p {
-    color: white;
-    text-align:  center;
+    color: #F44336;
+    text-align: center;
     margin-left: 5%;
+    margin-right: 5%;
+    font-family: Lucida Console, monospace;
 }
 
 .aboutInfoText h2 {
     color: white;
     text-align: left;
     margin-left: -6%;
+}
+
+i.fab {
+    font-size: 40px;
+    float: right !important;
 }
 
 
@@ -1212,24 +1260,48 @@ span.helper-text {
     color: #9e9e9e;
 }
 
+.form-button {
+    width: 99%;
+    height: 60px;
+    margin-left: 40px;
+    font-size: 30px;
+    border: inset 10px red;
+    background-color: #4CAF50 !important;
+    transition: color .5s ease-in-out, box-shadow .5s ease-in-out, text-shadow .5s ease-in-out, border .5s ease-in-out;
+}
+
+.form-button:hover{
+    color: black;
+    border: inset 10px green;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: -10px 10px 10px black;
+    text-shadow: -5px 5px 5px green;
+}
+
+i.material-icons.right {
+    font-size: 30px;
+}
+
 /* Style all font awesome icons */
 .socials{
     margin-top: 80px;
     text-align: center;
 }
 
-.fab {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 45%;
+.social-link {
+  padding: 10px !important;
+  font-size: 30px !important;
+  width: 50px !important;
+  height: 50px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  border-radius: 45% !important;
 }
 
-.fab:hover {
-  background-color: #26a69a;
+.social-link:hover {
+    background-color: #F44336;
 }
 
 /* Set a specific color for each brand */
@@ -1328,11 +1400,6 @@ span.helper-text {
     margin-left: 20px !important;
 }
 
-#adButton:hover{
-    background-color: blue !important;
-    color: black;
-    box-shadow: 5px 5px black;
-}
 
 .p1{
     width: 700px;
@@ -1398,11 +1465,11 @@ ul.collection.with-header {
 }
 
 .btn-back {
-    width: 75%;
+    width: 74.5vw;
     background-color: black;
     color: white;
     position: absolute;
-    margin-top: 19%;
+    margin-top: 34vh;
     margin-left: -3.5%;
 }
 
@@ -1702,7 +1769,6 @@ ul.collection.with-header {
     
     .socials {
         width: 100% !important;
-        padding-left: 20% !important;
     }
     
     .input-field.col.s6 {
@@ -2244,6 +2310,54 @@ ul.collection.with-header {
         width: 20% !important;
     }
     
+    .mobile-game-con {
+        width: 100% !important;
+    }
+    
+    .game-con {
+        background-color: white;
+        width: 100%;
+        max-width: none;
+        padding-top: 40px;
+    }
+    
+    .mobile-game-image-col {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .mobile-game-info-row {
+        margin-bottom: 0 !important;
+    }
+    
+    .mobile-game-info-row h3 {
+        font-size: 20px;
+    }
+    
+    .game-image {
+        height: 100%;
+        max-width: 100%;
+        max-height: 600px;
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .game-name {
+        font-size: 40px !important;
+        text-align: center !important;
+        margin-top: -5px;
+    }
+    
+    .game-case-title {
+        text-align: left !important;
+        margin-top: -130px !important;
+        margin-bottom: 0px !important;
+        margin-left: 5px !important;
+        color: hsla(0, 0%, 0%, 0.75) !important;
+        float: left;
+        font-size: 13px !important;
+    }
+    
     .mobile-button-plat{
         width: 20% !important;
     }
@@ -2425,8 +2539,25 @@ ul.collection.with-header {
     }
     
     .card .card-content {
-        padding-top: 24px;
+        padding: 0 !important;
         margin-bottom: -30px;
+        margin-top: -155px !important;
+    }
+    
+    span.card-title.activator.grey-text.text-darken-4 {
+        line-height: 15px;
+    }
+    
+    .col.s1.m2 {
+        padding: 9px !important;
+    }
+    
+    .fa-star {
+        height: 25px;
+        width: 25px;
+        font-size: 15px !important;
+        margin-top: 15px;
+        margin-left: 5px;
     }
     
     .card .card-title {
@@ -2434,10 +2565,12 @@ ul.collection.with-header {
         font-size: 14px;
     }
     
-    .card .card-content {
-        padding: 0 !important;
-        margin-top: 24px !important;
-    }
+    .game-case-dev {
+        margin-top: 0px !important;
+        margin-bottom: -15px !important;
+        margin-left: -15px !important;
+    }    
+    
     
     .contactForm {
         box-shadow: 10px 10px 5px #00000085;
@@ -2473,7 +2606,7 @@ ul.collection.with-header {
     }
     
     .about-box {
-        height: 2690px !important;
+        height: 100% !important;
     }
     
     .mobile-about-info{
@@ -2512,11 +2645,11 @@ ul.collection.with-header {
     .aboutDiv {
         width: 100% !important;
         border-radius: 15px 15px 15px 15px;
-        height: 1730px;
+        height: 100% !important;
     }
     
     .aboutInfo {
-        height: 1370px;
+        height: 100% !important;
     }
     
     .aboutHeader h3 {

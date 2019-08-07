@@ -6,7 +6,7 @@
     <div class="row">
       <div class="input-field col s12">
         <i class="Large material-icons">search</i>
-        <input id="Search" type="text" class="validateSearch" placeholder="Search" autocomplete="off">
+        <input id="Search" type="text" class="validateSearch" placeholder="Coming Soon!!!" autocomplete="off">
       </div>
     </div>
   </form>
@@ -40,7 +40,6 @@
           <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="new">NEW</a>
           <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="rating">RATINGS</a>
           <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="platform">PLATFORMS</a>
-          <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="players">PLAYERS</a>
           <a href="#!" class="collection-item" onclick="myCollection(this.id)" id="coop">CO-OP</a>
         </ul>
       </div>
@@ -64,9 +63,97 @@
                   {% endif %}
                   </div>
                   <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
                     <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
                   </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
                 </div>
               </div>
               </a>
@@ -91,9 +178,97 @@
                   {% endif %}
                   </div>
                   <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
                     <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s1 m2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s1 m2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
                   </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
                 </div>
               </div>
               </a>
@@ -138,9 +313,97 @@
                       {% endif %}
                       </div>
                       <div class="card-content">
+                        <span class="card-title activator game-case-title">{{game.game_platform}}</span>
                         <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                        <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                        <div class="row">
+                          {% if game.game_rating == "5" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                        </div>
                       </div>
-                      <p class="rating">Rating : {{game.game_rating}}</p>
                     </div>
                   </div>
                   </a>
@@ -163,9 +426,97 @@
                     {% endif %}
                     </div>
                     <div class="card-content">
+                      <span class="card-title activator game-case-title">{{game.game_platform}}</span>
                       <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                      <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                      <div class="row">
+                        {% if game.game_rating == "5" %}
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        {% endif %}
+                        {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        {% endif %}
+                        {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        {% endif %}
+                        {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        {% endif %}
+                        {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                        <div class="col s1 m2">
+                          <i class="fas fa-star star-checked"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        <div class="col s1 m2">
+                          <i class="far fa-star"></i>
+                        </div>
+                        {% endif %}
+                      </div>
                     </div>
-                    <p class="rating">Rating : {{game.game_rating}}</p>
                   </div>
                 </div>
                 </a>
@@ -188,9 +539,97 @@
                       {% endif %}
                       </div>
                       <div class="card-content">
+                        <span class="card-title activator game-case-title">{{game.game_platform}}</span>
                         <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                        <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                        <div class="row">
+                          {% if game.game_rating == "5" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                        </div>
                       </div>
-                      <p class="rating">Rating : {{game.game_rating}}</p>
                     </div>
                   </div>
                   </a>
@@ -213,9 +652,97 @@
                       {% endif %}
                       </div>
                       <div class="card-content">
+                        <span class="card-title activator game-case-title">{{game.game_platform}}</span>
                         <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                        <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                        <div class="row">
+                          {% if game.game_rating == "5" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                        </div>
                       </div>
-                      <p class="rating">Rating : {{game.game_rating}}</p>
                     </div>
                   </div>
                   </a>
@@ -238,9 +765,97 @@
                       {% endif %}
                       </div>
                       <div class="card-content">
+                        <span class="card-title activator game-case-title">{{game.game_platform}}</span>
                         <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                        <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                        <div class="row">
+                          {% if game.game_rating == "5" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                          {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                          <div class="col s1 m2">
+                            <i class="fas fa-star star-checked"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          <div class="col s1 m2">
+                            <i class="far fa-star"></i>
+                          </div>
+                          {% endif %}
+                        </div>
                       </div>
-                      <p class="rating">Rating : {{game.game_rating}}</p>
                     </div>
                   </div>
                   </a>
@@ -277,9 +892,97 @@
                   {% endif %}
                   </div>
                   <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
                     <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
                   </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
                 </div>
               </div>
               </a>
@@ -298,10 +1001,98 @@
                   <span class="new badge badge-game"></span>
                 {% endif %}
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                </div>
-                <p class="rating">Rating : {{game.game_rating}}</p>
+                  <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
               </div>
             </div>
             </a>
@@ -320,10 +1111,98 @@
                   <span class="new badge badge-game"></span>
                 {% endif %}
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                </div>
-                <p class="rating">Rating : {{game.game_rating}}</p>
+                  <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
               </div>
             </div>
             </a>
@@ -342,10 +1221,98 @@
                   <span class="new badge badge-game"></span>
                 {% endif %}
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                </div>
-                <p class="rating">Rating : {{game.game_rating}}</p>
+                  <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
               </div>
             </div>
             </a>
@@ -364,10 +1331,98 @@
                   <span class="new badge badge-game"></span>
                 {% endif %}
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                </div>
-                <p class="rating">Rating : {{game.game_rating}}</p>
+                  <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
               </div>
             </div>
             </a>
@@ -386,10 +1441,98 @@
                   <span class="new badge badge-game"></span>
                 {% endif %}
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                </div>
-                <p class="rating">Rating : {{game.game_rating}}</p>
+                  <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
               </div>
             </div>
             </a>
@@ -408,10 +1551,98 @@
                   <span class="new badge badge-game"></span>
                 {% endif %}
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                </div>
-                <p class="rating">Rating : {{game.game_rating}}</p>
+                  <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
               </div>
             </div>
             </a>
@@ -430,10 +1661,98 @@
                   <span class="new badge badge-game"></span>
                 {% endif %}
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                </div>
-                <p class="rating">Rating : {{game.game_rating}}</p>
+                  <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
+                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
               </div>
             </div>
             </a>
@@ -442,33 +1761,6 @@
           </div>
           <div class="platform-back" id="platform-back">
             <a class="waves-effect waves-light btn btn-back" onclick="myCollection('platform')">Go Back</a>
-          </div>
-        </div>
-      </div>
-      <!--   Find Players -->
-      <div class="col s12 mainDiv" id="playersGames" style="visibility: hidden; display: none;">
-        <div class="overflow-head">
-          <div class="overflow-games">
-            {% for game in players %}
-            <div class="col game-case-size" style="width: 215px;">
-              <a href="{{url_for('get_game', game_id=game._id)}}">
-              <div class="{{game.game_platform|lower}}-case">
-                <div class="card {{game.game_platform|lower}}-card">
-                  <div class="card-image">
-                  <img src="{{game.game_img}}">
-                  {% if game.recently_added == "on" %}
-                    <span class="new badge badge-game"></span>
-                  {% endif %}
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
-                  </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
-                </div>
-              </div>
-              </a>
-            </div>
-            {% endfor %}
           </div>
         </div>
       </div>
@@ -488,9 +1780,97 @@
                   {% endif %}
                   </div>
                   <div class="card-content">
+                    <span class="card-title activator game-case-title">{{game.game_platform}}</span>
                     <span class="card-title activator grey-text text-darken-4">{{game.game_name}}</span>
+                    <span class="card-title activator game-case-dev">BY {{game.game_developer}}</span>
+                    <div class="row">
+                      {% if game.game_rating == "5" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "4" and game.game_rating <= "4.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "3" and game.game_rating <= "3.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "2" and game.game_rating <= "2.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                      {% if game.game_rating >= "1" and game.game_rating <= "1.9" %}
+                      <div class="col s2">
+                        <i class="fas fa-star star-checked"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      <div class="col s2">
+                        <i class="far fa-star"></i>
+                      </div>
+                      {% endif %}
+                    </div>
                   </div>
-                  <p class="rating">Rating : {{game.game_rating}}</p>
                 </div>
               </div>
               </a>
@@ -591,15 +1971,48 @@
             <div class="row aboutInfo">
               <div class="col s12 m12 l4">
                 <h3>Why I Created This Website ? </h3>
-                <p>Why I Created This Website ? </p>
+                <p>
+                  I Created This Website For My Project 4 Assignment In Website Development
+                </p>
+                <p>
+                  The Purpose Of The Project Is To Create A Website That Would Display Cooking Recipes But With My Style Attached.
+                </p>
+                <p>
+                  I Deciding To Go With The Gaming Recipe  Approach That Would Display All the Ingredients Of A Game Showing The Platform, 
+                  Description, Trailer, Date Released, If the Game Is CO-OP And How Many, Players
+                </p>
               </div>
               <div class="col s12 m12 l4">
                 <h3>How I Created This Website ? </h3>
-                <p>How I Created This Website ? </p>
+                <p>
+                  I Used
+                  <ul style="text-align: right; color: #F44336; font-size: 20px">
+                    <li>HTML<i class="fab fa-html5"></i></li>
+                    <li>CSS<i class="fab fa-css3-alt"></i></li>
+                    <li>JAVASCRIPT<i class="fab fa-js"></i></li>
+                    <li>MATERIALIZE<i class="fas fa-paint-roller"></i></li>
+                    <li>FONT AWESOME<i class="fab fa-font-awesome"></i></li>
+                    <li>PYTHON<i class="fab fa-python"></i></li>
+                    <li>MONGO DB<i class="fas fa-database"></i></li>
+                  </ul>
+                  Web development Languages. 
+                </p>
+                <p>
+                  The Purpose Of The Project Is To Create A Website That Would Display Cooking Recipes But With My Style Attached.
+                </p>
               </div>
               <div class="col s12 m12 l4">
                 <h3>Who Does This Website Target ? </h3>
-                <p>Who Does This Website Target ? </p>
+                <p>
+                  I Created This Website For My Project 4 Assignment In Website Development
+                </p>
+                <p>
+                  The Purpose Of The Project Is To Create A Website That Would Display Cooking Recipes But With My Style Attached.
+                </p>
+                <p>
+                  I Deciding To Go With The Gaming Recipe  Approach That Would Display All the Ingredients Of A Game Showing The Platform, 
+                  Description, Trailer, Date Released, If the Game Is CO-OP And How Many, Players
+                </p>
               </div>
             </div>
             <div class="row progress-section">
@@ -764,8 +2177,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col s5 offset-s5 m-f-b">
-            <button class="btn waves-effect waves-light green" type="submit" name="action">Submit
+          <div class="col s12">
+            <button class="btn waves-effect waves-light form-button" type="submit" name="action">Submit
               <i class="material-icons right">send</i>
             </button>
           </div>
@@ -774,12 +2187,12 @@
       <div class="col s12">
         <div class="row">
           <div class="col m4 offset-m4 socials">
-            <a href="https://www.facebook.com/" class="fab fa-facebook"></a>
-            <a href="https://twitter.com/" class="fab fa-twitter"></a>
-            <a href="https://www.google.com/" class="fab fa-google"></a>
-            <a href="https://www.instagram.com/?hl=en" class="fab fa-instagram"></a>
-            <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-            <a href="https://github.com/" class="fab fa-github"></a>
+            <a href="https://www.facebook.com/" class="fab fa-facebook social-link"></a>
+            <a href="https://twitter.com/" class="fab fa-twitter social-link"></a>
+            <a href="https://www.google.com/" class="fab fa-google social-link"></a>
+            <a href="https://www.instagram.com/?hl=en" class="fab fa-instagram social-link"></a>
+            <a href="https://www.linkedin.com/" class="fab fa-linkedin social-link"></a>
+            <a href="https://github.com/" class="fab fa-github social-link"></a>
           </div>
         </div>
       </div>

@@ -29,15 +29,12 @@ function myCollection(Menuid){
       document.getElementById("new").classList.remove("active");
       document.getElementById("rating").classList.remove("active");
       document.getElementById("platform").classList.remove("active");
-      document.getElementById("players").classList.remove("active");
       document.getElementById("coop").classList.remove("active");
-      
       
       document.getElementById("allGames").setAttribute("style", "visibility: visible; display: block;");
       document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
-      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
     }
     else if (Menuid == "new"){
@@ -45,14 +42,12 @@ function myCollection(Menuid){
       document.getElementById("new").classList.add("active");
       document.getElementById("rating").classList.remove("active");
       document.getElementById("platform").classList.remove("active");
-      document.getElementById("players").classList.remove("active");
       document.getElementById("coop").classList.remove("active");
       
       document.getElementById("allGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("newGames").setAttribute("style", "visibility: visible; display: block;");
       document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
-      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
     }
     else if (Menuid == "rating"){
@@ -60,7 +55,6 @@ function myCollection(Menuid){
       document.getElementById("new").classList.remove("active");
       document.getElementById("rating").classList.add("active");
       document.getElementById("platform").classList.remove("active");
-      document.getElementById("players").classList.remove("active");
       document.getElementById("coop").classList.remove("active");
       
       document.getElementById("rating-Menu").setAttribute("style", "visibility: visible; display: block;");
@@ -74,9 +68,7 @@ function myCollection(Menuid){
       document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("ratingGames").setAttribute("style", "visibility: visible; display: block;");
       document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
-      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
-      
       document.getElementById("rating-back").setAttribute("style", "visibility: hidden; display: none;");
     }
     else if (Menuid == "platform"){
@@ -95,14 +87,12 @@ function myCollection(Menuid){
       document.getElementById("new").classList.remove("active");
       document.getElementById("rating").classList.remove("active");
       document.getElementById("platform").classList.add("active");
-      document.getElementById("players").classList.remove("active");
       document.getElementById("coop").classList.remove("active");
       
       document.getElementById("allGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("platformGames").setAttribute("style", "visibility: visible; display: block;");
-      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
     }
     else if (Menuid == "players"){
@@ -118,7 +108,6 @@ function myCollection(Menuid){
       document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
-      document.getElementById("playersGames").setAttribute("style", "visibility: visible; display: block;");
       document.getElementById("coopGames").setAttribute("style", "visibility: hidden; display: none;");
     }
     else if (Menuid == "coop"){
@@ -126,7 +115,6 @@ function myCollection(Menuid){
       document.getElementById("new").classList.remove("active");
       document.getElementById("rating").classList.remove("active");
       document.getElementById("platform").classList.remove("active");
-      document.getElementById("players").classList.remove("active");
       document.getElementById("coop").classList.add("active");
       
       
@@ -134,7 +122,6 @@ function myCollection(Menuid){
       document.getElementById("newGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("ratingGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("platformGames").setAttribute("style", "visibility: hidden; display: none;");
-      document.getElementById("playersGames").setAttribute("style", "visibility: hidden; display: none;");
       document.getElementById("coopGames").setAttribute("style", "visibility: visible; display: block;");
     }
 }
