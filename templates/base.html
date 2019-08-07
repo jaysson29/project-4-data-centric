@@ -35,11 +35,12 @@
             </div>
             <ul class="side-nav" id="mobile-demo">
                 <a onclick="$('.button-collapse').sideNav('hide');" href="#!"><i class="fas fa-times-circle"></i></a>
+                <h1 style="color: grey;border-bottom: 1px solid black;text-align: center;font-size: 60px;text-shadow: 2px 2px 1px black;">MAIN MENU</h1>
                 <li><a href="{{main}}" onclick="$('.button-collapse').sideNav('hide');" >Home</a></li>
                 <li><a href="{{gamelink}}" onclick="$('.button-collapse').sideNav('hide');" >Games</a></li>
                 <li><a href="{{about}}" id="aboutButton" onclick="$('.button-collapse').sideNav('hide');" >About</a></li>
                 <li><a href="{{contact}}" onclick="$('.button-collapse').sideNav('hide');" >Contact</a></li>
-                <h1 style="color: grey;border-bottom: 1px solid black;text-align: center;margin-top: 200px;font-size: 60px;text-shadow: 2px 2px 1px black;">ADMIN</h1>
+                <h1 style="color: grey;border-bottom: 1px solid black;text-align: center;margin-top: 100px;font-size: 60px;text-shadow: 2px 2px 1px black;">ADMIN</h1>
                 <li><a href="{{url_for('get_games')}}">Manage Games</a></li>
                 <li><a href="{{url_for('get_platforms')}}">Manage platforms</a></li>
              </ul>

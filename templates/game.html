@@ -84,13 +84,13 @@
     </div>
     
     <div class="row {{game.game_platform}}-row">
-      <div class="col s12">
+      <div class="col s12 mobile-trailer-col">
         <iframe class="game-trailer" id="{{game._id}}trailer-video" src="https://www.youtube.com/embed/{{game.game_trailer}}?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation"></iframe>
       </div>
     </div>
     
     <div class="row {{game.game_platform}}-row">
-      <div class="col s12">
+      <div class="col s12 mobile-trailer-col">
         
         <div class="game-reviews">
         {% for review in reviews %}
@@ -144,37 +144,37 @@
           <div class="row">
             <div class="col s12 store" style="margin-top: 0px !important;">
               <div class="col s1 store-logo">
-                
+                <i class="fab fa-amazon"></i>
               </div>
               <div class="col s8">
-                <h1 class="center">Amazon</h1>
+                <h1 class="center store-name">Amazon</h1>
               </div>
               <div class="col s3 store-price">
-                  <p class="store-price">£36.98</p>
+                  <p class="store-price">£49.99</p>
                   <p class="store-link">By Google</p>
               </div>
             </div>
             <div class="col s12 store">
               <div class="col s1 store-logo">
-                
+                <i class="fab fa-ebay"></i>
               </div>
               <div class="col s8">
-                <h1 class="center">Ebay</h1>
+                <h1 class="center store-name">Ebay</h1>
               </div>
               <div class="col s3 store-price">
-                  <p class="store-price">£36.98</p>
+                  <p class="store-price">£34.99</p>
                   <p class="store-link">By Google</p>
               </div>
             </div>
             <div class="col s12 store">
               <div class="col s1 store-logo">
-                
+                <i class="fab fa-gofore"></i>
               </div>
               <div class="col s8">
-                <h1 class="center">G2A</h1>
+                <h1 class="center store-name">G2A</h1>
               </div>
               <div class="col s3 store-price">
-                  <p class="store-price">£36.98</p>
+                  <p class="store-price">£19.99</p>
                   <p class="store-link">By Google</p>
               </div>
             </div>

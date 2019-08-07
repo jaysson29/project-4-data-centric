@@ -12,6 +12,7 @@ body{
 
 .side-nav {
     width: 100% !important;
+    background-color: #000 !important;
 }
 
 .side-nav li>a {
@@ -19,12 +20,18 @@ body{
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
+    color: white !important;
+}
+
+.side-nav li>a:hover {
+    background-color: #f44336;
 }
 
 .fa-times-circle {
-    color: black !important;
+    color: white !important;
     font-size: 60px !important;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
+    margin-top: 30px;
     text-align: right;
     width: 100%;
 }
@@ -382,7 +389,6 @@ nav .nav-wrapper{
 .store-logo {
     height: 50px;
     width: 50px !important;
-    background-color: rgb(0, 0, 0);
     margin-top: 12px;
 }
 
@@ -2554,9 +2560,8 @@ ul.collection.with-header {
     
     .fa-star {
         height: 25px;
-        width: 25px;
         font-size: 15px !important;
-        margin-top: 15px;
+        margin-top: 0;
         margin-left: 5px;
     }
     
@@ -2568,9 +2573,19 @@ ul.collection.with-header {
     .game-case-dev {
         margin-top: 0px !important;
         margin-bottom: -15px !important;
-        margin-left: -15px !important;
-    }    
+        margin-left: 0px !important;
+        width: 100%;
+        height: 35px;
+    }   
     
+    .game-trailer {
+        width: 100%;
+        height: 54.5vw;
+    }
+    
+    .mobile-trailer-col {
+        padding: 0 !important;
+    }
     
     .contactForm {
         box-shadow: 10px 10px 5px #00000085;
@@ -2587,8 +2602,8 @@ ul.collection.with-header {
         margin-bottom: 30px;
     }
     
-    .footer-copyright{
-        margin-left: -25% !important;
+    .footer-copyright {
+        margin-left: 0 !important;
     }
     
     .dropdown-content {
@@ -2723,8 +2738,10 @@ ul.collection.with-header {
     }
     
     .extra-sec {
-        width: 50% !important;
-        margin-top: 200px !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+        position: unset;
+        height: 250px !important;
     }
     
     .PlayStation-4-buy{
@@ -2770,38 +2787,42 @@ ul.collection.with-header {
     .store-logo {
         height: 20px !important;
         width: 20px !important;
-        margin-top: 6px !important;
-        margin-left: 5px !important;
+        margin-top: 2px !important;
+        margin-left: 40px !important;
     }
     
     .store {
-        height: 35px !important;
+        height: 45px !important;
         margin-left: 25px !important;
-        width: 155px !important;
+        width: 90% !important;
         border-radius: 15px !important;
         margin-top: 20px !important;
         box-shadow: 5px 5px black;
     }
     
+    .store-name {
+        margin-top: 0 !important;
+    }
+    
     .store-price {
         text-align: center;
-        margin-top: 4px !important;
+        margin-top: 1px !important;
         font-weight: 500;
-        font-size: 10px !important;
-        margin-bottom: 0 !important;
-        margin-left: 35px !important;
+        font-size: 18px !important;
+        margin-bottom: 0px !important;
+        margin-left: 275px !important;
         position: absolute !important;
         float: left;
     }
     
     p.store-price {
-    margin-left: 41px !important;
+        margin-left: 0 !important;
     }
     
     .store-link {
         font-size: 10px !important;
-        margin-top: 12px !important;
-        margin-left: 32px !important;
+        margin-top: 22px !important;
+        margin-left: -30px !important;
     }
     
     .modal-game-info{
@@ -2898,8 +2919,10 @@ ul.collection.with-header {
         margin-top: 5px !important;
     }
     
-    .game-review-rating{
-        margin-top: 5px !important;
+    .game-review-rating {
+        margin-top: 7.5px !important;
+        font-size: 10px;
+        width: 90px;
     }
     
     .input-field.col.s3.review-input-box {
@@ -2940,7 +2963,7 @@ ul.collection.with-header {
     .btn-floating.btn-large {
         width: 40px;
         height: 40px;
-        margin-left: -10px;
+        margin-left: 15px;
         margin-top: 10px;
     }
     
