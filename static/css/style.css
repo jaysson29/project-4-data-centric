@@ -12,7 +12,7 @@ body{
 
 .side-nav {
     width: 100% !important;
-    background-color: #000 !important;
+    background-image: url("/static/img/background.jpg");
 }
 
 .side-nav li>a {
@@ -1110,7 +1110,7 @@ nav .nav-wrapper{
 }
 
 .aboutInfo p {
-    color: #F44336;
+    color: #000000;
     text-align: center;
     margin-left: 5%;
     margin-right: 5%;
@@ -1497,6 +1497,28 @@ ul.collection.with-header {
     padding-top: 0 !important;
 }
 
+
+@media(max-width: 1440px){
+    .collection.with-header .collection-item {
+        padding-left: 30px;
+        height: 85px;
+        font-size: 25px;
+        padding-top: 30px;
+    }
+}
+
+
+@media(max-width: 1025px) {
+    .collection.with-header .collection-item {
+        padding-left: 0px;
+        padding-right: 0px;
+        text-align: center;
+        height: 85px;
+        font-size: 14px;
+        padding-top: 30px;
+    }
+}
+
 @media(max-width: 996px){
     .badge-game{
         left: calc(108% - 60px);
@@ -1796,14 +1818,20 @@ ul.collection.with-header {
         margin-bottom: -30px;
     }
     
-    .card .card-title {
-        font-size: 18px;
-        font-size: 14px;
+    .game-case-title {
+        text-align: left !important;
+        margin-top: -130px !important;
+        margin-bottom: 0px !important;
+        margin-left: 5px !important;
+        color: hsla(0, 0%, 0%, 0.75) !important;
+        float: left;
+        font-size: 13px !important;
     }
     
     .card .card-content {
         padding: 0 !important;
-        margin-top: 24px !important;
+        margin-bottom: -30px;
+        margin-top: -155px !important;
     }
     
     .contactForm {
@@ -2204,6 +2232,11 @@ ul.collection.with-header {
     .plat-con{
         height: 100%;
     }
+    
+    .gameAddPage {
+        margin-top: 40px;
+    }
+    
     .ParallaxVideo video{
         width: 385%;
         left: -145%;
@@ -2460,8 +2493,8 @@ ul.collection.with-header {
         height: 240px;
     }
     
-    .game-case-size{
-        width: 33% !important;
+    .game-case-size {
+        width: 50% !important;
     }
     
     .playstation-4-case{
