@@ -13,5 +13,5 @@ before_script:
   - export FLASK_APP="$TRAVIS_BUILD_DIR/app.py"
   - export FLASK_DEBUG=1
 script:
-  - rake
-  - flask test
+  - "rake"
+  - python app.py
