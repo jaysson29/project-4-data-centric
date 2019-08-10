@@ -1505,6 +1505,29 @@ ul.collection.with-header {
         font-size: 25px;
         padding-top: 30px;
     }
+    
+    .picture {
+        background-size: 173%;
+    }
+    
+    .name {
+        padding-top: 80px !important;
+        font-size: 20px;
+    }
+    
+    .mySkills {
+        font-size: 18px;
+        margin-left: -20px;
+        margin-right: -43px;
+    }
+    
+    .info {
+        height: 840px;
+    }
+    
+    .skill3 {
+        height: 100%;
+    }
 }
 
 

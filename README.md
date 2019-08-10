@@ -141,7 +141,7 @@ Can Delete File On MongoDB Database                             |   Pass
 Can View The File From The MongoDB Database On The Webpage      |   Pass
 ```
 ## User Experiences
-I Presented My Website To A Family Member To Test For Me To Get A Fresh Pair Of Eyes. From This I Made Fixes For The Following :
+I Presented My Website To A Family Member To Test For Me To Get A Fresh Pair Of Eyes, From This I Made Fixes For The Following :
 ```
 Removed Modals From Main Page And Display Seperate Pages For Each Game As It Was 
 Loading Every File At Once Slowing The Site Down.
