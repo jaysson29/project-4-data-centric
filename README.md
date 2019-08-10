@@ -1,7 +1,8 @@
 # Project 4 : Data Centric </h1>
 
 ### The Gaming Recipe Styled Website
-[![Python](https://img.shields.io/badge/python-2.7_3.3-blue.svg)]()
+
+[![Python](https://img.shields.io/badge/python-2.7_3.3_3.4_3.5_3.6-blue.svg)]()
 [![Requirements Status](https://requires.io/github/jaysson29/project-4-data-centric/requirements.svg?branch=master)](https://requires.io/github/jaysson29/project-4-data-centric/requirements/?branch=master)
 
 ### Preview
@@ -98,40 +99,79 @@ Or Click Manally Deploy Master Branch
 
 
 
-### Running the tests
+## Tests
 
-Manual And Automatic Testing
+#### Manual Tests
 
-#### Break down into end to end tests
-
-Explain what these tests test and why
+Design Was Tested On All Screen Sizes And Devices
+Browsers:
+```
+Microsoft Explorer
+Microsoft Edge
+Chrome 
+Firefox
+Safai
+```
 
 ```
-Give an example
+1920 x 1080
+1440 x 2960
+1440 x 900
+1080 x 1920
+1024 x 768
+750 x 1334
 ```
-#### And coding style tests
-
-Explain what these tests test and why
-
+Devices:
 ```
-Give an example
+PC
+Tablet
+Mobile Phone
+```
+```
+Android
+IPhone
+Windows
+```
+
+Test The CRUD Flask Application
+```
+Can Create File To MongoDB Database                             |   Pass
+Can Edit File On MongoDB Database                               |   Pass
+Can Delete File On MongoDB Database                             |   Pass
+Can View The File From The MongoDB Database On The Webpage      |   Pass
+```
+## User Experiences
+I Presented My Website To A Family Member To Test For Me To Get A Fresh Pair Of Eyes. From This I Made Fixes For The Following :
+```
+Removed Modals From Main Page And Display Seperate Pages For Each Game As It Was 
+Loading Every File At Once Slowing The Site Down.
+
+Change Mobile Menu As Buttons Was Hard To Press.
+
+Font-Sizes Was Too Big.
+
+Add Validation To Add Game As It Would Allow The User To Add An Empty File/Game.
+
 ```
 ### Tech Used
 
 ### Some the tech used includes:
-- **HTML**, **CSS**, **Javascript** and **Python**
-  - Base languages used to create this website
+- [HTML](https://www.w3schools.com/html/html_intro.asp)
+    - **HTML** is the standard markup language for creating Web pages.
+- [CSS](https://www.w3schools.com/css/)
+    - **Cascading Style Sheets** is a style sheet language used for describing the presentation of a document written in a markup language like HTML. 
+- [JavaScript](https://www.javascript.com/)
+    - **JavaScript**, often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification. 
 - [Materialize](http://archives.materializecss.com/0.100.2/)
     - I used **Materlialize** 0.100.2 to give my project a simple, responsive layout
 - [JQuery](https://jquery.com)
-    - I used **JQuery** for boostrap
+    - I used **JQuery** To Allow Features Of Materialize CSS To Work
 - [Python](https://www.python.org/)
     - I used **Python** for functionality
     - I used **Flask** for more python functionality
     - I used **PYMongo** for asscess to mongodb
 - [MongoDB](https://www.mongodb.com/)
     - I used **MongoDB** to store and receive data on a database
-
 
 # Credits
 
@@ -151,5 +191,7 @@ Give an example
 ## Acknowledgments
 
 * Stackoverflow
+* Materialize CSS
+* w3schools
 * Google
 * Code Institute ( For The Marker The Admin Password Is *Jayssonmaster29*)
