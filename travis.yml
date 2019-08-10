@@ -5,10 +5,13 @@ python:
   - 3.4
   - 3.5
   - 3.6
-before_install: gem install bundler
-install: pip install -r requirements.txt
+install: 
+  - pip install -r requirements.txt
+  - gem uninstall bundler
+  - gem install bundler --version '1.7.4'
 before_script:
   - export FLASK_APP="$TRAVIS_BUILD_DIR/app.py"
   - export FLASK_DEBUG=1
-
-script: flask test
+script:
+  - "rake"
+  - flask test
