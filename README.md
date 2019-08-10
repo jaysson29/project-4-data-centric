@@ -1,18 +1,17 @@
-<h1 align="center"> Project 4 : Data Centric </h1>
+# Project 4 : Data Centric </h1>
 
-<p style="font-weight: bold; font-size: 20px; text-align: center; text-decoration: underline" > The Gaming Recipe Styled Website </p>
-
-[![Python](https://img.shields.io/badge/python-2.7,3.5,3.6--dev-blue.svg)]()
+### The Gaming Recipe Styled Website
+[![Python](https://img.shields.io/badge/python-2.7_3.3-blue.svg)]()
 [![Travis](https://travis-ci.org/brennv/flask-app.svg?branch=master)](https://travis-ci.org/brennv/flask-app)
 [![Requirements](https://requires.io/github/brennv/flask-app/requirements.svg?branch=master)](https://requires.io/github/brennv/flask-app/requirements/?branch=master)
 
-<h2 align="center">Preview</h2>
+### Preview
 
 ![Full Width Pics Preview](https://github.com/jaysson29/project-4-data-centric/blob/master/snapshot.jpg?raw=true)
 
 #### **Live Preview** : **[The Game Space --- Heroku](https://project-4-data-centric-jason.herokuapp.com/)**
 
-<h3 align="center">What is this website for?</h3>
+## What is this website for?
 ```
 This is a website for my full stack web development course as a project, 
 this project is based on only three languages HTML, CSS AND JavaScript.
@@ -23,7 +22,7 @@ Games.
 
 The Styling Consists Of A Gaming Style UI And A User-Friendly Design
 ```
-<h3 align="center">What does it do?</h3>
+## What does it do?
 ```
 I Created This Website For My Project 4 Assignment In Website Development
 
@@ -45,11 +44,11 @@ If the Game Is CO-OP And How Many Players
 - Search Bar, Allowing The User To Search For Specific Game
 - Login/Register A User
 
-<h1 align="center">Getting Started</h1>
+# Getting Started
 
-<p style="text-align: center;" >These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. You Need A Python IDE Or Command Line To Run Locally.</p>
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. You Need A Python IDE Or Command Line To Run Locally.</p>
 
-<h3 align="center">Installing</h3>
+## Installing
 
 Firstly Clone Or Download The Git repository.
 
@@ -77,7 +76,7 @@ Navigate To http://localhost:7000 In Your Browser To View Website
 
 The Project Will Be Ready For Deployment
 
-<h1 align="center">Deployment</h1>
+# Deployment
 
 I Suggest Using Heroku To Deploy The Project
 
@@ -100,25 +99,25 @@ Or Click Manally Deploy Master Branch
 
 
 
-<h3 align="center">Running the tests</h3>
+### Running the tests
 
-<p style="text-align: center;" >Manual And Automatic Testing</p>
+Manual And Automatic Testing
 
-<h4 align="center">Break down into end to end tests</h4>
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-<h4 align="center">And coding style tests</h4>
+#### Break down into end to end tests
 
 Explain what these tests test and why
 
 ```
 Give an example
 ```
-<h3 align="center">Tech Used</h3>
+#### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+### Tech Used
 
 ### Some the tech used includes:
 - **HTML**, **CSS**, **Javascript** and **Python**
@@ -135,7 +134,7 @@ Give an example
     - I used **MongoDB** to store and receive data on a database
 
 
-<h1 align="center">Credits</h1>
+# Credits
 
 ## Author
 
