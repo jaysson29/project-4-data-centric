@@ -2,8 +2,7 @@
 
 ### The Gaming Recipe Styled Website
 [![Python](https://img.shields.io/badge/python-2.7_3.3-blue.svg)]()
-[![Travis](https://travis-ci.org/brennv/flask-app.svg?branch=master)](https://travis-ci.org/brennv/flask-app)
-[![Requirements](https://requires.io/github/brennv/flask-app/requirements.svg?branch=master)](https://requires.io/github/brennv/flask-app/requirements/?branch=master)
+[![Requirements Status](https://requires.io/github/jaysson29/project-4-data-centric/requirements.svg?branch=master)](https://requires.io/github/jaysson29/project-4-data-centric/requirements/?branch=master)
 
 ### Preview
 
