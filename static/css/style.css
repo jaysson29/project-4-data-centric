@@ -1511,8 +1511,8 @@ ul.collection.with-header {
     }
     
     .name {
-        padding-top: 80px !important;
-        font-size: 20px;
+        padding-top: 110px !important;
+        font-size: 25px;
     }
     
     .mySkills {
@@ -1528,6 +1528,7 @@ ul.collection.with-header {
     .skill3 {
         height: 100%;
     }
+    
 }
 
 
@@ -1539,6 +1540,49 @@ ul.collection.with-header {
         height: 85px;
         font-size: 14px;
         padding-top: 30px;
+    }
+    
+    .name {
+        padding-top: 110px !important;
+        font-size: 17px;
+    }
+    
+    .mobile-trailer-col{
+        padding: 0 !important;
+    }
+    
+    .store {
+        width: 92% !important;
+    }
+    
+    .store-logo {
+        margin-top: 16.6px !important;
+        margin-left: 40px !important;
+    }
+    
+    .store-price {
+        text-align: center;
+        margin-top: 5px !important;
+        font-weight: 500;
+        font-size: 28px !important;
+        margin-bottom: 0px !important;
+        margin-left: 250px !important;
+        position: absolute !important;
+        float: left;
+    }
+    
+    .store-link {
+        font-size: 15px !important;
+        margin-top: 40px !important;
+        margin-left: 190px !important;
+        width: 100%;
+    }
+    
+    .extra-sec {
+        width: 100% !important;
+        margin-top: 0 !important;
+        position: unset;
+        height: 100% !important;
     }
 }
 
@@ -1572,8 +1616,8 @@ ul.collection.with-header {
     }
     
     .searchButton {
-        margin-top: 610px;
-        margin-left: 30%;
+        margin-top: 550px;
+        margin-left: 36% !important;
         height: 40px;
         width: 250px;
     }
@@ -1588,10 +1632,15 @@ ul.collection.with-header {
         margin-top: -35px !important;
         font-size: 25px !important;
     }
+    
     nav .brand-logo {
-        left: 45% !important;
         position: inherit;
     }
+    
+    .side-nav {
+        background-size: 3860px !important;
+    }
+    
     
     nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
         font-size: 50px !important;
@@ -1648,6 +1697,18 @@ ul.collection.with-header {
     
     .modal-game-name {
         font-size: 30px !important;
+    }
+    
+    .game-name {
+        font-size: 40px !important;
+        text-align: center !important;
+        margin-top: -8px;
+    }
+    
+    .game-image {
+        max-width: 103.5%;
+        margin-left: -11px;
+        width: 103.5%;
     }
     
     .game-header h1 {
@@ -1725,10 +1786,6 @@ ul.collection.with-header {
     
     .menu-mobile{
         width: 100% !important;
-    }
-    
-    .mobile-games{
-        
     }
     
     .mainDiv{
@@ -1846,9 +1903,13 @@ ul.collection.with-header {
         margin-top: -130px !important;
         margin-bottom: 0px !important;
         margin-left: 5px !important;
-        color: hsla(0, 0%, 0%, 0.75) !important;
+        color: hsla(0, 0%, 100%, 0.75) !important;
         float: left;
-        font-size: 13px !important;
+        font-size: 16px !important;
+    }
+    
+    .game-logo-icon {
+        padding-left: 0;
     }
     
     .card .card-content {
@@ -1908,8 +1969,10 @@ ul.collection.with-header {
     }
     
     .mySkills {
-        margin-left: -60px;
-        margin-right: 0;
+        font-size: 28px;
+        height: 40px;
+        margin-left: -100px;
+        margin-right: 10px;
     }
     
     .info{
@@ -1930,7 +1993,7 @@ ul.collection.with-header {
     .aboutDiv {
         width: 100% !important;
         border-radius: 15px 15px 15px 15px;
-        height: 1270px;
+        height: 100% !important;
     }
     
     .aboutInfo {
@@ -1939,8 +2002,16 @@ ul.collection.with-header {
     
     .aboutHeader h3 {
         font-size: 50px;
-        margin-top: -2%;
+        margin-top: 5%;
         margin-left: 0;
+    }
+    
+    .aboutSection {
+        height: 100%;
+    }
+    
+    .about-box {
+        height: 100% !important;
     }
     
     .progress-section {
@@ -2008,10 +2079,9 @@ ul.collection.with-header {
     }
     
     .extra-sec {
-        width: 47.25% !important;
-        /* margin-left: -170px !important; */
-        margin-top: 200px !important;
-        position: absolute;
+        width: 100% !important;
+        margin-top: 0 !important;
+        position: relative !important;
         height: 230px !important;
     }
     
@@ -2058,8 +2128,15 @@ ul.collection.with-header {
     .store-logo {
         height: 20px !important;
         width: 20px !important;
-        margin-top: 6px !important;
-        margin-left: 5px !important;
+        margin-top: -3px !important;
+        padding-left: 45px !important;
+        margin-right: -20px;
+        margin-left: 0 !important;
+    }
+    
+    .store-name {
+        font-size: 40px;
+        margin-top: -5px;
     }
     
     .store {
@@ -2075,10 +2152,10 @@ ul.collection.with-header {
         text-align: center;
         margin-top: 2px !important;
         font-weight: 500;
-        font-size: 10px !important;
+        font-size: 18px !important;
         margin-bottom: 0 !important;
-        margin-left: 209px !important;
-        position: absolute !important;
+        margin-left: 0 !important;
+        position: relative !important;
     }
     
     p.store-price {
@@ -2239,6 +2316,149 @@ ul.collection.with-header {
     .fa-times:before {
         margin-left: 300px !important;
     }
+    
+    .picture {
+        height: 480px;
+        background-size: 103% !important;
+    }
+    
+    .name {
+        padding-top: 95px !important;
+        font-size: 30px;
+    }
+    
+    .section-heading {
+        font-size: 60px;
+    }
+    
+    .footer-copyright {
+        margin-left: 0 !important;
+    }
+}
+
+@media(max-width: 769px){
+    
+    nav .brand-logo {
+        left: 40% !important;
+        position: inherit;
+    }
+    
+    .side-nav {
+        background-size: 3860px !important;
+    }
+    
+    .searchButton {
+        margin-top: 550px;
+        margin-left: 36% !important;
+    }
+    
+    .picture {
+        height: 480px;
+        background-size: 103% !important;
+    }
+    
+    .name {
+        padding-top: 95px !important;
+        font-size: 30px;
+    }
+    
+    .section-heading {
+        font-size: 60px;
+    }
+    
+    .mySkills {
+        font-size: 28px;
+        height: 40px;
+        margin-left: -100px;
+        margin-right: 10px;
+    }
+    
+    .aboutHeader h3 {
+        font-size: 50px;
+        margin-top: 5%;
+        margin-left: 0;
+    }
+    
+    .aboutSection {
+        height: 100%;
+    }
+    
+    .about-box {
+        height: 100% !important;
+    }
+    
+    .aboutDiv {
+        width: 100% !important;
+        border-radius: 15px 15px 15px 15px;
+        height: 100% !important;
+    }
+
+    .game-name {
+        font-size: 40px !important;
+        text-align: center !important;
+        margin-top: -8px;
+    }
+    
+    .game-image {
+        max-width: 103.5%;
+        margin-left: -11px;
+        width: 103.5%;
+    }
+    
+    .extra-sec {
+        width: 100% !important;
+        margin-top: 0 !important;
+        position: unset;
+        height: 250px !important;
+    }
+    
+    .store-logo {
+        height: 18px !important;
+        width: 0 !important;
+        margin-top: -3.4px !important;
+        padding-left: 44px !important;
+        margin-right: -30px;
+    }
+    
+    .store-name {
+        margin-top: -5px !important;
+    }
+    
+    .store-price {
+        text-align: center;
+        margin-top: -2px !important;
+        font-weight: 500;
+        font-size: 18px !important;
+        margin-bottom: 0px !important;
+        margin-left: 440px !important;
+        position: absolute !important;
+        float: left;
+    }
+    
+    .store-link {
+        font-size: 10px !important;
+        margin-top: 22px !important;
+        margin-left: -40px !important;
+    }
+    
+    .btn-floating.btn-large {
+        width: 40px;
+        height: 40px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    .game-trailer {
+        width: 100%;
+        height: 44.5vw;
+    }
+    
+    .page-footer .footer-copyright {
+        padding-left: 25% !important;
+    }
+    
+    .mobile-trailer-col {
+        padding: 0 !important;
+    }
 }
 
 @media(max-width: 500px)
@@ -2296,7 +2516,8 @@ ul.collection.with-header {
     nav .brand-logo {
         left: 35% !important;
         position: inherit;
-    }
+        font-size: 1.5rem;
+}
     
     nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
         font-size: 50px !important;
@@ -3032,4 +3253,13 @@ ul.collection.with-header {
         margin-left: 300px !important;
     }
     
+    .picture {
+        height: 480px;
+        background-size: 163% !important;
+        background-position-x: 30%;
+    }
+    
+    .page-footer .footer-copyright {
+        padding-left: 0 !important;
+    }
 }
