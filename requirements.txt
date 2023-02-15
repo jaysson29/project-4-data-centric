@@ -3,7 +3,7 @@ Flask==1.1.1
 Flask-PyMongo==2.3.0
 Jinja2>=2.10.1
 MarkupSafe==1.1.1
-Werkzeug==0.15.5
+Werkzeug==2.2.3
 chardet==3.0.4
 colorama==0.4.1
 html5lib==1.0.1
